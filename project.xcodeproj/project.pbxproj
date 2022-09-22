@@ -13,6 +13,7 @@
 		4D6DA1F728C1C6A900395946 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D6DA1F528C1C6A900395946 /* Main.storyboard */; };
 		4D6DA1F928C1C6AC00395946 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D6DA1F828C1C6AC00395946 /* Assets.xcassets */; };
 		4D6DA1FC28C1C6AC00395946 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D6DA1FA28C1C6AC00395946 /* LaunchScreen.storyboard */; };
+		4DD688A328D9C24400B9FA61 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD688A228D9C24400B9FA61 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4D6DA1F828C1C6AC00395946 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D6DA1FB28C1C6AC00395946 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D6DA1FD28C1C6AC00395946 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DD688A228D9C24400B9FA61 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				4D6DA1EF28C1C6A900395946 /* AppDelegate.swift */,
 				4D6DA1F128C1C6A900395946 /* SceneDelegate.swift */,
 				4D6DA1F328C1C6A900395946 /* ViewController.swift */,
+				4DD688A228D9C24400B9FA61 /* MainViewController.swift */,
 				4D6DA1F528C1C6A900395946 /* Main.storyboard */,
 				4D6DA1F828C1C6AC00395946 /* Assets.xcassets */,
 				4D6DA1FA28C1C6AC00395946 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				4D6DA1F428C1C6A900395946 /* ViewController.swift in Sources */,
 				4D6DA1F028C1C6A900395946 /* AppDelegate.swift in Sources */,
 				4D6DA1F228C1C6A900395946 /* SceneDelegate.swift in Sources */,
+				4DD688A328D9C24400B9FA61 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,8 +296,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,7 +309,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -319,8 +325,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,7 +338,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
