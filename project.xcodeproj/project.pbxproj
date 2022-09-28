@@ -13,6 +13,9 @@
 		4D6DA1F728C1C6A900395946 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D6DA1F528C1C6A900395946 /* Main.storyboard */; };
 		4D6DA1F928C1C6AC00395946 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D6DA1F828C1C6AC00395946 /* Assets.xcassets */; };
 		4D6DA1FC28C1C6AC00395946 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D6DA1FA28C1C6AC00395946 /* LaunchScreen.storyboard */; };
+		4DA3F31E28DD8001003E3D97 /* MainViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3F31D28DD8001003E3D97 /* MainViewController+TableView.swift */; };
+		4DA3F32028DD867B003E3D97 /* NameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3F31F28DD867B003E3D97 /* NameCell.swift */; };
+		4DA3F32528DD8892003E3D97 /* NameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3F32428DD8892003E3D97 /* NameEntity.swift */; };
 		4DD688A328D9C24400B9FA61 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD688A228D9C24400B9FA61 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +28,9 @@
 		4D6DA1F828C1C6AC00395946 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D6DA1FB28C1C6AC00395946 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D6DA1FD28C1C6AC00395946 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DA3F31D28DD8001003E3D97 /* MainViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+TableView.swift"; sourceTree = "<group>"; };
+		4DA3F31F28DD867B003E3D97 /* NameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCell.swift; sourceTree = "<group>"; };
+		4DA3F32428DD8892003E3D97 /* NameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameEntity.swift; sourceTree = "<group>"; };
 		4DD688A228D9C24400B9FA61 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,16 +64,43 @@
 		4D6DA1EE28C1C6A900395946 /* project */ = {
 			isa = PBXGroup;
 			children = (
+				4DA3F32328DD8852003E3D97 /* Entity */,
+				4DA3F32228DD884A003E3D97 /* Cell */,
+				4DA3F32128DD883D003E3D97 /* ViewController */,
 				4D6DA1EF28C1C6A900395946 /* AppDelegate.swift */,
 				4D6DA1F128C1C6A900395946 /* SceneDelegate.swift */,
-				4D6DA1F328C1C6A900395946 /* ViewController.swift */,
-				4DD688A228D9C24400B9FA61 /* MainViewController.swift */,
 				4D6DA1F528C1C6A900395946 /* Main.storyboard */,
 				4D6DA1F828C1C6AC00395946 /* Assets.xcassets */,
 				4D6DA1FA28C1C6AC00395946 /* LaunchScreen.storyboard */,
 				4D6DA1FD28C1C6AC00395946 /* Info.plist */,
 			);
 			path = project;
+			sourceTree = "<group>";
+		};
+		4DA3F32128DD883D003E3D97 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4D6DA1F328C1C6A900395946 /* ViewController.swift */,
+				4DD688A228D9C24400B9FA61 /* MainViewController.swift */,
+				4DA3F31D28DD8001003E3D97 /* MainViewController+TableView.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		4DA3F32228DD884A003E3D97 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4DA3F31F28DD867B003E3D97 /* NameCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		4DA3F32328DD8852003E3D97 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				4DA3F32428DD8892003E3D97 /* NameEntity.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +174,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DA3F32528DD8892003E3D97 /* NameEntity.swift in Sources */,
+				4DA3F32028DD867B003E3D97 /* NameCell.swift in Sources */,
 				4D6DA1F428C1C6A900395946 /* ViewController.swift in Sources */,
+				4DA3F31E28DD8001003E3D97 /* MainViewController+TableView.swift in Sources */,
 				4D6DA1F028C1C6A900395946 /* AppDelegate.swift in Sources */,
 				4D6DA1F228C1C6A900395946 /* SceneDelegate.swift in Sources */,
 				4DD688A328D9C24400B9FA61 /* MainViewController.swift in Sources */,
