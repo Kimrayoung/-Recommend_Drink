@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Review Register View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController restorationIdentifier="ReviewRegisterViewController" storyboardIdentifier="ReviewRegisterViewController" id="Y6W-OH-hqX" customClass="ReviewRegisterViewController" customModule="PickDrink" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yny-dA-mzh" customClass="CosmosView" customModule="Cosmos">
+                                <rect key="frame" x="120" y="79" width="153" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="08h-H0-Wb1"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                        <color key="value" name="MainReviewColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                        <color key="value" name="MainReviewColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                        <color key="value" name="MainReviewColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="emptyBorderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="filledBorderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용을 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JyH-PN-COD">
+                                <rect key="frame" x="25" y="169" width="137" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="04J-3e-IAM">
+                                <rect key="frame" x="25" y="200" width="343" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="aWh-T9-Bmg"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XrB-gz-72l">
+                                <rect key="frame" x="323.66666666666669" y="410" width="44.333333333333314" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" name="reviewTextViewCntLabel"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호를 설정해주세요!(숫자 4자리)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18R-ok-a15">
+                                <rect key="frame" x="25" y="455" width="259.33333333333331" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex) 0000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E0k-Sd-Wba">
+                                <rect key="frame" x="25" y="485.33333333333331" width="343" height="39.999999999999943"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="fB8-bb-90S"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주의 ❗️해당 메뉴와 상관없는 내용은 통보없이 삭제 될 수 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4o-LK-1UB">
+                                <rect key="frame" x="25" y="550.33333333333337" width="343" height="14.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8i-UE-Z29">
+                                <rect key="frame" x="100" y="604.66666666666663" width="193" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="eOK-lb-3OJ"/>
+                                </constraints>
+                                <color key="tintColor" name="MainReviewColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="리뷰 등록하기">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="별점을 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYz-vw-J5F">
+                                <rect key="frame" x="136.33333333333334" y="122" width="120.66666666666666" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <color key="textColor" name="starSelectedLabel"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="I8i-UE-Z29" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="0JD-cR-odu"/>
+                            <constraint firstItem="Yny-dA-mzh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="120" id="2dl-3R-lgc"/>
+                            <constraint firstItem="04J-3e-IAM" firstAttribute="top" secondItem="JyH-PN-COD" secondAttribute="bottom" constant="10" id="3rF-9A-fqW"/>
+                            <constraint firstAttribute="trailing" secondItem="M4o-LK-1UB" secondAttribute="trailing" constant="25" id="Cnb-ed-7Ac"/>
+                            <constraint firstItem="E0k-Sd-Wba" firstAttribute="top" secondItem="18R-ok-a15" secondAttribute="bottom" constant="10" id="LJj-7q-arF"/>
+                            <constraint firstItem="04J-3e-IAM" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Njj-AV-bAJ"/>
+                            <constraint firstItem="M4o-LK-1UB" firstAttribute="leading" secondItem="JyH-PN-COD" secondAttribute="leading" id="UJi-wN-HXh"/>
+                            <constraint firstItem="Yny-dA-mzh" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Yzr-Az-RSj"/>
+                            <constraint firstItem="fYz-vw-J5F" firstAttribute="centerX" secondItem="Yny-dA-mzh" secondAttribute="centerX" id="ae3-bb-c89"/>
+                            <constraint firstItem="I8i-UE-Z29" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="100" id="deH-0F-a5a"/>
+                            <constraint firstItem="04J-3e-IAM" firstAttribute="leading" secondItem="JyH-PN-COD" secondAttribute="leading" id="eMx-k0-P2q"/>
+                            <constraint firstItem="XrB-gz-72l" firstAttribute="trailing" secondItem="04J-3e-IAM" secondAttribute="trailing" id="fAE-bw-LE0"/>
+                            <constraint firstItem="JyH-PN-COD" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="110" id="fdy-OJ-VpL"/>
+                            <constraint firstItem="18R-ok-a15" firstAttribute="leading" secondItem="JyH-PN-COD" secondAttribute="leading" id="g2V-qm-FIO"/>
+                            <constraint firstItem="JyH-PN-COD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="gEZ-ln-lfN"/>
+                            <constraint firstItem="I8i-UE-Z29" firstAttribute="top" secondItem="M4o-LK-1UB" secondAttribute="bottom" constant="40" id="gOF-iE-wXe"/>
+                            <constraint firstItem="XrB-gz-72l" firstAttribute="top" secondItem="04J-3e-IAM" secondAttribute="bottom" constant="10" id="k2D-dx-71O"/>
+                            <constraint firstItem="Yny-dA-mzh" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="s9I-Fb-sD0"/>
+                            <constraint firstItem="18R-ok-a15" firstAttribute="top" secondItem="04J-3e-IAM" secondAttribute="bottom" constant="55" id="tbz-CV-8U4"/>
+                            <constraint firstItem="E0k-Sd-Wba" firstAttribute="leading" secondItem="18R-ok-a15" secondAttribute="leading" id="vL4-3G-dCa"/>
+                            <constraint firstItem="fYz-vw-J5F" firstAttribute="top" secondItem="Yny-dA-mzh" secondAttribute="bottom" constant="3" id="vOA-Gc-hpl"/>
+                            <constraint firstItem="M4o-LK-1UB" firstAttribute="top" secondItem="E0k-Sd-Wba" secondAttribute="bottom" constant="25" id="xIJ-B6-5Ke"/>
+                            <constraint firstItem="E0k-Sd-Wba" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="xfv-GE-JlR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="reviewPasswordTextField" destination="E0k-Sd-Wba" id="PBs-dJ-pcG"/>
+                        <outlet property="reviewRegisterBtn" destination="I8i-UE-Z29" id="UD4-QD-NaO"/>
+                        <outlet property="reviewTextView" destination="04J-3e-IAM" id="WkV-jJ-4tX"/>
+                        <outlet property="reviewTextViewCnt" destination="XrB-gz-72l" id="2E7-zf-ko7"/>
+                        <outlet property="starView" destination="Yny-dA-mzh" id="C5J-bd-mba"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6.8702290076335872" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="MainReviewColor">
+            <color red="0.96078431372549022" green="0.87058823529411766" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="reviewTextViewCntLabel">
+            <color red="0.52941176470588236" green="0.52941176470588236" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="starSelectedLabel">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
