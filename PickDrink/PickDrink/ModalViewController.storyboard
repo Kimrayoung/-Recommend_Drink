@@ -12,7 +12,7 @@
         <!--Modal View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="ModalViewController" customModule="PickDrink" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="ModalViewController" storyboardIdentifier="ModalViewController" id="Y6W-OH-hqX" customClass="ModalViewController" customModule="PickDrink" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,28 +21,25 @@
                                 <rect key="frame" x="25" y="159" width="343" height="534"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="firstTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbD-iB-EFQ">
-                                        <rect key="frame" x="10" y="10" width="69.333333333333329" height="21"/>
+                                        <rect key="frame" x="10" y="40" width="69.333333333333329" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7t-Qy-ZlV">
-                                        <rect key="frame" x="10" y="41" width="323" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="Zw7-gn-vDV"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7t-Qy-ZlV" customClass="PaddingLabel" customModule="PickDrink" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="71" width="323" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SecondTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoh-LA-oNR">
-                                        <rect key="frame" x="10" y="121" width="97.666666666666671" height="21"/>
+                                        <rect key="frame" x="10" y="109" width="97.666666666666671" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iqe-jR-1rx">
-                                        <rect key="frame" x="10" y="152" width="323" height="200"/>
+                                        <rect key="frame" x="10" y="140" width="323" height="200"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="yHY-qh-b24"/>
@@ -52,19 +49,19 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3X-jq-Wef">
-                                        <rect key="frame" x="281" y="362" width="52" height="21"/>
+                                        <rect key="frame" x="281" y="350" width="52" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="reviewTextViewCntLabel"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주의❗️ 검토 후 타당하지 않으면 접수가 반려될 수 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucN-oo-4Fg">
-                                        <rect key="frame" x="10" y="402" width="309" height="15.666666666666686"/>
+                                        <rect key="frame" x="10" y="390" width="309" height="15.666666666666686"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDP-Zp-H8h">
-                                        <rect key="frame" x="89" y="432.66666666666663" width="165" height="40"/>
+                                        <rect key="frame" x="89" y="420.66666666666663" width="165" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="165" id="Mh0-zg-e5u"/>
                                             <constraint firstAttribute="height" constant="40" id="yON-ED-vgp"/>
@@ -80,7 +77,7 @@
                                 <constraints>
                                     <constraint firstItem="O3X-jq-Wef" firstAttribute="top" secondItem="iqe-jR-1rx" secondAttribute="bottom" constant="10" id="3qI-7I-hny"/>
                                     <constraint firstAttribute="trailing" secondItem="iqe-jR-1rx" secondAttribute="trailing" constant="10" id="4YM-7v-5HG"/>
-                                    <constraint firstItem="qbD-iB-EFQ" firstAttribute="top" secondItem="hkH-AO-GOb" secondAttribute="top" constant="10" id="4c2-Wm-Yi5"/>
+                                    <constraint firstItem="qbD-iB-EFQ" firstAttribute="top" secondItem="hkH-AO-GOb" secondAttribute="top" constant="40" id="4c2-Wm-Yi5"/>
                                     <constraint firstItem="ucN-oo-4Fg" firstAttribute="top" secondItem="iqe-jR-1rx" secondAttribute="bottom" constant="50" id="5wV-JE-AnN"/>
                                     <constraint firstItem="qbD-iB-EFQ" firstAttribute="leading" secondItem="hkH-AO-GOb" secondAttribute="leading" constant="10" id="CzL-lL-Fjm"/>
                                     <constraint firstItem="ucN-oo-4Fg" firstAttribute="leading" secondItem="qbD-iB-EFQ" secondAttribute="leading" id="HDe-hM-ecV"/>
@@ -90,7 +87,7 @@
                                     <constraint firstItem="PDP-Zp-H8h" firstAttribute="top" secondItem="ucN-oo-4Fg" secondAttribute="bottom" constant="15" id="b5F-CX-E6Y"/>
                                     <constraint firstItem="S7t-Qy-ZlV" firstAttribute="centerX" secondItem="hkH-AO-GOb" secondAttribute="centerX" id="kEX-An-Xv9"/>
                                     <constraint firstAttribute="trailing" secondItem="O3X-jq-Wef" secondAttribute="trailing" constant="10" id="lYt-zF-bkK"/>
-                                    <constraint firstItem="hoh-LA-oNR" firstAttribute="top" secondItem="S7t-Qy-ZlV" secondAttribute="bottom" constant="30" id="lwR-fC-M51"/>
+                                    <constraint firstItem="hoh-LA-oNR" firstAttribute="top" secondItem="S7t-Qy-ZlV" secondAttribute="bottom" constant="20" id="lwR-fC-M51"/>
                                     <constraint firstItem="S7t-Qy-ZlV" firstAttribute="top" secondItem="qbD-iB-EFQ" secondAttribute="bottom" constant="10" id="o5E-jz-Nqv"/>
                                     <constraint firstItem="iqe-jR-1rx" firstAttribute="top" secondItem="hoh-LA-oNR" secondAttribute="bottom" constant="10" id="pgc-uu-Tfj"/>
                                     <constraint firstItem="S7t-Qy-ZlV" firstAttribute="leading" secondItem="qbD-iB-EFQ" secondAttribute="leading" id="w5f-v4-VlZ"/>
@@ -109,8 +106,9 @@
                     </view>
                     <connections>
                         <outlet property="firstTitleLabel" destination="qbD-iB-EFQ" id="uag-wi-xuK"/>
-                        <outlet property="modalFirstContentLabel" destination="S7t-Qy-ZlV" id="1Z9-Sj-ukp"/>
+                        <outlet property="modalFirstContentLabel" destination="S7t-Qy-ZlV" id="LNM-BB-wgG"/>
                         <outlet property="modalTextView" destination="iqe-jR-1rx" id="066-8C-OXv"/>
+                        <outlet property="modalView" destination="hkH-AO-GOb" id="1WX-Xv-eCi"/>
                         <outlet property="secondTitleLabel" destination="hoh-LA-oNR" id="j2h-Uc-WiY"/>
                     </connections>
                 </viewController>

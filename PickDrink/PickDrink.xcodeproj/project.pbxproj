@@ -26,6 +26,7 @@
 		4DBE04A329CB245400E59BD6 /* RecommandMenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBE04A229CB245400E59BD6 /* RecommandMenuList.swift */; };
 		4DBE04A529CB253900E59BD6 /* RecommandMenuList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBE04A429CB253900E59BD6 /* RecommandMenuList.storyboard */; };
 		4DBE04A729CB350B00E59BD6 /* MyStackBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBE04A629CB350B00E59BD6 /* MyStackBtn.swift */; };
+		4DC08E9229DB2530005BC11F /* PaddingCustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC08E9129DB2530005BC11F /* PaddingCustomLabel.swift */; };
 		4DC315F329D2DEF5007BA144 /* NutritionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC315F229D2DEF5007BA144 /* NutritionViewController.swift */; };
 		4DC315F529D2DFFE007BA144 /* NutritionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC315F429D2DFFE007BA144 /* NutritionViewController.storyboard */; };
 		4DC4CDAD29D5CB67004E7687 /* ReviewRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC4CDAC29D5CB67004E7687 /* ReviewRegisterViewController.swift */; };
@@ -62,6 +63,7 @@
 		4DBE04A229CB245400E59BD6 /* RecommandMenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandMenuList.swift; sourceTree = "<group>"; };
 		4DBE04A429CB253900E59BD6 /* RecommandMenuList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecommandMenuList.storyboard; sourceTree = "<group>"; };
 		4DBE04A629CB350B00E59BD6 /* MyStackBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStackBtn.swift; sourceTree = "<group>"; };
+		4DC08E9129DB2530005BC11F /* PaddingCustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingCustomLabel.swift; sourceTree = "<group>"; };
 		4DC315F229D2DEF5007BA144 /* NutritionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionViewController.swift; sourceTree = "<group>"; };
 		4DC315F429D2DFFE007BA144 /* NutritionViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NutritionViewController.storyboard; sourceTree = "<group>"; };
 		4DC4CDAC29D5CB67004E7687 /* ReviewRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRegisterViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				4DCAFCC429D700870063EA1A /* ModalViewController.swift */,
 				4DCAFCC629D7032D0063EA1A /* ModalViewController.storyboard */,
 				4DCAFCC829D7049C0063EA1A /* CustomTextView.swift */,
+				4DC08E9129DB2530005BC11F /* PaddingCustomLabel.swift */,
 			);
 			path = PickDrink;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				4DCCE0F629D1CD7A0027629F /* ReviewCell.swift in Sources */,
 				4DC4CDAD29D5CB67004E7687 /* ReviewRegisterViewController.swift in Sources */,
 				4DBE04A729CB350B00E59BD6 /* MyStackBtn.swift in Sources */,
+				4DC08E9229DB2530005BC11F /* PaddingCustomLabel.swift in Sources */,
 				4DBE04A329CB245400E59BD6 /* RecommandMenuList.swift in Sources */,
 				4D0BCB3129C8260F00DD20AE /* ViewController.swift in Sources */,
 				4D0BCB4729C85F2500DD20AE /* ListTableViewCell.swift in Sources */,

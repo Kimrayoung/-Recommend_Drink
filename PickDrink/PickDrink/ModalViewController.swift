@@ -44,10 +44,11 @@ class ModalViewController: UIViewController {
     var modalType: modal? = nil
     var firstLabelContent: String? = nil
     
+    @IBOutlet weak var modalView: UIView!
     @IBOutlet weak var firstTitleLabel: UILabel!
     @IBOutlet weak var secondTitleLabel: UILabel!
     
-    @IBOutlet weak var modalFirstContentLabel: UILabel!
+    @IBOutlet weak var modalFirstContentLabel: PaddingLabel!
     @IBOutlet weak var modalTextView: UITextView!
     
     override func viewDidLoad() {
@@ -56,6 +57,8 @@ class ModalViewController: UIViewController {
     }
     
     private func basicModalSetting() {
+        modalView.layer.cornerRadius = 10
+        
         modalFirstContentLabel.layer.borderWidth = 1
         modalFirstContentLabel.layer.borderColor = UIColor(named: "reviewTextViewColor")?.cgColor
         modalFirstContentLabel.layer.cornerRadius = 8
@@ -68,7 +71,6 @@ class ModalViewController: UIViewController {
         modalFirstContentLabel.font = modalType.firstLabelTextFont
         modalFirstContentLabel.text = firstLabelContent
         self.modalTextView.textViewSetting(modalType.textViewPlaceHolder)
-
     }
     
 }

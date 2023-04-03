@@ -18,19 +18,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메뉴이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNx-LQ-z4W">
-                                <rect key="frame" x="15" y="134" width="69.333333333333329" height="24"/>
+                                <rect key="frame" x="15" y="114" width="69.333333333333329" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UYh-bR-y5D">
-                                <rect key="frame" x="0.0" y="79" width="393" height="40"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="rzg-Ry-Ynr"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dWX-a1-JMM">
-                                <rect key="frame" x="20" y="200" width="353" height="450"/>
+                                <rect key="frame" x="20" y="180" width="353" height="450"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8ea-7q-K4T">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="20.333333333333332"/>
@@ -208,19 +208,19 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HxK-5l-bHi">
-                                <rect key="frame" x="15.000000000000004" y="168" width="35.333333333333343" height="17"/>
+                                <rect key="frame" x="15.000000000000004" y="148" width="35.333333333333343" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" name="LabelThinColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주의❗️ 잘못 기재된 점이 있을 수 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQY-Zq-Ss2">
-                                <rect key="frame" x="15" y="670" width="207" height="14.333333333333371"/>
+                                <rect key="frame" x="15" y="650" width="207" height="14.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDB-GI-Vke">
-                                <rect key="frame" x="15" y="694.33333333333337" width="130" height="35"/>
+                                <rect key="frame" x="15" y="674.33333333333337" width="130" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="98y-AF-sVF"/>
                                     <constraint firstAttribute="width" constant="130" id="Y4n-WS-fEM"/>
@@ -240,9 +240,9 @@
                             <constraint firstItem="QDB-GI-Vke" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="PG4-a8-Yeo"/>
                             <constraint firstItem="vNx-LQ-z4W" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="QG8-d7-gAj"/>
                             <constraint firstItem="UYh-bR-y5D" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="TdV-0m-11A"/>
+                            <constraint firstItem="UYh-bR-y5D" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="UtA-hX-LZM"/>
                             <constraint firstItem="HxK-5l-bHi" firstAttribute="top" secondItem="vNx-LQ-z4W" secondAttribute="bottom" constant="10" id="Wfz-bU-nyH"/>
                             <constraint firstItem="GQY-Zq-Ss2" firstAttribute="top" secondItem="dWX-a1-JMM" secondAttribute="bottom" constant="20" id="XAl-ii-cg2"/>
-                            <constraint firstItem="UYh-bR-y5D" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="XKs-jj-NVv"/>
                             <constraint firstItem="HxK-5l-bHi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="jqL-ym-vMG"/>
                             <constraint firstItem="vNx-LQ-z4W" firstAttribute="top" secondItem="UYh-bR-y5D" secondAttribute="bottom" constant="15" id="pTf-Gw-gSv"/>
                             <constraint firstItem="dWX-a1-JMM" firstAttribute="top" secondItem="HxK-5l-bHi" secondAttribute="bottom" constant="15" id="sKH-Cp-QC5"/>
@@ -275,7 +275,7 @@
     </scenes>
     <resources>
         <namedColor name="LabelThinColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="complainBtnColor">
             <color red="0.83137254901960789" green="0.074509803921568626" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

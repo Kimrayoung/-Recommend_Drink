@@ -28,8 +28,6 @@ class ReviewRegisterViewController: UIViewController {
         starView.settings.fillMode = .full
         reviewTextView.textViewSetting(textViewPlaceHolder)
         textFieldSetting()
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

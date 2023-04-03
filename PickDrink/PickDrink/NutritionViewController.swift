@@ -37,6 +37,7 @@ class NutritionViewController: UIViewController {
         self.menuName.text = tempMenuName ?? "없음"
         sizeSetting()
         ingredientSetting()
+        complainBtn.addTarget(self, action: #selector(wrongContentBtnClicked(_:)), for: .touchUpInside)
     }
     
     private func sizeSetting() {
@@ -80,4 +81,11 @@ class NutritionViewController: UIViewController {
         }
     }
     
+    @objc func wrongContentBtnClicked(_ sender: UIButton) {
+        print(#fileID, #function, #line, "- <#comment#>")
+        guard let modalVC = ModalViewController.getInstance() else { return }
+        modalVC.modalType = .wrongContent
+        modalVC.firstLabelContent = menuName.text
+        self.present(modalVC, animated: true)
+    }
 }

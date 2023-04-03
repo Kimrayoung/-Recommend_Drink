@@ -83,7 +83,7 @@ class MenuDetailViewController: UIViewController {
         
         nutritionVC.nutrition = nutritionInfo
         nutritionVC.tempMenuName = menuDetail.name
-        self.present(nutritionVC, animated: true)
+        self.navigationController?.pushViewController(nutritionVC, animated: true)
     }
     
 }
@@ -102,6 +102,13 @@ extension MenuDetailViewController: UICollectionViewDataSource {
         let starImg : UIImage = UIImage(named: menuReviews[indexRow].reviewStar ?? "fivestars")!
         reviewCell.reviewStarImageView.image = starImg
         reviewCell.reviewContentLabel.text = menuReviews[indexRow].review
+        
+        reviewCell.reviewCompainBtnClosure = {  reviewContent, modalType in
+            guard let modalVC = ModalViewController.getInstance() else { return }
+            modalVC.modalType = modalType
+            modalVC.firstLabelContent = reviewContent
+            self.present(modalVC, animated: true)
+        }
         return reviewCell
     }
 }
