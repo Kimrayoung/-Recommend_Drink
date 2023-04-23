@@ -1,0 +1,23 @@
+{
+    "starbucks_tea": {
+        "starbucks_jeju_golden_tangerine_passion_tea": {
+            "menu_category": "tea",
+            "menu_imgUrl": null,
+            "menu_iceOrHot": 2,
+            "menu_name": "제주 금귤 패션 티",
+            "menu_price": "7200(G)",
+            "menu_seasonOnly": false,
+            "menu_allergy": null,
+            "etc": "제주 Only",
+            "menu_description": "제주 금귤과 패션 티가 만나 상큼함으로 리프레셔 되는 음료. 제주 해변가와 어울리는 청량감이 있는 티 베리에이션 음료",
+            "nutrition": {
+                "calorie": "100",
+                "caffeine": "150",
+                "salt": "120",
+                "sugar": "120",
+                "protein": "12",
+                "fat": "0"
+            }
+        }
+    }
+}

@@ -7,42 +7,12 @@
 
 import Foundation
 import UIKit
-public enum modal{
-    case wrongContent //잘못 기재된 내용 신고하는 모달
-    case complain //신고리뷰
-    
-    var firstTitle: String {
-        switch self {
-        case .wrongContent: return "잘못 기재된 메뉴"
-        case .complain: return "신고 리뷰 내용"
-        }
-    }
-    
-    var secondTitle: String {
-        switch self {
-        case .wrongContent: return "신고 리뷰 내용"
-        case .complain: return "신고 사유"
-        }
-    }
-    
-    var firstLabelTextFont: UIFont {
-        switch self {
-        case .wrongContent: return UIFont.boldSystemFont(ofSize: 16)
-        case .complain: return UIFont.systemFont(ofSize: 14)
-        }
-    }
-    
-    var textViewPlaceHolder: String {
-        switch self {
-        case .wrongContent: return "잘못 기재된 내용을 입력해주세요."
-        case .complain: return "신고하시는 이유를 간단히 작성해주세요."
-        }
-    }
-}
 
+/// 모달
 class ModalViewController: UIViewController {
-    var modalType: modal? = nil
+    var modalType: Modal? = nil
     var firstLabelContent: String? = nil
+    let textBorderColor = UIColor(named: "reviewTextViewColor")
     
     @IBOutlet weak var modalView: UIView!
     @IBOutlet weak var firstTitleLabel: UILabel!
@@ -50,17 +20,22 @@ class ModalViewController: UIViewController {
     
     @IBOutlet weak var modalFirstContentLabel: PaddingLabel!
     @IBOutlet weak var modalTextView: UITextView!
+    @IBOutlet weak var modalTextViewCnt: UILabel!
+    @IBOutlet weak var registerBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         basicModalSetting()
+        modalTextView.delegate = self
+        registerBtn.addTarget(self, action: #selector(registerBtnClicked(_:)), for: .touchUpInside)
     }
     
+    //MARK: - 모달화면 기본 세팅
     private func basicModalSetting() {
         modalView.layer.cornerRadius = 10
         
         modalFirstContentLabel.layer.borderWidth = 1
-        modalFirstContentLabel.layer.borderColor = UIColor(named: "reviewTextViewColor")?.cgColor
+        modalFirstContentLabel.layer.borderColor = UIColor(named: "reviewPlaceHolderColor")?.cgColor
         modalFirstContentLabel.layer.cornerRadius = 8
         
         guard let modalType = modalType,
@@ -70,7 +45,65 @@ class ModalViewController: UIViewController {
         secondTitleLabel.text = modalType.secondTitle
         modalFirstContentLabel.font = modalType.firstLabelTextFont
         modalFirstContentLabel.text = firstLabelContent
-        self.modalTextView.textViewSetting(modalType.textViewPlaceHolder)
+        
+        self.modalTextView.textViewSetting(self.modalTextView, modalType.textViewPlaceHolder)
+//        self.modalTextView.textViewDidBeginEditing(self.modalTextView, modalType.textViewPlaceHolder)
+//        self.modalTextView.textViewDidEndEditing(self.modalTextView, modalType.textViewPlaceHolder)
+//        self.modalTextView.textViewDidChange(self.modalTextView, self.modalTextViewCnt, modalType.textViewPlaceHolder)
     }
     
+    //MARK: - 모달 등록 버튼 클릭
+    @objc private func registerBtnClicked(_ sender: UIButton) {
+        print(#fileID, #function, #line, "- registerBtnClicked")
+        if !textViewChecking() {
+            let titleText = "에러"
+            let titleString = NSAttributedString(string: "에러")
+            
+            let modalAlert = UIAlertController(title: titleText, message: "입력하지 않은 항목이 있습니다", preferredStyle: .alert)
+            let modalAlertAction = UIAlertAction(title: "확인", style: .cancel)
+            
+            modalAlert.addAction(modalAlertAction)
+            self.present(modalAlert, animated: true)
+        }
+    }
+    
+    //MARK: - 모달 textView가 내용이 있는지 확인하는 함수
+    private func textViewChecking() -> Bool {
+        if modalTextView.text == modalType?.textViewPlaceHolder {
+            return false
+        }
+        return true
+    }
+    
+}
+
+//MARK: - 모달VC에 있는 textView관련 함수
+extension ModalViewController: UITextViewDelegate {
+    //MARK: - 텍스트 뷰 입력 시작
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        guard let textViewPlaceHolder = modalType?.textViewPlaceHolder else { return }
+        if modalTextView.text == textViewPlaceHolder {
+            print(#fileID, #function, #line, "- ?")
+            modalTextView.text = ""
+            modalTextView.textColor = .black
+        }
+    }
+
+    //MARK: - 텍스트 뷰 입력 끝
+    func textViewDidEndEditing(_ textView: UITextView) {
+        guard let textViewPlaceHolder = modalType?.textViewPlaceHolder else { return }
+        if modalTextView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            modalTextView.text = textViewPlaceHolder
+            modalTextView.textColor = textBorderColor
+        }
+    }
+
+    //MARK: - 텍스트 뷰 입력 중
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+
+        let currentText = modalTextView.text as NSString
+        let changedText = currentText.replacingCharacters(in: range, with: text)
+        modalTextView.text = "\(changedText.count) / 100"
+        return true
+    }
 }

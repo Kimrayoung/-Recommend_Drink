@@ -49,8 +49,8 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3X-jq-Wef">
-                                        <rect key="frame" x="281" y="350" width="52" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="286" y="350" width="47" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" name="reviewTextViewCntLabel"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -108,7 +108,9 @@
                         <outlet property="firstTitleLabel" destination="qbD-iB-EFQ" id="uag-wi-xuK"/>
                         <outlet property="modalFirstContentLabel" destination="S7t-Qy-ZlV" id="LNM-BB-wgG"/>
                         <outlet property="modalTextView" destination="iqe-jR-1rx" id="066-8C-OXv"/>
+                        <outlet property="modalTextViewCnt" destination="O3X-jq-Wef" id="4U2-Cy-ZW2"/>
                         <outlet property="modalView" destination="hkH-AO-GOb" id="1WX-Xv-eCi"/>
+                        <outlet property="registerBtn" destination="PDP-Zp-H8h" id="xv1-07-plk"/>
                         <outlet property="secondTitleLabel" destination="hoh-LA-oNR" id="j2h-Uc-WiY"/>
                     </connections>
                 </viewController>

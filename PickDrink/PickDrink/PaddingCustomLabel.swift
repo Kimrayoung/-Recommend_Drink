@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+/// label에 패딩 값 주기
 class PaddingLabel: UILabel {
     @IBInspectable var topPadding: CGFloat = 10.0
     @IBInspectable var bottomPadding: CGFloat = 10.0

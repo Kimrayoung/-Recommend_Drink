@@ -1,0 +1,132 @@
+{
+    "menus": {
+        "starbucks_etcDrink": {
+            "starbucks_spring_strawberry_milk": {
+                "menu_category": "etc_drink",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 1,
+                "menu_name": "봄 딸기 라떼",
+                "menu_price": "6900(G)",
+                "menu_sizes": "Grande",
+                "menu_nutrition_standard": "Grande",
+                "menu_seasonOnly": true,
+                "menu_allergy": "우유",
+                "etc": null,
+                "menu_description": "상큼한 봄 딸기와 신선한 우유가 만나 부드럽고 달콤한 풍미를 느낄 수 있는 음료. 국내산 제철 딸기의 신선함을 가득 담은 스타벅스의 딸기 음료를 다양한 식물성 옵션(코코넛, 오트)을 선택하여 새로운 조합의 봄 딸기 라떼를 즐겨보세요.",
+                "nutritionInfo": {
+                    "calorie": "225(I)",
+                    "caffeine": "0(I)",
+                    "salt": "75(I)",
+                    "sugar": "39(I)",
+                    "protein": "5(I)",
+                    "fat": "2.9(I)"
+                }
+            },
+            "starbucks_signature_chocolate": {
+                "menu_category": "etc_drink",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 2,
+                "menu_name": "시그니처 초콜릿",
+                "menu_price": "5700(T)/ 6200(G)/ 6700(V)",
+                "menu_sizes": "Tall/Grande/Venti",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": "우유",
+                "etc": null,
+                "menu_description": "깊고 진한 초콜릿과 부드러운 휘핑크림이 입안에서 사르르 녹는 프리미엄 초콜릿 음료",
+                "nutritionInfo": {
+                    "calorie": "325(I)/500(H)",
+                    "caffeine": "15(I/H)",
+                    "salt": "70(I)/105(H)",
+                    "sugar": "32(I)/52(H)",
+                    "protein": "10(I)/15(H)",
+                    "fat": "7(I)/9(H)"
+                }
+            },
+            "starbucks_fluffy_panda_chocolate": {
+                "menu_category": "etc_drink",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 2,
+                "menu_name": "플러피 판타 초콜릿",
+                "menu_price": "6500(G)",
+                "menu_sizes": "Grande",
+                "menu_nutrition_standard": "Grande",
+                "menu_seasonOnly": false,
+                "menu_allergy": "우유",
+                "etc": "용인에버랜드 매장 Only",
+                "menu_description": "고소한 헤이즐넛과 진한 초콜릿의 만남, 귀여운 판다까지 더해진 플러피 판다 아이스 초콜릿",
+                "nutritionInfo": {
+                    "calorie": "415(I)/470(H)",
+                    "caffeine": "0(I/H)",
+                    "salt": "150(I)/160(H)",
+                    "sugar": "39(I)/48(H)",
+                    "protein": "11(I)/12(H)",
+                    "fat": "16(I)/17(H)"
+                }
+            },
+            "starbucks_slammer": {
+                "menu_category": "etc_drink",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 1,
+                "menu_name": "스타벅스 슬래머",
+                "menu_price": "6500(G)",
+                "menu_sizes": "Grande",
+                "menu_nutrition_standard": "Grande",
+                "menu_seasonOnly": false,
+                "menu_allergy": null,
+                "etc": "SSG랜더스필드 매장 Only",
+                "menu_description": "스트로베리와 아사이베리의 상큼, 달콤한 맛이 톡톡! 시원한 통쾌한 그랜드 슬램을 위한 에너지 부스팅 음료",
+                "nutritionInfo": {
+                    "calorie": "235(I)",
+                    "caffeine": "0(I)",
+                    "salt": "0(I)",
+                    "sugar": "55(I)",
+                    "protein": "0(I)",
+                    "fat": "0(I)"
+                }
+            },
+            "starbucks_milk_nutritionInfo": {
+                "menu_category": "etc_drink",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 2,
+                "menu_name": "우유",
+                "menu_price": "3600(S)/ 4100(T)",
+                "menu_sizes": "Short/Tall",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": "우유",
+                "etc": false,
+                "menu_description": "부드럽고 담백한 우유",
+                "nutritionInfo": {
+                    "calorie": "240(I/H)",
+                    "caffeine": "0(I/H)",
+                    "salt": "200(I/H)",
+                    "sugar": "18(I/H)",
+                    "protein": "12(I/H)",
+                    "fat": "8(I/H)"
+                }
+            },
+            "starbucks_black_seasaem_latte_nutritionInfo": {
+                "menu_category": "etc_drink",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 2,
+                "menu_name": "제주 까망 라떼",
+                "menu_price": "7200(G)",
+                "menu_sizes": "Grande",
+                "menu_nutrition_standard": "Grande",
+                "menu_seasonOnly": false,
+                "menu_allergy": "땅콩, 대두, 우유, 알류, 밀, 오징어",
+                "etc": "제주 Only",
+                "menu_description": "제주도의 돌담길과 하르방의 풍경을 느낄 수 있는 음료로 고소한 흑임자와 달콤한 소보로 토핑으로 시원하게 누구나 즐길 수 있는 음료",
+                "nutritionInfo": {
+                    "calorie": "440(I)/445(H)",
+                    "caffeine": "0(I/H)",
+                    "salt": "210(I)/250(H)",
+                    "sugar": "45(I)/49(H)",
+                    "protein": "10(I)/13(H)",
+                    "fat": "11(I)/7(H)"
+                }
+            }
+        }
+    }
+}

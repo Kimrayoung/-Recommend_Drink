@@ -1,0 +1,111 @@
+{
+    "menus": {
+        "starbucks_fizzio": {
+            "starbucks_romantic_vin_chaud_fizzio": {
+                "menu_category": "fizzio",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 1,
+                "menu_name": "로맨틱 뱅쇼 피지오",
+                "menu_price": "6300(T)/ 6800(G)/ 7300(V)",
+                "menu_sizes": "Tall/Grande/Venti",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": null,
+                "etc": "오후 5시 이후만 판매",
+                "menu_description": "논알콜 와인 베이스에 다양한 과일과 향신료가 조화된 뱅쇼 스타일의 피지오 음료",
+                "nutritionInfo": {
+                    "calorie": "190(I)",
+                    "caffeine": "0(I)",
+                    "salt": "5(I)",
+                    "sugar": "39(I)",
+                    "protein": "0(I)",
+                    "fat": "0(I)"
+                }
+            },
+            "starbucks_black_tea_lemonade_fizzio": {
+                "menu_category": "fizzio",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 1,
+                "menu_name": "블랙 티 레모네이트 피지오",
+                "menu_price": "5400(T)/ 5900(G)/ 6400(V)",
+                "menu_sizes": "Tall/Grande/Venti",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": null,
+                "etc": null,
+                "menu_description": "진하게 우린 블랙 티와 상큼한 레모네이트를 더한 청량감 있는 음료. 목 넘김이 좋은 가벼운 탄산이 첨가되어 깔끔하게 즐길 수 있습니다.",
+                "nutritionInfo": {
+                    "calorie": "65(I)",
+                    "caffeine": "30(I)",
+                    "salt": "0(I)",
+                    "sugar": "17(I)",
+                    "protein": "0(I)",
+                    "fat": "0(I)"
+                }
+            },
+            "starbucks_yuja_passion_fizzio": {
+                "menu_category": "fizzio",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 1,
+                "menu_name": "유자 패션 피지오",
+                "menu_price": "5900(T)/ 6400(G)/ 6900(V)",
+                "menu_sizes": "Tall/Grande/Venti",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": null,
+                "etc": null,
+                "menu_description": "상콤달콤 고흥 유자와 스타벅스 시그니처 패션 탱고 티에 한 잔 한 잔 탄산을 넣어 제조하는 피지오 음료. 시트러스한 청량감을 가득 즐기세요",
+                "nutritionInfo": {
+                    "calorie": "145(I)",
+                    "caffeine": "0(I)",
+                    "salt": "5(I)",
+                    "sugar": "36(I)",
+                    "protein": "0(I)",
+                    "fat": "0(I)"
+                }
+            },
+            "starbucks_cool_lime_fizzio": {
+                "menu_category": "fizzio",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 1,
+                "menu_name": "쿨 라임 피지오",
+                "menu_price": "5900(T)/ 6400(G)/ 6900(V)",
+                "menu_sizes": "Tall/Grande/Venti",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": null,
+                "etc": "카페인 함유",
+                "menu_description": "그린 빈 추출액이 들어간 라임 베이스에 건조된 라임 슬라이스를 넣고 스파클링한 시원하고 청량감이 있는 음료",
+                "nutritionInfo": {
+                    "calorie": "105(I)",
+                    "caffeine": "110(I)",
+                    "salt": "20(I)",
+                    "sugar": "25(I)",
+                    "protein": "0(I)",
+                    "fat": "0(I)"
+                }
+            },
+            "starbucks_passion_tango_tea_lemonade_fizzio": {
+                "menu_category": "fizzio",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 1,
+                "menu_name": "패션 탱고 티 레모네이드 피지오",
+                "menu_price": "5400(T)/ 5900(G)/ 6400(V)",
+                "menu_sizes": "Tall/Grande/Venti",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": null,
+                "etc": null,
+                "menu_description": "꽃 향기와 달콤하고 상큼한 시트러스 향을 탄산과 함께 더욱 풍부하게 느끼고 싶으시다면 패션 티 레모네이드 피지오를 선택해 보세요! 언제 찾아도 기분이 좋아지는 훌륭한 음료입니다.",
+                "nutritionInfo": {
+                    "calorie": "65(I)",
+                    "caffeine": "0(I)",
+                    "salt": "0.2(I)",
+                    "sugar": "17(I)",
+                    "protein": "0(I)",
+                    "fat": "0(I)"
+                }
+            }
+        }
+    }
+}

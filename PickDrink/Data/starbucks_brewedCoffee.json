@@ -1,0 +1,48 @@
+{
+    "menus": {
+        "starbucks_brewedcoffee": {
+            "starbucks_iced_coffee": {
+                "menu_category": "brewedCoffee",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 1,
+                "menu_name": "아이스 커피",
+                "menu_price": "4500(T)/ 5000(G)/ 5500(V)",
+                "menu_sizes": "Tall/Grande/Venti",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": null,
+                "etc": null,
+                "menu_description": "깔끔하고 상큼함이 특징인 시원한 아이스 커피",
+                "nutritionInfo": {
+                    "calorie": "5(I)",
+                    "caffeine": "140(I)",
+                    "salt": "10(I)",
+                    "sugar": "0(I)",
+                    "protein": "0(I)",
+                    "fat": "0(I)"
+                }
+            },
+            "starbucks_brewed_coffee": {
+                "menu_category": "brewedCoffee",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 0,
+                "menu_name": "오늘의 커피",
+                "menu_price": "3700(S)/ 4200(T)/ 4700(G)/ 5200(V)",
+                "menu_sizes": "Short/Tall/Grande/Venti",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": null,
+                "etc": null,
+                "menu_description": "신선하게 브루드(Brewed)되어 원두의 다양함이 살아있는 커피",
+                "nutritionInfo": {
+                    "calorie": "5(H)",
+                    "caffeine": "260(H)",
+                    "salt": "10(H)",
+                    "sugar": "0(H)",
+                    "protein": "0(H)",
+                    "fat": "0(H)"
+                }
+            }
+        }
+    }
+}

@@ -51,7 +51,7 @@ struct Nutrition: Codable {
 
 struct Review: Codable {
     let review: String?
-    let reviewPassword: Int?
+    let reviewPassword: String?
     let reviewStar: String?
     let reviewId: String?
     let menuId: String?
@@ -62,6 +62,43 @@ struct Review: Codable {
         case reviewStar = "review_star"
         case reviewId = "review_id"
         case menuId = "menu_id"
+    }
+}
+
+public enum Modal{
+    case wrongContent //잘못 기재된 내용 신고하는 모달
+    case complain //신고리뷰
+    case editReview //리뷰 수정하기
+    
+    var firstTitle: String {
+        switch self {
+        case .wrongContent: return "잘못 기재된 메뉴"
+        case .complain: return "신고 리뷰 내용"
+        case .editReview: return "수정할 리뷰 내용"
+        }
+    }
+    
+    var secondTitle: String {
+        switch self {
+        case .wrongContent: return "잘못 기재된 내용"
+        case .complain: return "신고 사유"
+        case .editReview: return "수정 내용"
+        }
+    }
+    
+    var firstLabelTextFont: UIFont {
+        switch self {
+        case .wrongContent: return UIFont.boldSystemFont(ofSize: 16)
+        default: return UIFont.systemFont(ofSize: 14)
+        }
+    }
+    
+    var textViewPlaceHolder: String {
+        switch self {
+        case .wrongContent: return "잘못 기재된 내용을 입력해주세요."
+        case .complain: return "신고하시는 이유를 간단히 작성해주세요."
+        case .editReview: return "리뷰를 어떻게 변경할 건지 작성해주세요."
+        }
     }
 }
 

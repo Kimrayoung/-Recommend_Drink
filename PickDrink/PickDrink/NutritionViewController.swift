@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+/// 영양성분 화면
 class NutritionViewController: UIViewController {
     let stackBtnList : [[String]] = [["Tall", "355ml"], ["Grande", "473ml"],["Venti", "591ml"]]
     var nutrition: Nutrition? = nil
@@ -17,18 +18,16 @@ class NutritionViewController: UIViewController {
     var tempMenuName: String? = nil
     
     @IBOutlet weak var sizeLabel: UILabel!
+    @IBOutlet weak var nutritionStandardLabel: UILabel!
     @IBOutlet weak var nutritionStack: UIStackView!
     
-    @IBOutlet weak var calorieGramLabel: UILabel!
-    @IBOutlet weak var caffeineGramLabel: UILabel!
-    @IBOutlet weak var saturatedfatGramLabel: UILabel!
-    @IBOutlet weak var carbohydrateGramLabel: UILabel!
-    @IBOutlet weak var sugarsGramLabel: UILabel!
-    @IBOutlet weak var saltGramLabel: UILabel!
-    @IBOutlet weak var proteinGramLabel: UILabel!
-    @IBOutlet weak var fatGramLabel: UILabel!
-    @IBOutlet weak var cholesterolGramLabel: UILabel!
-    @IBOutlet weak var transfatGramLabel: UILabel!
+    @IBOutlet weak var calorieGramLabel: UILabel! //칼로리
+    @IBOutlet weak var caffeineGramLabel: UILabel! //카페인
+    @IBOutlet weak var fatGramLabel: UILabel! //포화지방
+    @IBOutlet weak var sugarsGramLabel: UILabel! //당류
+    @IBOutlet weak var saltGramLabel: UILabel! //나트륨
+    @IBOutlet weak var proteinGramLabel: UILabel! //단백질
+
     
     @IBOutlet weak var complainBtn: UIButton!
     
@@ -47,9 +46,9 @@ class NutritionViewController: UIViewController {
             stackBtn.addTarget(self, action: #selector(sizeBtnSelected(_:)), for: .touchUpInside)
             sizeStackView.addArrangedSubview(stackBtn)
         }
-        
     }
     
+    //MARK: - 사이즈 버튼들 누르면 사이즈 라벨 변경
     @objc private func sizeBtnSelected(_ sender: UIButton) {
         print(#fileID, #function, #line, "- ")
         let selectedTag = sender.tag
@@ -64,23 +63,22 @@ class NutritionViewController: UIViewController {
         }
     }
     
+    //MARK: - 영양성분표 세팅해주기
     func ingredientSetting() {
         let stackCount = nutritionStack.subviews.count
         print(#fileID, #function, #line, "- nutritionStackView.subviewsCount: \(stackCount)")
         if let nutrition = nutrition {
             calorieGramLabel.text = nutrition.calorie != nil ? String(nutrition.calorie!) + "kcal" : "정보없음"
             caffeineGramLabel.text = nutrition.caffeine != nil ? String(nutrition.caffeine!) + "mg" : "정보없음"
-            saturatedfatGramLabel.text = nutrition.saturatedfat != nil ? String(nutrition.saturatedfat!) + "g" : "정보없음"
-            carbohydrateGramLabel.text = nutrition.carbohydrate != nil ? String(nutrition.carbohydrate!) + "g" : "정보없음"
+            fatGramLabel.text = nutrition.fat != nil ? String(nutrition.saturatedfat!) + "g" : "정보없음"
             sugarsGramLabel.text = nutrition.sugars != nil ? String(nutrition.sugars!) + "g" : "정보없음"
             saltGramLabel.text = nutrition.salt != nil ? String(nutrition.salt!) + "mg" : "정보없음"
             proteinGramLabel.text = nutrition.protein != nil ? String(nutrition.protein!) + "g" : "정보없음"
-            fatGramLabel.text = nutrition.fat != nil ? String(nutrition.fat!) + "g" : "정보없음"
-            cholesterolGramLabel.text = nutrition.cholesterol != nil ? String(nutrition.cholesterol!) + "mg" : "정보없음"
-            transfatGramLabel.text = nutrition.transfat != nil ? String(nutrition.transfat!) + "g" : "정보없음"
+
         }
     }
     
+    //MARK: - 오류 사항 접수 버튼 클릭
     @objc func wrongContentBtnClicked(_ sender: UIButton) {
         print(#fileID, #function, #line, "- <#comment#>")
         guard let modalVC = ModalViewController.getInstance() else { return }

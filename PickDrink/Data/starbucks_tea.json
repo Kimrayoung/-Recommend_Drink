@@ -1,0 +1,426 @@
+{
+    "menus": {
+        "starbucks_tea": {
+            "starbucks_jeju_golden_tangerine_passion_tea": {
+                "menu_category": "tea",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 2,
+                "menu_name": "제주 금귤 패션 티",
+                "menu_price": "7200(G)",
+                "menu_sizes": "Grande",
+                "menu_nutrition_standard": "Grande",
+                "menu_seasonOnly": false,
+                "menu_allergy": null,
+                "etc": "제주 Only",
+                "menu_description": "제주 금귤과 패션 티가 만나 상큼함으로 리프레셔 되는 음료. 제주 해변가와 어울리는 청량감이 있는 티 베리에이션 음료",
+                "nutritionInfo": {
+                    "calorie": "230(I/H)",
+                    "caffeine": "0(I/H)",
+                    "salt": "10(I/H)",
+                    "sugar": "52(I/H)",
+                    "protein": "1(I/H)",
+                    "fat": "0(I/H)"
+                }
+            },
+            "starbucks_pink_flower_youthberry_tea": {
+                "menu_category": "tea",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 1,
+                "menu_name": "핑크 플라워 유스베리 티",
+                "menu_price": "6100(T)/ 6600(G)/ 7100(V)",
+                "menu_sizes": "Tall/Grande/Venti",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": null,
+                "etc": null,
+                "menu_description": "달콤한 참외 베이스에 은은한 꽃 향을 더해 마치 꽃 한송이를 선물 받은 듯한 음료. 유스베리& 히비스커스 블렌딩 티로 꽃 향과 달콤함을 한번에 느낄 수 있으며 초콜릿 소스로 핑크빛 꽃임을 표현한 티 베리에이션 음료",
+                "nutritionInfo": {
+                    "calorie": "195(I)",
+                    "caffeine": "5(I)",
+                    "salt": "20(I)",
+                    "sugar": "45(I)",
+                    "protein": "1(I)",
+                    "fat": "0.4(I)"
+                }
+            },
+            "starbucks_mint_blended_brewed_tea": {
+                "menu_category": "tea",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 2,
+                "menu_name": "민트 블렌드 티",
+                "menu_price": "4500(T)/ 5000(G)",
+                "menu_sizes": "Tall/Grande",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": null,
+                "etc": null,
+                "menu_description": "스피어민트, 페퍼민트, 레몬머틀이 블렌딩된 상쾌한 허브 티",
+                "nutritionInfo": {
+                    "calorie": "0(I/H)",
+                    "caffeine": "0(I/H)",
+                    "salt": "0(I/H)",
+                    "sugar": "0(I/H)",
+                    "protein": "0(I/H)",
+                    "fat": "0(I/H)"
+                }
+            },
+            "starbucks_blooming_fruit_youthberry_tea": {
+                "menu_category": "tea",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 2,
+                "menu_name": "블루밍 프루트 유스베리 티",
+                "menu_price": "8500(G)",
+                "menu_sizes": "Grande",
+                "menu_nutrition_standard": "Grande",
+                "menu_seasonOnly": false,
+                "menu_allergy": "복숭아",
+                "etc": "티바나 바, 리저브 매장 Only",
+                "menu_description": "입안을 가득 채우는 과일의 풍미가 달콤 새콤한 유스베리와 매력적이게 어우러지는 음료. 5가지 생과일이 가득 들어가 겨울시즌 비타민 충전에도 좋은 티 음료",
+                "nutritionInfo": {
+                    "calorie": "175(I/H)",
+                    "caffeine": "20(I/H)",
+                    "salt": "0(I/H)",
+                    "sugar": "40(I/H)",
+                    "protein": "1(I/H)",
+                    "fat": "0(I/H)"
+                }
+            },
+            "starbucks_earl_grey_brewed_tea": {
+                "menu_category": "tea",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 2,
+                "menu_name": "얼 그레이 티",
+                "menu_price": "4500(T)/ 5000(G)",
+                "menu_sizes": "Tall/Grande",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": null,
+                "etc": null,
+                "menu_description": "꽃향 가득한 라벤더와 베르가못 향이 진한 홍차와 블렌딩된 향긋한 블랙 티",
+                "nutritionInfo": {
+                    "calorie": "0(I/H)",
+                    "caffeine": "50(I/H)",
+                    "salt": "0(I/H)",
+                    "sugar": "0(I/H)",
+                    "protein": "0(I/H)",
+                    "fat": "0(I/H)"
+                }
+            },
+            "starbucks_youthberry_brewed_tea": {
+                "menu_category": "tea",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 2,
+                "menu_name": "유스베리 티",
+                "menu_price": "4500(T)/ 5000(G)",
+                "menu_sizes": "Tall/Grande",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": null,
+                "etc": null,
+                "menu_description": "제주산 유기농 찻잎으로 만든 황차에 사과, 망고, 파인애플, 히비스커스, 로즈힙 등이 블렌딩되어 핑크빛 컬러가 감도는 수색과 베리류의 새콤함을 느낄 수 있는 옐로우 티",
+                "nutritionInfo": {
+                    "calorie": "0(I/H)",
+                    "caffeine": "20(I/H)",
+                    "salt": "0(I/H)",
+                    "sugar": "0(I/H)",
+                    "protein": "0(I/H)",
+                    "fat": "0(I/H)"
+                }
+            },
+            "starbucks_yuja_mint_tea": {
+                "menu_category": "tea",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 2,
+                "menu_name": "유자 민트 티",
+                "menu_price": "5900(T)/ 6400(G)/ 6900(V)",
+                "menu_sizes": "Tall/Grande/Venti",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": null,
+                "etc": null,
+                "menu_description": "달콤한 국내산 고흥 유자와 알싸하고 은은한 진저와 상쾌한 민트 티가 조화로운 유자 민트 티",
+                "nutritionInfo": {
+                    "calorie": "145(I)/235(H)",
+                    "caffeine": "0(I/H)",
+                    "salt": "5(I)/10(H)",
+                    "sugar": "37(I)/58(H)",
+                    "protein": "0(I/H)",
+                    "fat": "0(I/H)"
+                }
+            },
+            "starbucks_english_breakfast_brewed_tea": {
+                "menu_category": "tea",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 2,
+                "menu_name": "잉글리쉬 브렉퍼스트 티",
+                "menu_price": "4500(T)/ 5000(G)",
+                "menu_sizes": "Tall/Grande",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": null,
+                "etc": null,
+                "menu_description": "인도 아삼, 제주도 유기농 홍차가 블렌딩되어 진한 벌꿀향과 그윽한 몰트향이 특징인 블랙 티",
+                "nutritionInfo": {
+                    "calorie": "0(I/H)",
+                    "caffeine": "40(I)/70(H)",
+                    "salt": "0(I/H)",
+                    "sugar": "0(I/H)",
+                    "protein": "0(I/H)",
+                    "fat": "0(I/H)"
+                }
+            },
+            "starbucks_jeju_organic_green_tea": {
+                "menu_category": "tea",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 2,
+                "menu_name": "제주 유기 녹차",
+                "menu_price": "5300(T)/ 6300(V)",
+                "menu_sizes": "Tall/Venti",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": null,
+                "etc": null,
+                "menu_description": "우수한 품질의 제주도 유기농 녹차로 만든 맑은 수색과 신선한 향, 맛이 뛰어난 녹차",
+                "nutritionInfo": {
+                    "calorie": "0(I/H)",
+                    "caffeine": "16(I/H)",
+                    "salt": "0(I/H)",
+                    "sugar": "0(I/H)",
+                    "protein": "0(I/H)",
+                    "fat": "0(I/H)"
+                }
+            },
+            "starbucks_chamomile_blended_brewed_tea": {
+                "menu_category": "tea",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 2,
+                "menu_name": "캐모마일 블렌드 티",
+                "menu_price": "4500(T)/ 5000(G)",
+                "menu_sizes": "Tall/Grande",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": null,
+                "etc": null,
+                "menu_description": "캐모마일과 레몬 그라스, 레몬밤, 히비스커스 등 블렌딩되어 은은하고 차분한 향이 기분을 좋게하는 허브 티",
+                "nutritionInfo": {
+                    "calorie": "0(I/H)",
+                    "caffeine": "0(I/H)",
+                    "salt": "0(I/H)",
+                    "sugar": "0(I/H)",
+                    "protein": "0(I/H)",
+                    "fat": "0(I/H)"
+                }
+            },
+            "starbucks_hibiscus_blend_brewed_tea": {
+                "menu_category": "tea",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 2,
+                "menu_name": "히비스커스 블렌드 티",
+                "menu_price": "4500(T)/ 5000(G)",
+                "menu_sizes": "Tall/Grande",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": null,
+                "etc": null,
+                "menu_description": "히비스커스, 사과, 파파야, 망고, 레몬그라스 등이 블렌딩된 상큼한 허브 티",
+                "nutritionInfo": {
+                    "calorie": "0(I/H)",
+                    "caffeine": "0(I/H)",
+                    "salt": "0(I/H)",
+                    "sugar": "0(I/H)",
+                    "protein": "0(I/H)",
+                    "fat": "0(I/H)"
+                }
+            },
+            "starbucks_red_power_passion_tea": {
+                "menu_category": "tea",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 2,
+                "menu_name": "레드 파워 패션 티",
+                "menu_price": "5900(G)",
+                "menu_sizes": "Grande",
+                "menu_nutrition_standard": "Grande",
+                "menu_seasonOnly": false,
+                "menu_allergy": "복숭아",
+                "etc": "SSG랜더스필드 Only",
+                "menu_description": "딸기와 복숭아의 화사함에 패션 탱고티의 산뜻함을 더해 한 모금 마시면 두근거리는 열정이 다시 떠오르는 리프레싱 티 음료",
+                "nutritionInfo": {
+                    "calorie": "190(I)",
+                    "caffeine": "33(I)",
+                    "salt": "40(I)",
+                    "sugar": "31(I)",
+                    "protein": "1(I)",
+                    "fat": "0(I)"
+                }
+            },
+            "starbucks_grapefruit_honey_black_tea": {
+                "menu_category": "tea",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 2,
+                "menu_name": "자몽 허니 블랙 티",
+                "menu_price": "5700(T)/ 6200(G)/ 6700(V)",
+                "menu_sizes": "Tall/Grande/Venti",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": null,
+                "etc": null,
+                "menu_description": "새콤한 자몽과 달콤한 꿀이 깊고 그윽한 풍미의 스타벅스 티바나 블랙 티의 조화",
+                "nutritionInfo": {
+                    "calorie": "125(I/H)",
+                    "caffeine": "30(I)/70(H)",
+                    "salt": "5(I/H)",
+                    "sugar": "30(I/H)",
+                    "protein": "0(I/H)",
+                    "fat": "0(I/H)"
+                }
+            },
+            "starbucks_dolce_black_milk_tea": {
+                "menu_category": "tea",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 2,
+                "menu_name": "돌체 블랙 밀크 티",
+                "menu_price": "5900(T)/ 6400(G)/ 6900(V)",
+                "menu_sizes": "Tall/Grande/Venti",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": null,
+                "etc": null,
+                "menu_description": "진한 홍차에 부드러운 우유와 연유 시럽으로 향긋하고 달콤하게 맛을 낸 스타벅스만의 돌체 블랙 밀크 티",
+                "nutritionInfo": {
+                    "calorie": "210(I)/250(H)",
+                    "caffeine": "35(I)/60(H)",
+                    "salt": "85(I)/115(H)",
+                    "sugar": "31(I)/34(H)",
+                    "protein": "6(I)/8(H)",
+                    "fat": "3.7(I)/5(H)"
+                }
+            },
+            "starbucks_malcha_shot_affogato": {
+                "menu_category": "tea",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 2,
+                "menu_name": "말차 샷 아포가토",
+                "menu_price": "7000(T)",
+                "menu_sizes": "Tall",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": "우유",
+                "etc": "티바나 바, 리저브 매장 Only",
+                "menu_description": "바닐라 빈이 가득한 아이스크림과 진한 말차샷이 달콤 쌉싸름하게 어우러진 아포가토",
+                "nutritionInfo": {
+                    "calorie": "230(I)",
+                    "caffeine": "30(I)",
+                    "salt": "70(I)",
+                    "sugar": "18(I)",
+                    "protein": "4(I)",
+                    "fat": "10(I)"
+                }
+            },
+            "starbucks_malcha_tea_einspanner": {
+                "menu_category": "tea",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 2,
+                "menu_name": "말차 티 슈페너",
+                "menu_price": "6500(T)",
+                "menu_sizes": "Tall",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": "우유",
+                "etc": "티바나 바, 리저브 매장 Only",
+                "menu_description": "아인슈페너를 말차로 즐기는 음료. 진하고 쌉싸름한 말차와 글레이즈드의 달콤한이 만나 부드럽게 즐기기 좋은 티 음료",
+                "nutritionInfo": {
+                    "calorie": "320(I)/400(H)",
+                    "caffeine": "60(I/H)",
+                    "salt": "160(I)/220(H)",
+                    "sugar": "31(I)/38(H)",
+                    "protein": "7(I)/10(H)",
+                    "fat": "12(I)/15(H)"
+                }
+            },
+            "starbucks_earl_grey_vanilla_tea_latte": {
+                "menu_category": "tea",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 2,
+                "menu_name": "얼 그레이 바닐라 티 라떼",
+                "menu_price": "6100(T)/ 6600(G)/ 7100(V)",
+                "menu_sizes": "Tall/Grande/Venti",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": "대두, 우유",
+                "etc": null,
+                "menu_description": "2가지 티(블랙티, 얼 그레이 티)가 조화롭게 어우러지고 얼 그레이 폼과 바닐라의 풍미가 은은하게 퍼져 깔끔하고 부드러운 티 라떼 음료",
+                "nutritionInfo": {
+                    "calorie": "325(I)/360(H)",
+                    "caffeine": "29(I)/55(H)",
+                    "salt": "115(I)/120(H)",
+                    "sugar": "33(I)/36(H)",
+                    "protein": "8(I)/9(H)",
+                    "fat": "11(I)/12(H)"
+                }
+            },
+            "starbucks_malcha_latte_from_jeju_organic_farm": {
+                "menu_category": "tea",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 2,
+                "menu_name": "제주 유기농 말차로 만든 라떼",
+                "menu_price": "6100(T)/ 6600(G)/ 7100(V)",
+                "menu_sizes": "Tall/Grande/Venti",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": "우유",
+                "etc": null,
+                "menu_description": "차광재배한 어린 녹찻잎을 곱게 갈아 깊고 진한 말차 본연의 맛과 향을 부드럽게 즐길 수 있는 유기농 말차로 만든 라떼",
+                "nutritionInfo": {
+                    "calorie": "155(I)/205(H)",
+                    "caffeine": "60(I/H)",
+                    "salt": "95(I)/130(H)",
+                    "sugar": "16(I)/20(H)",
+                    "protein": "6(I)/9(H)",
+                    "fat": "3.6(I)/5(H)"
+                }
+            },
+            "starbucks_chai_tea_latte": {
+                "menu_category": "tea",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 2,
+                "menu_name": "차이 티 라떼",
+                "menu_price": "5500(T)/ 6000(G)/ 6500(V)",
+                "menu_sizes": "Tall/Grande/Venti",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": "우유",
+                "etc": null,
+                "menu_description": "스파이시한 향과 독특한 계피향, 달콤한 차이로 만든 부드러운 티 라떼",
+                "nutritionInfo": {
+                    "calorie": "190(I)/200(H)",
+                    "caffeine": "70(I/H)",
+                    "salt": "70(I/H)",
+                    "sugar": "31(I/H)",
+                    "protein": "5(I)/6(H)",
+                    "fat": "3(I/H)"
+                }
+            },
+            "starbucks_honey_earl_grey_milk_tea": {
+                "menu_category": "tea",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 2,
+                "menu_name": "허니 얼 그레이 밀크 티",
+                "menu_price": "6900(G)",
+                "menu_sizes": "Grande",
+                "menu_nutrition_standard": "Grande",
+                "menu_seasonOnly": false,
+                "menu_allergy": "우유",
+                "etc": "티바나 바, 리저브 매장 Only",
+                "menu_description": "베르가못 향 가득한 진한 티바나 얼 그레이 티에 꿀이 더해져 달콤하고 부드러운 밀크 티",
+                "nutritionInfo": {
+                    "calorie": "220(I)/395(H)",
+                    "caffeine": "52(I)/70(H)",
+                    "salt": "65(I)/210(H)",
+                    "sugar": "31(I)/45(H)",
+                    "protein": "4(I)/12(H)",
+                    "fat": "2.4(I)/8(H)"
+                }
+            }
+        }
+    }
+}

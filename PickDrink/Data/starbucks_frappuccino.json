@@ -1,0 +1,237 @@
+{
+    "menus": {
+        "starbucks_frappuccino": {
+            "starbucks_double_espresso_chip_frappuccino": {
+                "menu_category": "frappuccino",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 1,
+                "menu_name": "더블 에스프레소 칩 프라푸치노",
+                "menu_price": "6300(T)/ 6800(G)/ 7300(V)",
+                "menu_sizes": "Tall/Grande/Venti",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": "우유",
+                "etc": null,
+                "menu_description": "리스트레토 에스프레소 2샷과 에스프레소 칩, 하프앤하프가 진하게 어우러진 커피의 기본에 충실한 프라푸치노",
+                "nutritionInfo": {
+                    "calorie": "265(I)",
+                    "caffeine": "130(I)",
+                    "salt": "140(I)",
+                    "sugar": "31(I)",
+                    "protein": "4(I)",
+                    "fat": "11(I)"
+                }
+            },
+            "starbucks_esrpesso_frappuccino": {
+                "menu_category": "frappuccino",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 1,
+                "menu_name": "에스프레소 프라푸치노",
+                "menu_price": "5500(T)/ 6000(G)/ 6500(V)",
+                "menu_sizes": "Tall/Grande/Venti",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": "우유",
+                "etc": null,
+                "menu_description": "에스프레소 샷의 강렬함과 약간의 단맛이 어우러진 프라푸치노",
+                "nutritionInfo": {
+                    "calorie": "145(I)",
+                    "caffeine": "120(I)",
+                    "salt": "115(I)",
+                    "sugar": "29(I)",
+                    "protein": "2(I)",
+                    "fat": "1.1(I)"
+                }
+            },
+            "starbucks_java_chip_frappuccino": {
+                "menu_category": "frappuccino",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 1,
+                "menu_name": "자바 칩 프라푸치노",
+                "menu_price": "6300(T)/ 6800(G)/ 7300(V)",
+                "menu_sizes": "Tall/Grande/Venti",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": "대두, 우유, 밀",
+                "etc": null,
+                "menu_description": "커피, 모카 소스, 진한 초코릿 칩이 입안 가득 느껴지는 스타벅스에서만 맛볼 수 있는 프라푸치노",
+                "nutritionInfo": {
+                    "calorie": "340(I)",
+                    "caffeine": "100(I)",
+                    "salt": "180(I)",
+                    "sugar": "42(I)",
+                    "protein": "6(I)",
+                    "fat": "9(I)"
+                }
+            },
+            "starbucks_caramel_frappuccino": {
+                "menu_category": "frappuccino",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 1,
+                "menu_name": "카라멜 프라푸치노",
+                "menu_price": "5900(T)/ 6400(G)/ 6900(V)",
+                "menu_sizes": "Tall/Grande/Venti",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": "대두, 우유",
+                "etc": null,
+                "menu_description": "카라멜과 커피가 어우러진 프라푸치노",
+                "nutritionInfo": {
+                    "calorie": "300(I)",
+                    "caffeine": "85(I)",
+                    "salt": "190(I)",
+                    "sugar": "39(I)",
+                    "protein": "4(I)",
+                    "fat": "7(I)"
+                }
+            },
+            "starbucks_white_chocolate_mocha_frappuccino": {
+                "menu_category": "frappuccino",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 1,
+                "menu_name": "화이트 초콜릿 모카 프라푸치노",
+                "menu_price": "6000(T)/ 6500(G)/ 7000(V)",
+                "menu_sizes": "Tall/Grande/Venti",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": "우유",
+                "etc": null,
+                "menu_description": "화이트 초콜릿, 커피와 우유가 조화로운 프라푸치노",
+                "nutritionInfo": {
+                    "calorie": "245(I)",
+                    "caffeine": "85(I)",
+                    "salt": "140(I)",
+                    "sugar": "38(I)",
+                    "protein": "4(I)",
+                    "fat": "6(I)"
+                }
+            },
+            "starbucks_vanilla_cream_frappuccino": {
+                "menu_category": "frappuccino",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 1,
+                "menu_name": "바닐라 크림 프라푸치노",
+                "menu_price": "5100(T)/ 5600(G)/ 6100(V)",
+                "menu_sizes": "Tall/Grande/Venti",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": "우유",
+                "etc": null,
+                "menu_description": "신선한 우유와 바닐라 시럽이 어우러진 크림 프라푸치노",
+                "nutritionInfo": {
+                    "calorie": "200(I)",
+                    "caffeine": "0(I)",
+                    "salt": "150(I)",
+                    "sugar": "28(I)",
+                    "protein": "4(I)",
+                    "fat": "6(I)"
+                }
+            },
+            "starbucks_jeju_black_sesame_cream_frappuccino": {
+                "menu_category": "frappuccino",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 1,
+                "menu_name": "제주 까망 크림 프라푸치노",
+                "menu_price": "7500(G)",
+                "menu_sizes": "Grande",
+                "menu_nutrition_standard": "Grande",
+                "menu_seasonOnly": false,
+                "menu_allergy": "땅콩, 대두, 우유, 알류, 밀, 오징어",
+                "etc": "제주 only",
+                "menu_description": "제주 까망 라떼의 프라푸치노 버전으로 쫄깃한 국내산 흑임자 떡과 블랙 소보로 토핑으로 컵빙수처럼 먹는 음료이다. 고소한 국내산 흑임자 떡과 달콤한 블랙 소보로 토핑으로 제주의 돌 하르방 길을 느낄 수 있는 음료",
+                "nutritionInfo": {
+                    "calorie": "600(I)",
+                    "caffeine": "0(I)",
+                    "salt": "330(I)",
+                    "sugar": "79(I)",
+                    "protein": "9(I)",
+                    "fat": "7(I)"
+                }
+            },
+            "starbucks_jeju_mugwort_cream_frappuccino": {
+                "menu_category": "frappuccino",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 1,
+                "menu_name": "제주 쑥떡 크림 프라푸치노",
+                "menu_price": "7500(G)",
+                "menu_sizes": "Grande",
+                "menu_nutrition_standard": "Grande",
+                "menu_seasonOnly": false,
+                "menu_allergy": "대두, 우유, 밀",
+                "etc": "제주 only",
+                "menu_description": "제주 쑥쑥 라떼의 시원한 버전으로 쫄깃쫄깃한 국내산 흑임자 떡으로 씹는 재미를 즐길 수 있는 음료",
+                "nutritionInfo": {
+                    "calorie": "460(I)",
+                    "caffeine": "0(I)",
+                    "salt": "250(I)",
+                    "sugar": "57(I)",
+                    "protein": "8(I)",
+                    "fat": "10(I)"
+                }
+            },
+            "starbucks_jeju_malcha_cream_frappuccino": {
+                "menu_category": "frappuccino",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 1,
+                "menu_name": "제주 유기농 말차로 만든 크림 프라푸치노",
+                "menu_price": "6300(T)/ 6800(G)/ 7300(V)",
+                "menu_sizes": "Tall/Grande/Venti",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": "우유",
+                "etc": null,
+                "menu_description": "깊고 진한 말차 본연의 맛과 향을 시원하고 부드럽게 즐길 수 있는 프라푸치노",
+                "nutritionInfo": {
+                    "calorie": "230(I)",
+                    "caffeine": "60(I)",
+                    "salt": "150(I)",
+                    "sugar": "28(I)",
+                    "protein": "5(I)",
+                    "fat": "7(I)"
+                }
+            },
+            "starbucks_chocolate_cream_chip_frappuccino": {
+                "menu_category": "frappuccino",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 1,
+                "menu_name": "초콜릿 크림 칩 프라푸치노",
+                "menu_price": "6000(T)/ 6500(G)/ 7000(V)",
+                "menu_sizes": "Tall/Grande/Venti",
+                "menu_nutrition_standard": "Tall",
+                "menu_seasonOnly": false,
+                "menu_allergy": "대두, 우유, 밀",
+                "etc": null,
+                "menu_description": "모카 소스와 진한 초콜릿 칩과 초콜릿 드리즐이 올라간 달콤한 크림 프라푸치노",
+                "nutritionInfo": {
+                    "calorie": "300(I)",
+                    "caffeine": "10(I)",
+                    "salt": "160(I)",
+                    "sugar": "40(I)",
+                    "protein": "6(I)",
+                    "fat": "7(I)"
+                }
+            },
+            "starbucks_white_tiger_frappuccino": {
+                "menu_category": "frappuccino",
+                "menu_imgUrl": null,
+                "menu_iceOrHot": 1,
+                "menu_name": "화이트 타이거 프라푸치노",
+                "menu_price": "6500(G)",
+                "menu_sizes": "Grande",
+                "menu_nutrition_standard": "Grande",
+                "menu_seasonOnly": false,
+                "menu_allergy": "우유",
+                "etc": "용인에버랜드 only",
+                "menu_description": "밀크 쉐이크 같은 부드럽고 달콤한 바닐라 크림 프라푸치노에 깊은 풍미의 단맛을 가진 흑당시럽이 어우러져 용인에버랜드 백호의 줄무늬를 형상화한 부드럽고 달콤한 프라푸치노",
+                "nutritionInfo": {
+                    "calorie": "410(I)",
+                    "caffeine": "0(I)",
+                    "salt": "220(I)",
+                    "sugar": "57(I)",
+                    "protein": "5(I)",
+                    "fat": "14(I)"
+                }
+            }
+        }
+    }
+}

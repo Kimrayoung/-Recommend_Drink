@@ -35,16 +35,19 @@ class RecommandMenuList: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    //MARK: - 네비게이션 바 세팅
     func setNavigationBar() {
         let backBarButtonItem = UIBarButtonItem(title: "카페리스트", style: .done, target: self, action: #selector(self.backBarBtnAction(_ :)))
         self.navigationItem.title = navigationBarTitle
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backBarButtonItem
     }
     
+    //MARK: - 네비게이션 뒤로가기 버튼 클릭
     @objc func backBarBtnAction(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
     
+    //MARK: - 추천대상 버튼 세팅하기
     func recommandBtnSetting(_ recommandList: [String]) {
         for i in 0..<recommandList.count {
             print(#fileID, #function, #line, "- comment")
@@ -54,8 +57,8 @@ class RecommandMenuList: UIViewController {
         }
     }
     
+    //MARK: - 추천대상 버튼 클릭
     @objc fileprivate func recommandBtnSelected(_ sender: UIButton) {
-        
         recommandStackView.arrangedSubviews.map { btn in
             if btn.tag == sender.tag {
                 btn.backgroundColor = UIColor(named: "recommandSelectedBtnColor")

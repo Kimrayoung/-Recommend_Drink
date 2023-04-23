@@ -81,7 +81,7 @@
             <connections>
                 <outlet property="reviewComplainBtn" destination="dAm-EM-7E8" id="s3p-Xa-ED6"/>
                 <outlet property="reviewContentLabel" destination="f0t-dg-oYo" id="CJB-ux-W6Z"/>
-                <outlet property="reviewDeleteLabel" destination="nYY-qz-Czq" id="fQP-Df-N5z"/>
+                <outlet property="reviewDeleteBtn" destination="nYY-qz-Czq" id="ZkD-8D-b9J"/>
                 <outlet property="reviewEditBtn" destination="iGY-7r-BNK" id="O3s-q7-eRw"/>
                 <outlet property="reviewStarImageView" destination="Mwr-0t-Z6L" id="58w-Hr-wWl"/>
             </connections>

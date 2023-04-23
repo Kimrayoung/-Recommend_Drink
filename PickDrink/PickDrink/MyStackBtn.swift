@@ -15,6 +15,7 @@ public enum btnType {
     case nutritionList
 }
 
+/// 커스텀 버튼 - stack에 들어갈 버튼
 class MyStackBtn: UIButton {
     init(_ btnTitle: String, _ type: btnType, _ tag: Int) {
         super.init(frame: CGRect.zero)
@@ -32,7 +33,7 @@ class MyStackBtn: UIButton {
             self.heightAnchor.constraint(equalToConstant: 35)
         ])
         
-        //어떤 화면인지에 따라서 버튼의 배경색이 달라짐
+        //MARK: - 어떤 화면인지에 따라서 버튼의 배경색이 달라짐
         switch type {
         case .drinkList:
             self.setTitleColor(.white, for: .normal)
