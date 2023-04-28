@@ -3,7 +3,9 @@
         "starbucks_refresher": {
             "starbucks_strawberry_acai_with_lemonade": {
                 "menu_category": "refresher",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_strawberry_lemonade_refresher.jpeg?alt=media&token=18390c1b-de28-4ab1-9b5c-f7c05e361674"
+                ],
                 "menu_iceOrHot": 1,
                 "menu_name": "딸기 아사이 레모네이드 스타벅스 리프레셔",
                 "menu_price": "5900(T)/ 6400(G)/ 6900(V)",
@@ -24,7 +26,9 @@
             },
             "starbucks_pink_drink_with_strawberry_acai": {
                 "menu_category": "refresher",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_pink_drink_refresher.jpeg?alt=media&token=8e84ca84-b56f-4460-b5c3-78790cfe86fb"
+                ],
                 "menu_iceOrHot": 1,
                 "menu_name": "핑크 드링크 위드 딸기 아사이 스타벅스 리프레셔",
                 "menu_price": "5900(T)/ 6400(G)/ 6900(V)",

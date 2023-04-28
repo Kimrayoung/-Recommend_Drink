@@ -3,7 +3,9 @@
         "starbucks_blended": {
             "starbucks_basil_lemon_sherbet_blended": {
                 "menu_category": "blended",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_Basil_Lemon_Sherbet_Blended.jpeg?alt=media&token=f1a13bbb-c9f2-488e-aa55-d8014af68971"
+                ],
                 "menu_iceOrHot": 1,
                 "menu_name": "바질 레몬 셔벗 블렌디드",
                 "menu_price": "6500(T)/ 7000(G)/ 7500(V)",
@@ -24,7 +26,9 @@
             },
             "starbucks_jeju_golden_tangerine_blended": {
                 "menu_category": "blended",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_Jeju_Golden_Tangerine_Blended.jpeg?alt=media&token=dd359456-1dc0-4990-ad7e-02037847c73f"
+                ],
                 "menu_iceOrHot": 1,
                 "menu_name": "제주 금귤 듬뿍 블렌디드",
                 "menu_price": "7500(G)",
@@ -45,7 +49,9 @@
             },
             "starbucks_jeju_malcha_apple_mango_blended": {
                 "menu_category": "blended",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_Jeju_Malcha_AppleMango_Blended.jpeg?alt=media&token=008b13dc-9a0d-4d10-b245-db1e063a864f"
+                ],
                 "menu_iceOrHot": 1,
                 "menu_name": "제주 말차 & 애플망고 블렌디드",
                 "menu_price": "7500(G)",
@@ -66,7 +72,9 @@
             },
             "starbucks_mango_passion_tea_blended": {
                 "menu_category": "blended",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_mango_passion_tea_blended.jpeg?alt=media&token=1b4c85be-d6a4-471f-91dc-71d5543739e7"
+                ],
                 "menu_iceOrHot": 1,
                 "menu_name": "망고 패션 티 블렌디드",
                 "menu_price": "5400(T)/ 5900(G)/ 6400(V)",
@@ -87,7 +95,9 @@
             },
             "starbucks_the_green_mugwort_blended": {
                 "menu_category": "blended",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_mugwort_blended.jpeg?alt=media&token=6e8bd7e2-cba8-4c3f-80aa-edb821f95fec"
+                ],
                 "menu_iceOrHot": 1,
                 "menu_name": "더 그린 쑥 블렌디드",
                 "menu_price": "7200(G)",
@@ -108,7 +118,9 @@
             },
             "starbucks_strawberry_delight_yogurt_blended": {
                 "menu_category": "blended",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_Strawberry_Delight_Yogurt_Blended.jpeg?alt=media&token=65574ffe-181c-482e-b38b-ecf34f312138"
+                ],
                 "menu_iceOrHot": 1,
                 "menu_name": "딸기 딜라이트 요거트 블렌디드",
                 "menu_price": "6300(T)/ 6800(G)/ 7300(V)",
@@ -129,7 +141,9 @@
             },
             "starbucks_mango_banana_blended": {
                 "menu_category": "blended",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_mango_banna_blended.jpeg?alt=media&token=b77e2659-5134-4192-844a-af2a4da45768"
+                ],
                 "menu_iceOrHot": 1,
                 "menu_name": "망고 바나나 블렌디드",
                 "menu_price": "6300(G)",
@@ -150,7 +164,9 @@
             },
             "starbucks_mint_chocolate_chip_blended": {
                 "menu_category": "blended",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_mint_chocolate_blended.jpeg?alt=media&token=f1800b9a-8245-4b48-bfcb-43a2f5b9f007"
+                ],
                 "menu_iceOrHot": 1,
                 "menu_name": "민트 초콜릿 칩 블렌디드",
                 "menu_price": "6300(T)/ 6800(G)/ 7300(V)",

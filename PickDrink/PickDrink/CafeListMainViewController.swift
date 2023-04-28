@@ -7,15 +7,17 @@
 
 import Foundation
 import UIKit
-//import FirebaseCore
-//import FirebaseFirestore
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
+//MARK: - 카페 리스트 화면
 class CafeListMainViewController: UIViewController {
-//    let db = Firestore.firestore()
+    let db = Firestore.firestore()
     
     let cafeList: [String] = ["스타벅스", "투썸플레이스", "메가커피", "할리스", "탐앤탐스"]
     @IBOutlet weak var cafeListTableView: UITableView!
-    
+    var categorie: String = "espresso"
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,17 +26,6 @@ class CafeListMainViewController: UIViewController {
         cafeListTableView.delegate = self
         //tableview에 사용할 cell등록해주기
         self.cafeListTableView.register(ListTableViewCell.uiNib, forCellReuseIdentifier: ListTableViewCell.reuseIdentifier)
-        
-//        db.collection("cafes")
-//            .getDocuments() { (querySnapshot, err) in
-//                if let err = err {
-//                    print("Error getting documents: \(err)")
-//                } else {
-//                    for document in querySnapshot!.documents {
-//                        print("firebase document \(document.documentID) => \(document.data())")
-//                    }
-//                }
-//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -30,6 +30,7 @@
 		4DC315F529D2DFFE007BA144 /* NutritionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC315F429D2DFFE007BA144 /* NutritionViewController.storyboard */; };
 		4DC4CDAD29D5CB67004E7687 /* ReviewRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC4CDAC29D5CB67004E7687 /* ReviewRegisterViewController.swift */; };
 		4DC4CDAF29D5CBD1004E7687 /* ReviewRegisterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC4CDAE29D5CBD0004E7687 /* ReviewRegisterViewController.storyboard */; };
+		4DC6F65029FA7D9700239B46 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4DC6F64F29FA7D9700239B46 /* FirebaseFirestoreSwift */; };
 		4DCAFCBE29D683C00063EA1A /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 4DCAFCBD29D683C00063EA1A /* Cosmos */; };
 		4DCAFCC129D686E90063EA1A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4DCAFCC029D686E90063EA1A /* FirebaseAuth */; };
 		4DCAFCC329D686E90063EA1A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4DCAFCC229D686E90063EA1A /* FirebaseFirestore */; };
@@ -85,6 +86,7 @@
 				4DCAFCBE29D683C00063EA1A /* Cosmos in Frameworks */,
 				4DCAFCC129D686E90063EA1A /* FirebaseAuth in Frameworks */,
 				4DCAFCC329D686E90063EA1A /* FirebaseFirestore in Frameworks */,
+				4DC6F65029FA7D9700239B46 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +98,7 @@
 			children = (
 				4D0BCB2B29C8260F00DD20AE /* PickDrink */,
 				4D0BCB2A29C8260F00DD20AE /* Products */,
+				4DC6F64E29FA7D9700239B46 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,6 +148,13 @@
 			path = PickDrink;
 			sourceTree = "<group>";
 		};
+		4DC6F64E29FA7D9700239B46 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -165,6 +175,7 @@
 				4DCAFCBD29D683C00063EA1A /* Cosmos */,
 				4DCAFCC029D686E90063EA1A /* FirebaseAuth */,
 				4DCAFCC229D686E90063EA1A /* FirebaseFirestore */,
+				4DC6F64F29FA7D9700239B46 /* FirebaseFirestoreSwift */,
 			);
 			productName = PickDrink;
 			productReference = 4D0BCB2929C8260F00DD20AE /* PickDrink.app */;
@@ -490,6 +501,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4DC6F64F29FA7D9700239B46 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4DCAFCBF29D686E90063EA1A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
 		4DCAFCBD29D683C00063EA1A /* Cosmos */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4DCAFCBC29D683BF0063EA1A /* XCRemoteSwiftPackageReference "Cosmos" */;

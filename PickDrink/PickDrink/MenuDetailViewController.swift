@@ -14,7 +14,7 @@ class MenuDetailViewController: UIViewController {
     
     let nutritionInfo: Nutrition = Nutrition(calorie: 10, caffeine: 150, saturatedfat: 0, carbohydrate: 2, sugars: 0, salt: 5, protein: 1, fat: 0, cholesterol: 0, transfat: nil)
     
-    var menuDetail: MenuDetail = MenuDetail(id: "starbucks_americano", name: "아메리카노", imgUrl: nil, allergy: nil, category: "espresso", description: "진한 에스프레소에 시원한 정수물을 더하여 스타벅스의 깔끔하고 강렬한 에스프레소를 가장 부드럽고 시원하게 즐길 수 있는 커피", iceOrhot: 2, price: "4500/ 5000/ 5500", seasonOnly: false, etc: nil, nutrition: nil)
+    var menuDetail: MenuDetail = MenuDetail(id: "starbucks_americano", name: "아메리카노", imgUrl: ["https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_americano_hot.jpeg?alt=media&token=bc5ac6cd-4c62-4ffb-b5a0-c7815dc79b39", "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_americano_ice.jpeg?alt=media&token=9b683c5b-0e5a-44ab-9d13-265d3e7a5416"], allergy: nil, category: "espresso", description: "진한 에스프레소에 시원한 정수물을 더하여 스타벅스의 깔끔하고 강렬한 에스프레소를 가장 부드럽고 시원하게 즐길 수 있는 커피진한 에스프레소에 시원한 정수물을 더하여 스타벅스의 깔끔하고 강렬한 에스프레소를 가장 부드럽고 시원하게 즐길 수 있는 커피진한 에스프레소에 시원한 정수물을 더하여 스타벅스의 깔끔하고 강렬한 에스프레소를 가장 부드럽고 시원하게 즐길 수 있는 커피adfdfadfadfadfadfadfadfadfadfafdfadfadfadfadfadfadfa", iceOrhot: 2, price: "4500/ 5000/ 5500", seasonOnly: false, etc: nil, nutrition: nil)
     
     var menuReviews: [Review] = [Review(review: "너무 맛있고 맛이 좋아요 또 먹고 싶어요 많이 먹고 싶어요 계속먹고 싶어요 아랄랄랄랄", reviewPassword: "0123", reviewStar: "fivestars", reviewId: "1234", menuId: "starbucks_americano"), Review(review: "너무 맛있고 맛이 좋아요 또 먹고 싶어요 많이 먹고 싶어요 계속먹고 싶어요 아랄랄랄랄22222222222222222222222222222222222222222", reviewPassword: "0123", reviewStar: "fourstars", reviewId: "1234", menuId: "starbucks_americano"), Review(review: "너무 맛있고 맛이 좋아요 또 먹고 싶어요 많이 먹고 싶어요 계속먹고 싶어요 아랄랄랄랄너무 맛있고 맛이 좋아요 또 먹고 싶어요 많이 먹고 싶어요 계속먹고 싶어요 아랄랄랄랄너무 맛있고 맛이 좋아요 또 먹고 싶어요 많이 먹고 싶어요 계속먹고 싶어요 아랄랄랄랄너무 맛있고 맛이", reviewPassword: "0123", reviewStar: "fivestars", reviewId: "1234", menuId: "starbucks_americano")]
     
@@ -40,6 +40,7 @@ class MenuDetailViewController: UIViewController {
         
         //reviewCollectionViewCell등록하기
         reviewCollectionView.register(ReviewCell.uiNib, forCellWithReuseIdentifier: ReviewCell.reuseIdentifier)
+        print(#fileID, #function, #line, "- ⭐️menuDetailList's menuId: \(menuId)")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,11 +50,24 @@ class MenuDetailViewController: UIViewController {
     
     //MARK: - 기본화면 세팅
     private func basicSetting() {
+        if let imageUrlString = menuDetail.imgUrl?[1] {
+            if let url = URL(string: imageUrlString) {
+                menuImg.loadImg(url: url)
+            }
+        }
         priceLabel.text = menuDetail.price
         descriptionLabel.text = menuDetail.description ?? "없음"
+        descriptionLabel.numberOfLines = 0
+        
         
         //MARK: - 따뜻한 음료인지 차가운음료인지 셋팅
         if menuDetail.iceOrhot == 0 {
+            if let imageUrlString = menuDetail.imgUrl?[0] {
+                if let url = URL(string: imageUrlString) {
+                    menuImg.loadImg(url: url)
+                }
+            }
+            
             let button = UIButton(type: .system)
             hotOrIceView.addSubview(button)
             button.setTitle("Hot Only", for: .normal)
@@ -69,9 +83,16 @@ class MenuDetailViewController: UIViewController {
             button.bottomAnchor.constraint(equalTo: self.hotOrIceView.bottomAnchor, constant: 0).isActive = true
         }
         else if menuDetail.iceOrhot == 1 { //0 -> hot only, 1 -> ice Only, 2 -> ice and hot
+            if let imageUrlString = menuDetail.imgUrl?[0] {
+                if let url = URL(string: imageUrlString) {
+                    menuImg.loadImg(url: url)
+                }
+            }
+            
             let button = UIButton(type: .system)
             button.setTitle("Ice Only", for: .normal)
             button.setTitleColor(.blue, for: .normal)
+            button.layer.cornerRadius = 7
             button.layer.borderWidth = 2
             button.layer.borderColor = UIColor.blue.cgColor
             button.translatesAutoresizingMaskIntoConstraints = false
@@ -117,6 +138,13 @@ class MenuDetailViewController: UIViewController {
             sender.backgroundColor = .red
         } else {
             sender.backgroundColor = .blue
+        }
+        
+        //MARK: - segment에 따라서 변경됨
+        if let imageUrlString = menuDetail.imgUrl?[segmentValue] {
+            if let url = URL(string: imageUrlString) {
+                menuImg.loadImg(url: url)
+            }
         }
     }
     

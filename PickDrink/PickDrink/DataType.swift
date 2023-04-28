@@ -8,10 +8,67 @@
 import Foundation
 import UIKit
 
+struct Cafe: Codable {
+    let cafeId: String?
+    let cafeMenus: MenuCategory?
+    let cafeName: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case cafeId = "cafe_id"
+        case cafeMenus = "cafe_menus"
+        case cafeName = "cafe_name"
+    }
+}
+
+
+
+struct MenuCategory: Codable {
+    let espresso, frappuccino, coldbrew, tea, refresher, fizzio, blended, etcDrink, brewedcoffee: [CafeMenuComposition]
+    
+    static func starbucksKoreaName(_ englishName: String) -> String{
+        switch englishName {
+            case "espresso" : return "에스프레소"
+            case "frappuccino" : return "프라푸치노"
+            case "coldbrew" : return "콜드브루"
+            case "fizzio" : return "피지오(에이드)"
+            case "tea" : return "티"
+            case "refresher" : return "리프레셔"
+            case "blended" : return "블렌디드"
+            case "etcDrink" : return "기타음료(라떼 등)"
+            case "brewedcoffee" : return "브루드 커피"
+            default: return "없음"
+        }
+    }
+    
+    static func megaKoreaName(_ englishName: String) -> String {
+        switch englishName {
+            case "espresso" : return "에스프레소"
+            case "frappuccino" : return "프라페"
+            case "coldbrew" : return "콜드브루"
+            case "fizzio" : return "에이드"
+            case "tea" : return "티"
+            case "refresher" : return "리프레셔"
+            case "blended" : return "스무디/주스"
+            case "etcDrink" : return "기타음료(라떼 등)"
+            case "brewedcoffee" : return "브루드 커피"
+            default: return "없음"
+        }
+    }
+}
+
+struct CafeMenuComposition: Codable {
+    let menuId, menuName: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case menuId = "menu_id"
+        case menuName = "menu_name"
+    }
+}
+
 struct MenuDetail: Codable {
     let id: String?
     let name: String?
-    let imgUrl: String?
+    let imgUrl: [String]?
     let allergy: String?
     let category: String?
     let description: String?

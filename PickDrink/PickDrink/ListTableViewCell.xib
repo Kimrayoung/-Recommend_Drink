@@ -15,17 +15,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="367" height="58"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZM-1q-bfw">
-                        <rect key="frame" x="15" y="10" width="42" height="38"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZM-1q-bfw">
+                        <rect key="frame" x="20.000000000000004" y="15" width="41.333333333333343" height="28"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="mZM-1q-bfw" firstAttribute="leading" secondItem="HVI-Gg-T1e" secondAttribute="leading" constant="15" id="Krh-Ge-8Ah"/>
-                    <constraint firstItem="mZM-1q-bfw" firstAttribute="top" secondItem="HVI-Gg-T1e" secondAttribute="top" constant="10" id="X4e-JQ-o0A"/>
-                    <constraint firstAttribute="bottom" secondItem="mZM-1q-bfw" secondAttribute="bottom" constant="10" id="nqo-nD-98X"/>
+                    <constraint firstItem="mZM-1q-bfw" firstAttribute="leading" secondItem="HVI-Gg-T1e" secondAttribute="leading" constant="20" id="Krh-Ge-8Ah"/>
+                    <constraint firstItem="mZM-1q-bfw" firstAttribute="top" secondItem="HVI-Gg-T1e" secondAttribute="top" constant="15" id="X4e-JQ-o0A"/>
+                    <constraint firstAttribute="bottom" secondItem="mZM-1q-bfw" secondAttribute="bottom" constant="15" id="nqo-nD-98X"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

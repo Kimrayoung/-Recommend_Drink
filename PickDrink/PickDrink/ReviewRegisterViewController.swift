@@ -69,9 +69,6 @@ class ReviewRegisterViewController: UIViewController {
         print(#fileID, #function, #line, "- passwordChecking", passwordCheck)
         if !passwordCheck {
             let titleText = "에러"
-
-            let titleString = NSAttributedString(string: "에러")
-
             let passwordAlert = UIAlertController(title: titleText, message: "비밀번호를 확인해주세요!", preferredStyle: .alert)
             
             let passwordAlertAction = UIAlertAction(title: "확인", style: .cancel)
@@ -81,8 +78,6 @@ class ReviewRegisterViewController: UIViewController {
             return
         } else if !starAndReviewCheck {
             let titleText = "에러"
-            let titleString = NSAttributedString(string: "에러")
-            
             let reviewAlert = UIAlertController(title: titleText, message: "입력하지 않은 항목이 있습니다", preferredStyle: .alert)
             let reviewAlertAction = UIAlertAction(title: "확인", style: .cancel)
             

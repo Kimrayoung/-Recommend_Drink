@@ -3,7 +3,9 @@
         "starbucks_frappuccino": {
             "starbucks_double_espresso_chip_frappuccino": {
                 "menu_category": "frappuccino",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_Double_Espresso_Chip_Frappuccino.jpeg?alt=media&token=0450a21a-02e9-4266-bfad-37c935819ded"
+                ],
                 "menu_iceOrHot": 1,
                 "menu_name": "더블 에스프레소 칩 프라푸치노",
                 "menu_price": "6300(T)/ 6800(G)/ 7300(V)",
@@ -24,7 +26,9 @@
             },
             "starbucks_esrpesso_frappuccino": {
                 "menu_category": "frappuccino",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_espresso_frappuccino.jpeg?alt=media&token=e57c5b85-5e71-43c8-9d21-fbd6ee6385f8"
+                ],
                 "menu_iceOrHot": 1,
                 "menu_name": "에스프레소 프라푸치노",
                 "menu_price": "5500(T)/ 6000(G)/ 6500(V)",
@@ -45,7 +49,9 @@
             },
             "starbucks_java_chip_frappuccino": {
                 "menu_category": "frappuccino",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_java_chip_frappuccino.jpeg?alt=media&token=d4bb7cc2-da21-4cf6-92a7-5efd25824108"
+                ],
                 "menu_iceOrHot": 1,
                 "menu_name": "자바 칩 프라푸치노",
                 "menu_price": "6300(T)/ 6800(G)/ 7300(V)",
@@ -66,7 +72,9 @@
             },
             "starbucks_caramel_frappuccino": {
                 "menu_category": "frappuccino",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_carmel_fappuccino.jpeg?alt=media&token=6a0a8204-0f98-4c6e-b1ab-86da7cb8d0e7"
+                ],
                 "menu_iceOrHot": 1,
                 "menu_name": "카라멜 프라푸치노",
                 "menu_price": "5900(T)/ 6400(G)/ 6900(V)",
@@ -87,7 +95,9 @@
             },
             "starbucks_white_chocolate_mocha_frappuccino": {
                 "menu_category": "frappuccino",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_white_mocha_frappuccino.jpeg?alt=media&token=ace5f2f8-e8bb-44dd-860b-aac258473302"
+                ],
                 "menu_iceOrHot": 1,
                 "menu_name": "화이트 초콜릿 모카 프라푸치노",
                 "menu_price": "6000(T)/ 6500(G)/ 7000(V)",
@@ -108,7 +118,9 @@
             },
             "starbucks_vanilla_cream_frappuccino": {
                 "menu_category": "frappuccino",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_vanilla_cream_frappuccino.jpeg?alt=media&token=d884b362-cab0-499a-a676-5d9a56930d43"
+                ],
                 "menu_iceOrHot": 1,
                 "menu_name": "바닐라 크림 프라푸치노",
                 "menu_price": "5100(T)/ 5600(G)/ 6100(V)",
@@ -129,7 +141,9 @@
             },
             "starbucks_jeju_black_sesame_cream_frappuccino": {
                 "menu_category": "frappuccino",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_Jeju_Black_Sesame_Frappuccino.jpeg?alt=media&token=9c2d0c24-09da-4fee-adcd-e00315dc66a8"
+                ],
                 "menu_iceOrHot": 1,
                 "menu_name": "제주 까망 크림 프라푸치노",
                 "menu_price": "7500(G)",
@@ -150,7 +164,9 @@
             },
             "starbucks_jeju_mugwort_cream_frappuccino": {
                 "menu_category": "frappuccino",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_Jeju_Mugwort_Frappuccino.jpeg?alt=media&token=3282277b-f744-44af-9007-9140072f7f5f"
+                ],
                 "menu_iceOrHot": 1,
                 "menu_name": "제주 쑥떡 크림 프라푸치노",
                 "menu_price": "7500(G)",
@@ -171,7 +187,9 @@
             },
             "starbucks_jeju_malcha_cream_frappuccino": {
                 "menu_category": "frappuccino",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_jeju_malcha_frappuccino.jpeg?alt=media&token=1592cb0a-d9a7-45b6-83cb-85d11417ba32"
+                ],
                 "menu_iceOrHot": 1,
                 "menu_name": "제주 유기농 말차로 만든 크림 프라푸치노",
                 "menu_price": "6300(T)/ 6800(G)/ 7300(V)",
@@ -192,7 +210,9 @@
             },
             "starbucks_chocolate_cream_chip_frappuccino": {
                 "menu_category": "frappuccino",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_chocolate_frappuccino.jpeg?alt=media&token=ce6c68c2-8092-45d3-a2c7-d255a282317c"
+                ],
                 "menu_iceOrHot": 1,
                 "menu_name": "초콜릿 크림 칩 프라푸치노",
                 "menu_price": "6000(T)/ 6500(G)/ 7000(V)",
@@ -213,7 +233,9 @@
             },
             "starbucks_white_tiger_frappuccino": {
                 "menu_category": "frappuccino",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_white_tiger_frappuccino.jpeg?alt=media&token=769ebf63-d5d9-4394-98fa-0d18ad9ce306"
+                ],
                 "menu_iceOrHot": 1,
                 "menu_name": "화이트 타이거 프라푸치노",
                 "menu_price": "6500(G)",

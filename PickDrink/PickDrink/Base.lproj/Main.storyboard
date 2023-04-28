@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hbP-Sq-nFL">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -14,18 +14,17 @@
             <objects>
                 <viewController id="Mmb-7J-Dte" customClass="CafeListMainViewController" customModule="PickDrink" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dha-F7-J0u">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick Drink!🥤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGb-FQ-7fI">
-                                <rect key="frame" x="9.9999999999999929" y="50" width="111.33333333333331" height="20.333333333333329"/>
+                                <rect key="frame" x="10" y="54" width="111.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bNU-6Q-z4X">
-                                <rect key="frame" x="0.0" y="87" width="393" height="765"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bNU-6Q-z4X">
+                                <rect key="frame" x="0.0" y="84.5" width="320" height="483.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -33,7 +32,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="oGb-FQ-7fI" firstAttribute="leading" secondItem="xgb-FP-9yW" secondAttribute="leading" constant="10" id="MhG-SH-YEZ"/>
-                            <constraint firstItem="oGb-FQ-7fI" firstAttribute="top" secondItem="Dha-F7-J0u" secondAttribute="top" constant="50" id="vxo-VG-c15"/>
+                            <constraint firstAttribute="bottom" secondItem="bNU-6Q-z4X" secondAttribute="bottom" id="u7e-ce-Ncm"/>
+                            <constraint firstItem="bNU-6Q-z4X" firstAttribute="leading" secondItem="xgb-FP-9yW" secondAttribute="leading" id="vNe-ow-Neu"/>
+                            <constraint firstItem="oGb-FQ-7fI" firstAttribute="top" secondItem="xgb-FP-9yW" secondAttribute="top" constant="10" id="vxo-VG-c15"/>
+                            <constraint firstAttribute="trailing" secondItem="bNU-6Q-z4X" secondAttribute="trailing" id="xGH-Sy-DHQ"/>
+                            <constraint firstItem="bNU-6Q-z4X" firstAttribute="top" secondItem="oGb-FQ-7fI" secondAttribute="bottom" constant="10" id="zb0-bQ-idZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YkO-vf-dEo"/>
@@ -43,31 +46,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rbb-WQ-S7i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="191.6030534351145" y="166.90140845070422"/>
+            <point key="canvasLocation" x="191.25" y="166.90140845070422"/>
         </scene>
         <!--Drink List Main View Controller-->
         <scene sceneID="vUP-r0-w5f">
             <objects>
                 <viewController id="fai-0t-B7c" customClass="DrinkListMainViewController" customModule="PickDrink" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LzO-UR-Yve">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick Drink!🥤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFh-3f-WWc">
-                                <rect key="frame" x="9.9999999999999929" y="50" width="111.33333333333331" height="20.333333333333329"/>
+                                <rect key="frame" x="10" y="54" width="111.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGA-AA-sNx">
-                                <rect key="frame" x="5" y="78.333333333333329" width="383" height="45"/>
+                                <rect key="frame" x="5" y="84.5" width="383" height="40"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6zw-Lu-hig">
-                                        <rect key="frame" x="0.0" y="0.0" width="383" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="383" height="40"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="6zw-Lu-hig" firstAttribute="bottom" secondItem="Xrp-Kg-TWl" secondAttribute="bottom" id="bUD-gj-RO0"/>
+                                    <constraint firstAttribute="height" constant="40" id="hvj-Wd-gKB"/>
                                     <constraint firstItem="6zw-Lu-hig" firstAttribute="trailing" secondItem="Xrp-Kg-TWl" secondAttribute="trailing" id="ipE-Cb-lFo"/>
                                     <constraint firstItem="6zw-Lu-hig" firstAttribute="leading" secondItem="Xrp-Kg-TWl" secondAttribute="leading" id="ooS-AQ-fxg"/>
                                     <constraint firstItem="6zw-Lu-hig" firstAttribute="top" secondItem="Xrp-Kg-TWl" secondAttribute="top" id="v8E-UU-fev"/>
@@ -77,40 +81,39 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="fDa-fu-YCe"/>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="선택된 카페 - " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QdR-fa-sRm">
-                                <rect key="frame" x="5" y="133.33333333333334" width="84" height="18"/>
+                                <rect key="frame" x="5" y="134.5" width="84" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스타벅스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLa-Fc-L8D">
-                                <rect key="frame" x="90" y="133.33333333333334" width="52" height="18"/>
+                                <rect key="frame" x="90" y="134.5" width="52" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" name="cafeListSelectedBtnColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DmN-NX-iP1">
-                                <rect key="frame" x="0.0" y="151.33333333333331" width="393" height="700.66666666666674"/>
+                                <rect key="frame" x="0.0" y="152.5" width="320" height="415.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZyS-ky-mQa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="DmN-NX-iP1" firstAttribute="trailing" secondItem="ZyS-ky-mQa" secondAttribute="trailing" id="6rU-tX-0ku"/>
+                            <constraint firstItem="DmN-NX-iP1" firstAttribute="leading" secondItem="ZyS-ky-mQa" secondAttribute="leading" id="1UV-i3-hhZ"/>
+                            <constraint firstItem="DmN-NX-iP1" firstAttribute="trailing" secondItem="ZyS-ky-mQa" secondAttribute="trailing" id="4WR-TM-JfV"/>
+                            <constraint firstAttribute="bottom" secondItem="DmN-NX-iP1" secondAttribute="bottom" id="Azg-yF-gwR"/>
                             <constraint firstItem="uGA-AA-sNx" firstAttribute="leading" secondItem="ZyS-ky-mQa" secondAttribute="leading" constant="5" id="G8e-s1-A9I"/>
                             <constraint firstItem="DmN-NX-iP1" firstAttribute="top" secondItem="QdR-fa-sRm" secondAttribute="bottom" id="GtE-Bn-Evz"/>
-                            <constraint firstItem="uGA-AA-sNx" firstAttribute="top" secondItem="yFh-3f-WWc" secondAttribute="bottom" constant="8" symbolic="YES" id="Ho7-3a-83K"/>
-                            <constraint firstItem="DmN-NX-iP1" firstAttribute="leading" secondItem="ZyS-ky-mQa" secondAttribute="leading" id="PVY-XH-jZO"/>
-                            <constraint firstItem="yFh-3f-WWc" firstAttribute="top" secondItem="LzO-UR-Yve" secondAttribute="top" constant="50" id="RcG-W2-hR4"/>
+                            <constraint firstItem="uGA-AA-sNx" firstAttribute="top" secondItem="yFh-3f-WWc" secondAttribute="bottom" constant="10" id="Ho7-3a-83K"/>
+                            <constraint firstItem="yFh-3f-WWc" firstAttribute="top" secondItem="ZyS-ky-mQa" secondAttribute="top" constant="10" id="RcG-W2-hR4"/>
                             <constraint firstItem="yFh-3f-WWc" firstAttribute="leading" secondItem="ZyS-ky-mQa" secondAttribute="leading" constant="10" id="U1T-Wj-9AW"/>
-                            <constraint firstAttribute="bottom" secondItem="DmN-NX-iP1" secondAttribute="bottom" id="al7-8d-JWy"/>
-                            <constraint firstItem="ZyS-ky-mQa" firstAttribute="trailing" secondItem="uGA-AA-sNx" secondAttribute="trailing" constant="5" id="f7h-Sp-RaD"/>
+                            <constraint firstItem="ZyS-ky-mQa" firstAttribute="trailing" secondItem="uGA-AA-sNx" secondAttribute="trailing" id="f7h-Sp-RaD"/>
                             <constraint firstItem="XLa-Fc-L8D" firstAttribute="leading" secondItem="QdR-fa-sRm" secondAttribute="trailing" constant="1" id="fih-Dc-NCl"/>
                             <constraint firstItem="QdR-fa-sRm" firstAttribute="leading" secondItem="ZyS-ky-mQa" secondAttribute="leading" constant="5" id="gzh-Ke-yGc"/>
                             <constraint firstItem="XLa-Fc-L8D" firstAttribute="top" secondItem="uGA-AA-sNx" secondAttribute="bottom" constant="10" id="i3b-nW-cN0"/>
                             <constraint firstItem="QdR-fa-sRm" firstAttribute="top" secondItem="uGA-AA-sNx" secondAttribute="bottom" constant="10" id="qiG-An-cIX"/>
                             <constraint firstItem="uGA-AA-sNx" firstAttribute="centerX" secondItem="LzO-UR-Yve" secondAttribute="centerX" id="say-rZ-BX2"/>
-                            <constraint firstAttribute="bottom" secondItem="uGA-AA-sNx" secondAttribute="bottom" constant="728.66666666666663" id="uLA-J4-Hfy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="62g-0O-7R9"/>
@@ -153,12 +156,12 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="97e-U2-dRT">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="fai-0t-B7c" kind="relationship" relationship="rootViewController" id="dTv-sH-ALY"/>
+                        <segue destination="fai-0t-B7c" kind="relationship" relationship="rootViewController" id="DRi-Tg-ujO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Haj-5e-NOy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -172,7 +175,7 @@
                     <tabBarItem key="tabBarItem" title="카페별 추천음료" image="list.bullet.clipboard" catalog="system" id="gTv-u6-D7F"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NQU-A7-NNX">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

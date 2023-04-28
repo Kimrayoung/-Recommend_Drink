@@ -3,7 +3,9 @@
         "starbucks_etcDrink": {
             "starbucks_spring_strawberry_milk": {
                 "menu_category": "etc_drink",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_strawBerry_latte.jpeg?alt=media&token=29bb4482-3d31-460e-901d-797e17e5ded0"
+                ],
                 "menu_iceOrHot": 1,
                 "menu_name": "봄 딸기 라떼",
                 "menu_price": "6900(G)",
@@ -24,7 +26,10 @@
             },
             "starbucks_signature_chocolate": {
                 "menu_category": "etc_drink",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_hot_chocolate.jpeg?alt=media&token=95d324be-3652-4ee2-91aa-1962e35342cf",
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_ice_chocolate.jpeg?alt=media&token=36191005-d7d3-4037-b3c0-a43781393022"
+                ],
                 "menu_iceOrHot": 2,
                 "menu_name": "시그니처 초콜릿",
                 "menu_price": "5700(T)/ 6200(G)/ 6700(V)",
@@ -45,7 +50,10 @@
             },
             "starbucks_fluffy_panda_chocolate": {
                 "menu_category": "etc_drink",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_panda_chocolate.jpeg?alt=media&token=686bd3f5-639e-4dfd-bf57-16dda8e29fef",
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_ice_panda_chocolate.jpeg?alt=media&token=04c9e8bd-2ecf-445c-81f0-8c1f0f14d0b0"
+                ],
                 "menu_iceOrHot": 2,
                 "menu_name": "플러피 판타 초콜릿",
                 "menu_price": "6500(G)",
@@ -66,7 +74,9 @@
             },
             "starbucks_slammer": {
                 "menu_category": "etc_drink",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_slammer.jpeg?alt=media&token=c587e8bd-305c-4695-bf15-0e03eb3e6d60"
+                ],
                 "menu_iceOrHot": 1,
                 "menu_name": "스타벅스 슬래머",
                 "menu_price": "6500(G)",
@@ -87,7 +97,10 @@
             },
             "starbucks_milk_nutritionInfo": {
                 "menu_category": "etc_drink",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_hot_milk.jpeg?alt=media&token=e804a00e-f7cc-4825-a118-f7a346e1393b",
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_ice_milk.jpeg?alt=media&token=e91d24a2-ba5b-43f4-906b-421de0cd6f8b"
+                ],
                 "menu_iceOrHot": 2,
                 "menu_name": "우유",
                 "menu_price": "3600(S)/ 4100(T)",
@@ -108,7 +121,10 @@
             },
             "starbucks_black_seasaem_latte_nutritionInfo": {
                 "menu_category": "etc_drink",
-                "menu_imgUrl": null,
+                "menu_imgUrl": [
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_Jeju_Black_Sesame_Latte.jpeg?alt=media&token=d606ee99-00bc-4852-9cc3-b8a10e9799d0",
+                    "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_Iced_Jeju_Black_Sesame_Latte.jpeg?alt=media&token=4d7cc692-baa7-4ec4-9db5-87027d0e4a02"
+                ],
                 "menu_iceOrHot": 2,
                 "menu_name": "제주 까망 라떼",
                 "menu_price": "7200(G)",

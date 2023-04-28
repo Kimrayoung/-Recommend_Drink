@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hkH-AO-GOb">
-                                <rect key="frame" x="25" y="159" width="343" height="534"/>
+                                <rect key="frame" x="25" y="161" width="343" height="530"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="firstTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbD-iB-EFQ">
                                         <rect key="frame" x="10" y="40" width="69.333333333333329" height="21"/>
@@ -79,6 +79,7 @@
                                     <constraint firstAttribute="trailing" secondItem="iqe-jR-1rx" secondAttribute="trailing" constant="10" id="4YM-7v-5HG"/>
                                     <constraint firstItem="qbD-iB-EFQ" firstAttribute="top" secondItem="hkH-AO-GOb" secondAttribute="top" constant="40" id="4c2-Wm-Yi5"/>
                                     <constraint firstItem="ucN-oo-4Fg" firstAttribute="top" secondItem="iqe-jR-1rx" secondAttribute="bottom" constant="50" id="5wV-JE-AnN"/>
+                                    <constraint firstAttribute="height" constant="530" id="8EG-Xf-dun"/>
                                     <constraint firstItem="qbD-iB-EFQ" firstAttribute="leading" secondItem="hkH-AO-GOb" secondAttribute="leading" constant="10" id="CzL-lL-Fjm"/>
                                     <constraint firstItem="ucN-oo-4Fg" firstAttribute="leading" secondItem="qbD-iB-EFQ" secondAttribute="leading" id="HDe-hM-ecV"/>
                                     <constraint firstItem="iqe-jR-1rx" firstAttribute="centerX" secondItem="hkH-AO-GOb" secondAttribute="centerX" id="KAV-4a-pEh"/>
@@ -101,7 +102,6 @@
                             <constraint firstItem="hkH-AO-GOb" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Bxy-gy-O1U"/>
                             <constraint firstItem="hkH-AO-GOb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="Dc1-bd-EBO"/>
                             <constraint firstItem="hkH-AO-GOb" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="IKk-gA-R9F"/>
-                            <constraint firstItem="hkH-AO-GOb" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="100" id="Twa-n3-Fxy"/>
                         </constraints>
                     </view>
                     <connections>
