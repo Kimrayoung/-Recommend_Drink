@@ -47,9 +47,6 @@ class ModalViewController: UIViewController {
         modalFirstContentLabel.text = firstLabelContent
         
         self.modalTextView.textViewSetting(self.modalTextView, modalType.textViewPlaceHolder)
-//        self.modalTextView.textViewDidBeginEditing(self.modalTextView, modalType.textViewPlaceHolder)
-//        self.modalTextView.textViewDidEndEditing(self.modalTextView, modalType.textViewPlaceHolder)
-//        self.modalTextView.textViewDidChange(self.modalTextView, self.modalTextViewCnt, modalType.textViewPlaceHolder)
     }
     
     //MARK: - 모달 등록 버튼 클릭

@@ -16,7 +16,7 @@ const jsonToFirestore = async () => {
             serviceAccount.databaseUrl
         );
 
-        await firestoreService.restore("./cafe_list.json");
+        await firestoreService.restore("./starbucks_espresso.json");
     } catch (error) {
         console.log(error);
     }

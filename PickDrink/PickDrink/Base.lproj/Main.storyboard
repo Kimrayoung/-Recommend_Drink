@@ -101,13 +101,17 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="DmN-NX-iP1" firstAttribute="leading" secondItem="ZyS-ky-mQa" secondAttribute="leading" id="1UV-i3-hhZ"/>
+                            <constraint firstItem="DmN-NX-iP1" firstAttribute="leading" secondItem="ZyS-ky-mQa" secondAttribute="leading" id="4J4-TB-oqJ"/>
                             <constraint firstItem="DmN-NX-iP1" firstAttribute="trailing" secondItem="ZyS-ky-mQa" secondAttribute="trailing" id="4WR-TM-JfV"/>
+                            <constraint firstItem="DmN-NX-iP1" firstAttribute="top" secondItem="QdR-fa-sRm" secondAttribute="bottom" id="818-QK-3Or"/>
                             <constraint firstAttribute="bottom" secondItem="DmN-NX-iP1" secondAttribute="bottom" id="Azg-yF-gwR"/>
                             <constraint firstItem="uGA-AA-sNx" firstAttribute="leading" secondItem="ZyS-ky-mQa" secondAttribute="leading" constant="5" id="G8e-s1-A9I"/>
                             <constraint firstItem="DmN-NX-iP1" firstAttribute="top" secondItem="QdR-fa-sRm" secondAttribute="bottom" id="GtE-Bn-Evz"/>
                             <constraint firstItem="uGA-AA-sNx" firstAttribute="top" secondItem="yFh-3f-WWc" secondAttribute="bottom" constant="10" id="Ho7-3a-83K"/>
                             <constraint firstItem="yFh-3f-WWc" firstAttribute="top" secondItem="ZyS-ky-mQa" secondAttribute="top" constant="10" id="RcG-W2-hR4"/>
+                            <constraint firstItem="DmN-NX-iP1" firstAttribute="trailing" secondItem="ZyS-ky-mQa" secondAttribute="trailing" id="S47-NT-87R"/>
                             <constraint firstItem="yFh-3f-WWc" firstAttribute="leading" secondItem="ZyS-ky-mQa" secondAttribute="leading" constant="10" id="U1T-Wj-9AW"/>
+                            <constraint firstAttribute="bottom" secondItem="DmN-NX-iP1" secondAttribute="bottom" id="XUG-1a-Ss5"/>
                             <constraint firstItem="ZyS-ky-mQa" firstAttribute="trailing" secondItem="uGA-AA-sNx" secondAttribute="trailing" id="f7h-Sp-RaD"/>
                             <constraint firstItem="XLa-Fc-L8D" firstAttribute="leading" secondItem="QdR-fa-sRm" secondAttribute="trailing" constant="1" id="fih-Dc-NCl"/>
                             <constraint firstItem="QdR-fa-sRm" firstAttribute="leading" secondItem="ZyS-ky-mQa" secondAttribute="leading" constant="5" id="gzh-Ke-yGc"/>
@@ -125,7 +129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vlm-CR-nJz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="191.6030534351145" y="-517.6056338028169"/>
+            <point key="canvasLocation" x="191.25" y="-517.6056338028169"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="RDq-QI-EzX">
@@ -156,7 +160,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="97e-U2-dRT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -175,7 +179,7 @@
                     <tabBarItem key="tabBarItem" title="카페별 추천음료" image="list.bullet.clipboard" catalog="system" id="gTv-u6-D7F"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NQU-A7-NNX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -77,13 +77,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호를 설정해주세요!(숫자 4자리)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18R-ok-a15">
-                                <rect key="frame" x="25" y="430" width="259.33333333333331" height="20.333333333333314"/>
+                                <rect key="frame" x="25" y="415" width="259.33333333333331" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex) 0000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E0k-Sd-Wba">
-                                <rect key="frame" x="25" y="460.33333333333331" width="343" height="40"/>
+                                <rect key="frame" x="25" y="445.33333333333331" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="fB8-bb-90S"/>
                                 </constraints>
@@ -91,13 +91,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주의 ❗️해당 메뉴와 상관없는 내용은 통보없이 삭제 될 수 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4o-LK-1UB">
-                                <rect key="frame" x="25" y="525.33333333333337" width="343" height="14.333333333333371"/>
+                                <rect key="frame" x="25" y="510.33333333333331" width="343" height="14.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8i-UE-Z29">
-                                <rect key="frame" x="100" y="549.66666666666663" width="193" height="40"/>
+                                <rect key="frame" x="100" y="534.66666666666663" width="193" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="eOK-lb-3OJ"/>
                                 </constraints>
@@ -134,7 +134,7 @@
                             <constraint firstItem="I8i-UE-Z29" firstAttribute="top" secondItem="M4o-LK-1UB" secondAttribute="bottom" constant="10" id="gOF-iE-wXe"/>
                             <constraint firstItem="XrB-gz-72l" firstAttribute="top" secondItem="04J-3e-IAM" secondAttribute="bottom" constant="10" id="k2D-dx-71O"/>
                             <constraint firstItem="Yny-dA-mzh" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="s9I-Fb-sD0"/>
-                            <constraint firstItem="18R-ok-a15" firstAttribute="top" secondItem="04J-3e-IAM" secondAttribute="bottom" constant="55" id="tbz-CV-8U4"/>
+                            <constraint firstItem="18R-ok-a15" firstAttribute="top" secondItem="04J-3e-IAM" secondAttribute="bottom" constant="40" id="tbz-CV-8U4"/>
                             <constraint firstItem="E0k-Sd-Wba" firstAttribute="leading" secondItem="18R-ok-a15" secondAttribute="leading" id="vL4-3G-dCa"/>
                             <constraint firstItem="fYz-vw-J5F" firstAttribute="top" secondItem="Yny-dA-mzh" secondAttribute="bottom" id="vOA-Gc-hpl"/>
                             <constraint firstItem="M4o-LK-1UB" firstAttribute="top" secondItem="E0k-Sd-Wba" secondAttribute="bottom" constant="25" id="xIJ-B6-5Ke"/>

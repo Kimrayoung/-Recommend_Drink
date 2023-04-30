@@ -70,8 +70,8 @@ class NutritionViewController: UIViewController {
         if let nutrition = nutrition {
             calorieGramLabel.text = nutrition.calorie != nil ? String(nutrition.calorie!) + "kcal" : "정보없음"
             caffeineGramLabel.text = nutrition.caffeine != nil ? String(nutrition.caffeine!) + "mg" : "정보없음"
-            fatGramLabel.text = nutrition.fat != nil ? String(nutrition.saturatedfat!) + "g" : "정보없음"
-            sugarsGramLabel.text = nutrition.sugars != nil ? String(nutrition.sugars!) + "g" : "정보없음"
+            fatGramLabel.text = nutrition.fat != nil ? String(nutrition.fat!) + "g" : "정보없음"
+            sugarsGramLabel.text = nutrition.sugar != nil ? String(nutrition.sugar!) + "g" : "정보없음"
             saltGramLabel.text = nutrition.salt != nil ? String(nutrition.salt!) + "mg" : "정보없음"
             proteinGramLabel.text = nutrition.protein != nil ? String(nutrition.protein!) + "g" : "정보없음"
 

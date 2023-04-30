@@ -7,14 +7,18 @@
 
 import Foundation
 import UIKit
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 /// 메뉴 디테일 화면
 class MenuDetailViewController: UIViewController {
+    let db = Firestore.firestore()
+    var cafeId: String = ""
     var menuId: String = "" //나중에 db 연결해서는 이 메뉴 ID를 통해서 데이터를 가지고 온다
     
-    let nutritionInfo: Nutrition = Nutrition(calorie: 10, caffeine: 150, saturatedfat: 0, carbohydrate: 2, sugars: 0, salt: 5, protein: 1, fat: 0, cholesterol: 0, transfat: nil)
-    
-    var menuDetail: MenuDetail = MenuDetail(id: "starbucks_americano", name: "아메리카노", imgUrl: ["https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_americano_hot.jpeg?alt=media&token=bc5ac6cd-4c62-4ffb-b5a0-c7815dc79b39", "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_americano_ice.jpeg?alt=media&token=9b683c5b-0e5a-44ab-9d13-265d3e7a5416"], allergy: nil, category: "espresso", description: "진한 에스프레소에 시원한 정수물을 더하여 스타벅스의 깔끔하고 강렬한 에스프레소를 가장 부드럽고 시원하게 즐길 수 있는 커피진한 에스프레소에 시원한 정수물을 더하여 스타벅스의 깔끔하고 강렬한 에스프레소를 가장 부드럽고 시원하게 즐길 수 있는 커피진한 에스프레소에 시원한 정수물을 더하여 스타벅스의 깔끔하고 강렬한 에스프레소를 가장 부드럽고 시원하게 즐길 수 있는 커피adfdfadfadfadfadfadfadfadfadfafdfadfadfadfadfadfadfa", iceOrhot: 2, price: "4500/ 5000/ 5500", seasonOnly: false, etc: nil, nutrition: nil)
+    var nutritionInfo: Nutrition? = nil
+    var menuDetail: MenuDetail? = nil
     
     var menuReviews: [Review] = [Review(review: "너무 맛있고 맛이 좋아요 또 먹고 싶어요 많이 먹고 싶어요 계속먹고 싶어요 아랄랄랄랄", reviewPassword: "0123", reviewStar: "fivestars", reviewId: "1234", menuId: "starbucks_americano"), Review(review: "너무 맛있고 맛이 좋아요 또 먹고 싶어요 많이 먹고 싶어요 계속먹고 싶어요 아랄랄랄랄22222222222222222222222222222222222222222", reviewPassword: "0123", reviewStar: "fourstars", reviewId: "1234", menuId: "starbucks_americano"), Review(review: "너무 맛있고 맛이 좋아요 또 먹고 싶어요 많이 먹고 싶어요 계속먹고 싶어요 아랄랄랄랄너무 맛있고 맛이 좋아요 또 먹고 싶어요 많이 먹고 싶어요 계속먹고 싶어요 아랄랄랄랄너무 맛있고 맛이 좋아요 또 먹고 싶어요 많이 먹고 싶어요 계속먹고 싶어요 아랄랄랄랄너무 맛있고 맛이", reviewPassword: "0123", reviewStar: "fivestars", reviewId: "1234", menuId: "starbucks_americano")]
     
@@ -31,8 +35,7 @@ class MenuDetailViewController: UIViewController {
  
     override func viewDidLoad() {
         super.viewDidLoad()
-        menuDetail.nutrition = nutritionInfo
-        basicSetting()
+        receiveMenuData()
         navigationBarsetting()
         
         reviewCollectionView.dataSource = self
@@ -40,7 +43,6 @@ class MenuDetailViewController: UIViewController {
         
         //reviewCollectionViewCell등록하기
         reviewCollectionView.register(ReviewCell.uiNib, forCellWithReuseIdentifier: ReviewCell.reuseIdentifier)
-        print(#fileID, #function, #line, "- ⭐️menuDetailList's menuId: \(menuId)")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,21 +50,47 @@ class MenuDetailViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    //MARK: - 기본화면 세팅
-    private func basicSetting() {
-        if let imageUrlString = menuDetail.imgUrl?[1] {
-            if let url = URL(string: imageUrlString) {
-                menuImg.loadImg(url: url)
+    func receiveMenuData(){
+        print(#fileID, #function, #line, "- <#comment#>")
+        let cafe = cafeId + "_menus"
+        let cafeMenu = db.collection(cafe).document(menuId)
+        cafeMenu.getDocument { (document, error) in
+            if let document = document, document.exists {
+                if let data = try? document.data(as: MenuDetail.self) {
+                    print(#fileID, #function, #line, "- data:\(data)")
+                    self.menuDetail = data
+                    print(#fileID, #function, #line, "- menuDetailTemp: \(self.menuDetail)")
+                    self.nutritionInfo = data.nutrition
+                    self.basicSetting()
+                }
+            } else {
+                print("Document does not exist")
             }
         }
-        priceLabel.text = menuDetail.price
-        descriptionLabel.text = menuDetail.description ?? "없음"
+        let tempReview = db.collection("reviews").document("starbucks_americano")
+        tempReview.getDocument { (document, error) in
+            if let document = document, document.exists {
+                if let data = try? document.data(as: ReviewArray.self) {
+                    print(#fileID, #function, #line, "- Review data parsing success:\(data)")
+                } else {
+                    print(#fileID, #function, #line, "- Review data parsing fail: \(document)")
+                }
+            } else {
+                print("Document does not exist")
+            }
+        }
+    }
+    
+    //MARK: - 기본화면 세팅
+    private func basicSetting() {
+        priceLabel.text = menuDetail?.price
+        descriptionLabel.text = menuDetail?.description ?? "없음"
         descriptionLabel.numberOfLines = 0
         
         
         //MARK: - 따뜻한 음료인지 차가운음료인지 셋팅
-        if menuDetail.iceOrhot == 0 {
-            if let imageUrlString = menuDetail.imgUrl?[0] {
+        if menuDetail?.iceOrhot == 0 {
+            if let imageUrlString = menuDetail?.imgUrl?[0] {
                 if let url = URL(string: imageUrlString) {
                     menuImg.loadImg(url: url)
                 }
@@ -82,8 +110,8 @@ class MenuDetailViewController: UIViewController {
             button.rightAnchor.constraint(equalTo: self.hotOrIceView.rightAnchor, constant: 0).isActive = true
             button.bottomAnchor.constraint(equalTo: self.hotOrIceView.bottomAnchor, constant: 0).isActive = true
         }
-        else if menuDetail.iceOrhot == 1 { //0 -> hot only, 1 -> ice Only, 2 -> ice and hot
-            if let imageUrlString = menuDetail.imgUrl?[0] {
+        else if menuDetail?.iceOrhot == 1 { //0 -> hot only, 1 -> ice Only, 2 -> ice and hot
+            if let imageUrlString = menuDetail?.imgUrl?[0] {
                 if let url = URL(string: imageUrlString) {
                     menuImg.loadImg(url: url)
                 }
@@ -103,7 +131,12 @@ class MenuDetailViewController: UIViewController {
             button.bottomAnchor.constraint(equalTo: self.hotOrIceView.bottomAnchor, constant: 0).isActive = true
             
         }
-        else if menuDetail.iceOrhot == 2 { //0 -> hot only, 1 -> ice Only, 2 -> ice and hot
+        else if menuDetail?.iceOrhot == 2 { //0 -> hot only, 1 -> ice Only, 2 -> ice and hot
+            if let imageUrlString = menuDetail?.imgUrl?[1] {
+                if let url = URL(string: imageUrlString) {
+                    menuImg.loadImg(url: url)
+                }
+            }
             let segmentControl = UISegmentedControl(items: ["Hot", "Iced"])
             segmentControl.translatesAutoresizingMaskIntoConstraints = false
             print(#fileID, #function, #line, "- selectedSegmentIndex: \(segmentControl.selectedSegmentIndex)")
@@ -124,8 +157,8 @@ class MenuDetailViewController: UIViewController {
         
         let nutritionGesture = UITapGestureRecognizer(target: self, action: #selector(self.nutritionViewClicked(_ :)))
         self.nutritionView.addGestureRecognizer(nutritionGesture)
-        allergyLabel.text = menuDetail.allergy ?? "없음"
-        etcLabel.text = menuDetail.etc ?? "없음"
+        allergyLabel.text = menuDetail?.allergy ?? "없음"
+        etcLabel.text = menuDetail?.etc ?? "없음"
 
         reviewRegisterBtn.addTarget(self, action: #selector(reviewRegisterBtnClicked(_ :)), for: .touchUpInside)
     }
@@ -141,7 +174,7 @@ class MenuDetailViewController: UIViewController {
         }
         
         //MARK: - segment에 따라서 변경됨
-        if let imageUrlString = menuDetail.imgUrl?[segmentValue] {
+        if let imageUrlString = menuDetail?.imgUrl?[segmentValue] {
             if let url = URL(string: imageUrlString) {
                 menuImg.loadImg(url: url)
             }
@@ -152,7 +185,7 @@ class MenuDetailViewController: UIViewController {
     @objc func reviewRegisterBtnClicked(_ sender: UIButton) {
         print(#fileID, #function, #line, "- ⭐️reviewRegisterBtnClicked")
         guard let reviewRegisterVC = ReviewRegisterViewController.getInstance() else { return }
-        if let menuName = menuDetail.name {
+        if let menuName = menuDetail?.name {
             reviewRegisterVC.navigationTitle = menuName
             self.navigationController?.pushViewController(reviewRegisterVC, animated: true)
         }
@@ -160,7 +193,7 @@ class MenuDetailViewController: UIViewController {
         reviewRegisterVC.reviewClosure = { star, review, password, id in
             print(#fileID, #function, #line, "- reviewClouser:\(star)")
             print(#fileID, #function, #line, "- review: \(review)")
-            let newReview: Review = Review(review: review, reviewPassword: password, reviewStar: star, reviewId: id, menuId: self.menuDetail.id)
+            let newReview: Review = Review(review: review, reviewPassword: password, reviewStar: star, reviewId: id, menuId: self.menuId)
 //            self.menuReviews.append(newReview)
             self.menuReviews.insert(newReview, at: 0)
             self.reviewCollectionView.reloadData()
@@ -169,7 +202,7 @@ class MenuDetailViewController: UIViewController {
     
     //MARK: - 네비게이션 바 세팅
     private func navigationBarsetting() {
-        self.navigationItem.title = menuDetail.name
+        self.navigationItem.title = menuDetail?.name
         let backBarButtonItemSetting = UIBarButtonItem(title: "메뉴리스트", style: .plain, target: self, action: #selector(navigationbackBarItemAction(_ :)))
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backBarButtonItemSetting
     }
@@ -181,11 +214,12 @@ class MenuDetailViewController: UIViewController {
     
     //MARK: - 영양성분을 보기 위해서 뷰를 클릭
     @objc func nutritionViewClicked(_ sender: UITapGestureRecognizer) {
-        print(#fileID, #function, #line, "- ⭐️nutrition view Clicked")
-        guard let nutritionVC = NutritionViewController.getInstance() else { return }
+        print(#fileID, #function, #line, "- ⭐️nutrition view Clicked: \(self.nutritionInfo)")
+        guard let nutritionVC = NutritionViewController.getInstance(),
+              let nutritionInfo = self.nutritionInfo else { return }
         
         nutritionVC.nutrition = nutritionInfo
-        nutritionVC.tempMenuName = menuDetail.name
+        nutritionVC.tempMenuName = menuDetail?.name
         self.navigationController?.pushViewController(nutritionVC, animated: true)
     }
     

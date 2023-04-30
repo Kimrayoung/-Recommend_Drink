@@ -20,8 +20,6 @@ struct Cafe: Codable {
     }
 }
 
-
-
 struct MenuCategory: Codable {
     let espresso, frappuccino, coldbrew, tea, refresher, fizzio, blended, etcDrink, brewedcoffee: [CafeMenuComposition]
     
@@ -66,7 +64,6 @@ struct CafeMenuComposition: Codable {
 }
 
 struct MenuDetail: Codable {
-    let id: String?
     let name: String?
     let imgUrl: [String]?
     let allergy: String?
@@ -79,31 +76,30 @@ struct MenuDetail: Codable {
     var nutrition: Nutrition?
     
     enum CodingKeys: String, CodingKey {
-        case id = "menu_id"
         case name = "menu_name"
         case imgUrl = "menu_imgUrl"
         case allergy = "menu_allergy"
         case category = "menu_category"
         case description = "menu_description"
-        case iceOrhot = "menu_iceOrhot"
+        case iceOrhot = "menu_iceOrHot"
         case price = "menu_price"
         case seasonOnly = "menu_seasonOnly"
         case etc = "menu_etc"
-        case nutrition = "menu_nutrition"
+        case nutrition = "nutritionInfo"
     }
 }
 
 struct Nutrition: Codable {
-    let calorie: Int?
-    let caffeine: Int?
-    let saturatedfat: Int? //포화지방
-    let carbohydrate: Int? //탄수화물
-    let sugars: Int? //당류
-    let salt: Int? //나트륨
-    let protein: Int? //단백질
-    let fat: Int? //지방
-    let cholesterol: Int? //콜레스테롤
-    let transfat: Int? //트랜스 지방
+    let calorie: String?
+    let caffeine: String?
+    let sugar: String? //당류
+    let salt: String? //나트륨
+    let protein: String? //단백질
+    let fat: String? //지방
+}
+
+struct ReviewArray: Codable {
+    let reviews: [Review]?
 }
 
 struct Review: Codable {

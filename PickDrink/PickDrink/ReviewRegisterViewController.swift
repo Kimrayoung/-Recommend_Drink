@@ -32,7 +32,6 @@ class ReviewRegisterViewController: UIViewController {
         reviewPasswordTextField.delegate = self
         reviewTextView.delegate = self
         reviewTextView.textViewSetting(self.reviewTextView,textViewPlaceHolder)
-//        reviewTextView.textViewDidBeginEditing(self.reviewTextView, textViewPlaceHolder)
         textFieldSetting()
         reviewRegisterBtn.addTarget(self, action: #selector(registerBtnClicked(_:)), for: .touchUpInside)
     }
