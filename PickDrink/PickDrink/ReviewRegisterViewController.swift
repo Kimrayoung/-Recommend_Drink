@@ -8,9 +8,14 @@
 import Foundation
 import UIKit
 import Cosmos
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 /// 리뷰등록 화면
 class ReviewRegisterViewController: UIViewController {
+    let db = Firestore.firestore()
+    var menuId: String = ""
     var navigationTitle: String = ""
     
     @IBOutlet weak var starView: CosmosView!
@@ -23,7 +28,7 @@ class ReviewRegisterViewController: UIViewController {
     let textViewPlaceHolder: String = "음료 맛이 어떤지 간단하게 적어주세요!"
     let textBorderColor = UIColor(named: "reviewPlaceHolderColor")
     
-    var reviewClosure: ((_ star: String, _ review: String, _ password: String, _ reviewId: String) -> ())? = nil
+    var reviewClosure: (() -> ())? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,27 +90,12 @@ class ReviewRegisterViewController: UIViewController {
             return
         }
         
+        sendReviewData()
+        
         //별점, 리뷰, 비밀번호가 모두 입력이 되어있는 것을 확인했다면 해당 페이지가 pop되고 review가 추가됨
         self.navigationController?.popViewController(animated: true)
         //메뉴 디테일 화면에서 방금 추가한 리뷰가 바로 보이도록 해야한다
-        var starRating: String = ""
-        if starView.rating == 1 {
-            starRating = "onestar"
-        } else if starView.rating == 2 {
-            starRating = "twostars"
-        } else if starView.rating == 3 {
-            starRating = "threestars"
-        } else if starView.rating == 4 {
-            starRating = "fourstars"
-        } else if starView.rating == 5 {
-            starRating = "fivestars"
-        }
-        
-        if let reviewClosure = reviewClosure {
-            guard let reviewText = reviewTextView.text,
-                  let reviewPasswordText = reviewPasswordTextField.text else { return }
-            reviewClosure(starRating, reviewText, reviewPasswordText, "reviwerwer")
-        }
+
     }
     
     //MARK: - 패스워드 입력되었는지 확인
@@ -129,6 +119,57 @@ class ReviewRegisterViewController: UIViewController {
         return true
     }
     
+    //MARK: - firestroe로 데이터 보내기
+    private func sendReviewData() {
+        var starRating: String = ""
+        if starView.rating == 1 {
+            starRating = "onestar"
+        } else if starView.rating == 2 {
+            starRating = "twostars"
+        } else if starView.rating == 3 {
+            starRating = "threestars"
+        } else if starView.rating == 4 {
+            starRating = "fourstars"
+        } else if starView.rating == 5 {
+            starRating = "fivestars"
+        }
+        
+        guard let password = reviewPasswordTextField.text else { return }
+        //해당 메뉴에 해당 하는 문서가 있으면 update이고 없으면 set
+        
+        let reviewSendRequest = db.collection("reviews").document(menuId)
+        reviewSendRequest.getDocument { (doc, err) in
+            if let doc = doc, doc.exists {
+                let review : [String : String] = [
+                    "menuId" : self.menuId,
+                    "review" : self.reviewTextView.text,
+                    "reviewId" : UUID().uuidString,
+                    "reviewStar": starRating,
+                    "reviewPassword": password
+                ]
+                
+                reviewSendRequest.updateData([
+                    "reviews": FieldValue.arrayUnion([review])
+                ])
+            } else {
+                do {
+                    let review: Review = Review(review: self.reviewTextView.text, reviewPassword: self.reviewPasswordTextField.text, reviewStar: starRating, reviewId: UUID().uuidString, menuId: self.menuId)
+
+                    let setReview: ReviewArray = ReviewArray(reviews: [review])
+                    
+                    try self.db.collection("reviews").document(self.menuId).setData(from: setReview)
+                    
+                } catch let error {
+                    print(#fileID, #function, #line, "- err: \(error)")
+                }
+            }
+            
+            if let reviewClosure = self.reviewClosure {
+                reviewClosure()
+            }
+        }
+    }
+    
 }
 
 //MARK: - 리뷰 textView관련 extension
@@ -147,6 +188,23 @@ extension ReviewRegisterViewController: UITextViewDelegate {
         if reviewTextView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             reviewTextView.text = textViewPlaceHolder
             reviewTextView.textColor = textBorderColor
+        }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        //100자 넘어가면 더 이상 입력 안됨
+        if textView.text.count > 100 {
+            textView.deleteBackward()
+        }
+
+        if textView.text == textViewPlaceHolder {
+            reviewTextViewCnt.text = "0 / 100"
+        } else {
+            reviewTextViewCnt.text = "\(textView.text.count) / 100"
+        }
+
+        if textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || textView.text == textViewPlaceHolder {
+            textView.text = textViewPlaceHolder
         }
     }
 

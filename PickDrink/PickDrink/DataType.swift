@@ -111,11 +111,18 @@ struct Review: Codable {
     
     enum CodingKeys: String, CodingKey {
         case review
-        case reviewPassword = "review_password"
-        case reviewStar = "review_star"
-        case reviewId = "review_id"
-        case menuId = "menu_id"
+        case reviewPassword
+        case reviewStar
+        case reviewId
+        case menuId
     }
+}
+
+struct Complain: Codable {
+    let menuId: String?
+    let complainReview: String?
+    let complainReason: String?
+    let reviewId: String?
 }
 
 public enum Modal{

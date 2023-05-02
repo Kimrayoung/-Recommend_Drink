@@ -20,7 +20,7 @@ class MenuDetailViewController: UIViewController {
     var nutritionInfo: Nutrition? = nil
     var menuDetail: MenuDetail? = nil
     
-    var menuReviews: [Review] = [Review(review: "너무 맛있고 맛이 좋아요 또 먹고 싶어요 많이 먹고 싶어요 계속먹고 싶어요 아랄랄랄랄", reviewPassword: "0123", reviewStar: "fivestars", reviewId: "1234", menuId: "starbucks_americano"), Review(review: "너무 맛있고 맛이 좋아요 또 먹고 싶어요 많이 먹고 싶어요 계속먹고 싶어요 아랄랄랄랄22222222222222222222222222222222222222222", reviewPassword: "0123", reviewStar: "fourstars", reviewId: "1234", menuId: "starbucks_americano"), Review(review: "너무 맛있고 맛이 좋아요 또 먹고 싶어요 많이 먹고 싶어요 계속먹고 싶어요 아랄랄랄랄너무 맛있고 맛이 좋아요 또 먹고 싶어요 많이 먹고 싶어요 계속먹고 싶어요 아랄랄랄랄너무 맛있고 맛이 좋아요 또 먹고 싶어요 많이 먹고 싶어요 계속먹고 싶어요 아랄랄랄랄너무 맛있고 맛이", reviewPassword: "0123", reviewStar: "fivestars", reviewId: "1234", menuId: "starbucks_americano")]
+    var menuReviews: [Review]? = nil
     
     @IBOutlet weak var menuImg: UIImageView!
     @IBOutlet weak var priceLabel: UILabel!
@@ -36,6 +36,7 @@ class MenuDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         receiveMenuData()
+        receiveReviewData()
         navigationBarsetting()
         
         reviewCollectionView.dataSource = self
@@ -50,16 +51,17 @@ class MenuDetailViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    //MARK: - 해당 메뉴에 대한 데이터를 받아온다
     func receiveMenuData(){
         print(#fileID, #function, #line, "- <#comment#>")
         let cafe = cafeId + "_menus"
-        let cafeMenu = db.collection(cafe).document(menuId)
-        cafeMenu.getDocument { (document, error) in
+        let cafeMenuRequest = db.collection(cafe).document(menuId)
+        cafeMenuRequest.getDocument { (document, error) in
             if let document = document, document.exists {
                 if let data = try? document.data(as: MenuDetail.self) {
                     print(#fileID, #function, #line, "- data:\(data)")
                     self.menuDetail = data
-                    print(#fileID, #function, #line, "- menuDetailTemp: \(self.menuDetail)")
+
                     self.nutritionInfo = data.nutrition
                     self.basicSetting()
                 }
@@ -67,17 +69,24 @@ class MenuDetailViewController: UIViewController {
                 print("Document does not exist")
             }
         }
-        let tempReview = db.collection("reviews").document("starbucks_americano")
-        tempReview.getDocument { (document, error) in
-            if let document = document, document.exists {
-                if let data = try? document.data(as: ReviewArray.self) {
-                    print(#fileID, #function, #line, "- Review data parsing success:\(data)")
-                } else {
-                    print(#fileID, #function, #line, "- Review data parsing fail: \(document)")
-                }
-            } else {
-                print("Document does not exist")
+    }
+    
+    //MARK: - 해당 메뉴에 대한 리뷰들을 받아온다
+    func receiveReviewData() {
+        print(#fileID, #function, #line, "- <#comment#>")
+        let reviewRequest = db.collection("reviews").document(menuId)
+        reviewRequest.addSnapshotListener { documentSnapshot, err in
+            guard let documentSnapshot = documentSnapshot else {
+                print(#fileID, #function, #line, "- error fetching document: \(err)")
+                return
             }
+            if let data = try? documentSnapshot.data(as: ReviewArray.self) {
+                print(#fileID, #function, #line, "- Review data parsing success:\(data)")
+                self.menuReviews = data.reviews?.reversed()
+            } else {
+                print(#fileID, #function, #line, "- Review data parsing fail: \(documentSnapshot)")
+            }
+            self.reviewCollectionView.reloadData()
         }
     }
     
@@ -190,13 +199,10 @@ class MenuDetailViewController: UIViewController {
             self.navigationController?.pushViewController(reviewRegisterVC, animated: true)
         }
         
-        reviewRegisterVC.reviewClosure = { star, review, password, id in
-            print(#fileID, #function, #line, "- reviewClouser:\(star)")
-            print(#fileID, #function, #line, "- review: \(review)")
-            let newReview: Review = Review(review: review, reviewPassword: password, reviewStar: star, reviewId: id, menuId: self.menuId)
-//            self.menuReviews.append(newReview)
-            self.menuReviews.insert(newReview, at: 0)
-            self.reviewCollectionView.reloadData()
+        reviewRegisterVC.menuId = menuId
+        
+        reviewRegisterVC.reviewClosure = {
+            self.receiveReviewData()
         }
     }
     
@@ -225,11 +231,41 @@ class MenuDetailViewController: UIViewController {
     
 }
 
+extension UICollectionView {
+    func setEmptyMessage() {
+        print(#fileID, #function, #line, "- setEmptyMessage")
+        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
+            messageLabel.text = "아직 리뷰가 없습니다🥺 \n리뷰나 자신만의 꿀팁을 남겨주세요!❤️"
+            messageLabel.textColor = .black
+            messageLabel.numberOfLines = 0
+            messageLabel.textAlignment = .center
+            messageLabel.font = .systemFont(ofSize: 15)
+            messageLabel.sizeToFit()
+
+            self.backgroundView = messageLabel
+    }
+    
+    func restore() {
+        self.backgroundView = nil
+    }
+}
+
 //MARK: - 콜렉션 뷰 dataSource관련 함수
 extension MenuDetailViewController: UICollectionViewDataSource {
     //한개의 section에 몇개의 데이터가 들어갈건지 정해주기
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        menuReviews.count
+        if let menuReviews = menuReviews {
+            if menuReviews.isEmpty {
+                self.reviewCollectionView.setEmptyMessage()
+                return 0
+            } else {
+                self.reviewCollectionView.restore()
+                return menuReviews.count
+            }
+        } else {
+            self.reviewCollectionView.setEmptyMessage()
+            return 0
+        }
     }
     
     //MARK: - 어떤 cell이 들어갈 건지 정해주기
@@ -237,13 +273,17 @@ extension MenuDetailViewController: UICollectionViewDataSource {
         guard let reviewCell = reviewCollectionView.dequeueReusableCell(withReuseIdentifier: ReviewCell.reuseIdentifier, for: indexPath) as? ReviewCell else { return UICollectionViewCell() }
         
         let indexRow = indexPath.row
+        
+        guard let menuReviews = menuReviews else { return UICollectionViewCell() }
         guard let starImg = UIImage(named: menuReviews[indexRow].reviewStar ?? "fivestars") else { return UICollectionViewCell() }
+        
         reviewCell.reviewStarImageView.image = starImg
         reviewCell.reviewContentLabel.text = menuReviews[indexRow].review
-        reviewCell.reviewPassword = menuReviews[indexRow].reviewPassword
+        reviewCell.reviewData = menuReviews[indexRow]
+        reviewCell.reviewIndex = indexRow
         
-        reviewCell.reviewCompainBtnClosure = openModal(_:_:)
-        reviewCell.reviewEditBtnClosure = reviewEdit(_:_:_:)
+        reviewCell.reviewCompainBtnClosure = openModal(_:_:_:_:)
+        reviewCell.reviewEditBtnClosure = reviewEdit(_:_:_:_:)
 
         return reviewCell
     }
@@ -258,26 +298,33 @@ extension MenuDetailViewController: UICollectionViewDelegateFlowLayout {
 //MARK: - reviewCell 관련 함수 처리
 extension MenuDetailViewController{
     //MARK: - 리뷰 수정&삭제&신고하기 누르면 뜨는 모달 열기
-    func openModal(_ reviewContent: String, _ modalType: Modal) {
+    func openModal(_ reviewContent: String, _ modalType: Modal, _ reviewData: Review, _ reviewIndex: Int) {
         print(#fileID, #function, #line, "- reviewComplain")
         guard let modalVC = ModalViewController.getInstance() else { return }
         
+        modalVC.menuId = menuId
+        modalVC.reviewIndex = reviewIndex
+        modalVC.reviewData = reviewData
         modalVC.modalType = modalType
         modalVC.firstLabelContent = reviewContent
 
         self.present(modalVC, animated: true)
     }
     //MARK: - 리뷰 수정하기
-    func reviewEdit(_ reviewContent: String, _ modalType: Modal,_ reviewPassword: String) {
-        print(#fileID, #function, #line, "- reviewEdit", reviewPassword)
+    func reviewEdit(_ reviewContent: String, _ modalType: Modal,_ reviewData: Review, _ reviewIndex: Int) {
+        print(#fileID, #function, #line, "- reviewEdit")
         guard let passwordVC = PasswordAlertViewController.getInstance() else { return }
+        
+        guard let reviewPassword = reviewData.reviewPassword else { return }
         passwordVC.reviewPW = reviewPassword
         
         passwordVC.modalPresentationStyle = .overCurrentContext
         passwordVC.modalTransitionStyle =  .crossDissolve
+        
         passwordVC.checkBtnClosure = {
-            self.openModal(reviewContent, modalType)
+            self.openModal(reviewContent, modalType, reviewData, reviewIndex)
         }
+        
         self.present(passwordVC, animated: true)
     }
     
