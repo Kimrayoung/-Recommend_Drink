@@ -17,14 +17,15 @@ public enum btnType {
 
 /// 커스텀 버튼 - stack에 들어갈 버튼
 class MyStackBtn: UIButton {
-    init(_ btnTitle: String, _ type: btnType, _ tag: Int) {
+    init(_ btnTitle: String,_ type: btnType, _ tag: Int) {
         super.init(frame: CGRect.zero)
         self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
         
         self.layer.cornerRadius = 10
-        
+       
         self.setTitle(btnTitle, for: .normal)
         self.tag = tag
+        
         
         self.translatesAutoresizingMaskIntoConstraints = false
         

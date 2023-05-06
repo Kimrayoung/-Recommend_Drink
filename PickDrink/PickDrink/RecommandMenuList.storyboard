@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,14 +18,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vpG-qj-BlY">
-                                <rect key="frame" x="0.0" y="164" width="393" height="688"/>
+                                <rect key="frame" x="0.0" y="126" width="393" height="726"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19Y-4y-OV8">
-                                <rect key="frame" x="5" y="113" width="383" height="43"/>
+                                <rect key="frame" x="5" y="59" width="383" height="40"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="psr-GL-ugu">
-                                        <rect key="frame" x="0.0" y="0.0" width="383" height="43"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="383" height="40"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -32,20 +33,28 @@
                                     <constraint firstItem="psr-GL-ugu" firstAttribute="top" secondItem="8Jp-uk-8vY" secondAttribute="top" id="QmP-WS-H2s"/>
                                     <constraint firstItem="psr-GL-ugu" firstAttribute="bottom" secondItem="8Jp-uk-8vY" secondAttribute="bottom" id="VWi-fv-Ghs"/>
                                     <constraint firstItem="psr-GL-ugu" firstAttribute="height" secondItem="l2c-fk-kkH" secondAttribute="height" id="bDO-1d-30x"/>
+                                    <constraint firstAttribute="height" constant="40" id="ijn-gg-J58"/>
                                     <constraint firstItem="psr-GL-ugu" firstAttribute="leading" secondItem="8Jp-uk-8vY" secondAttribute="leading" id="t5U-pY-r9d"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="8Jp-uk-8vY"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="l2c-fk-kkH"/>
                             </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※ 다소 주관적일 수 있습니다!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Suw-ba-6pX">
+                                <rect key="frame" x="10" y="109" width="161" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" name="reviewTextViewCntLabel"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="19Y-4y-OV8" secondAttribute="bottom" constant="696" id="TwS-Qv-EWa"/>
+                            <constraint firstItem="19Y-4y-OV8" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="9gi-yb-5yF"/>
+                            <constraint firstItem="Suw-ba-6pX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="UDu-qn-hnP"/>
                             <constraint firstItem="vpG-qj-BlY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="XuX-Eg-5dp"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="19Y-4y-OV8" secondAttribute="trailing" constant="5" id="ZPj-cB-y9W"/>
-                            <constraint firstItem="19Y-4y-OV8" firstAttribute="centerX" secondItem="vpG-qj-BlY" secondAttribute="centerX" id="c3E-mn-z2w"/>
-                            <constraint firstItem="vpG-qj-BlY" firstAttribute="top" secondItem="19Y-4y-OV8" secondAttribute="bottom" constant="8" symbolic="YES" id="cOc-jK-QVD"/>
+                            <constraint firstItem="Suw-ba-6pX" firstAttribute="top" secondItem="psr-GL-ugu" secondAttribute="bottom" constant="10" id="aE7-fC-xX1"/>
+                            <constraint firstItem="vpG-qj-BlY" firstAttribute="top" secondItem="Suw-ba-6pX" secondAttribute="bottom" id="cOc-jK-QVD"/>
                             <constraint firstItem="19Y-4y-OV8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="5" id="kiS-PI-Sl9"/>
                             <constraint firstAttribute="bottom" secondItem="vpG-qj-BlY" secondAttribute="bottom" id="p2V-c1-uNW"/>
                             <constraint firstItem="vpG-qj-BlY" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="sCf-Xe-zHw"/>
@@ -62,6 +71,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="reviewTextViewCntLabel">
+            <color red="0.52941176470588236" green="0.52941176470588236" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -52,12 +52,9 @@ protocol Storyboarded { //프로토콜 선언
 
 extension Storyboarded {
   static func getInstance(_ storyboardName: String? = nil) -> Self? {
-    //String(describing) -> 해당하는 클래스의 이름을 가지고 올 수 있다 -> 즉, 자기자신의 이름을 가지고 올 수 있다
-      //특정 클래스의 이름을 가져온다
       print(#fileID, #function, #line, "- storyboardName checked: \(String(describing: self))")
     let name = storyboardName ?? String(describing: self)
     
-    //스토리보드의 이름이랑 viewController의 이름이 일치한다면? -> 잘 가져와짐
     let storyBoard = UIStoryboard(name: name, bundle: Bundle.main)
     return storyBoard.instantiateViewController(withIdentifier: String(describing: self)) as? Self
   }
@@ -67,6 +64,7 @@ extension UIViewController: Storyboarded {}
 
 extension UIImageView {
     func loadImg(url: URL) {
+        print(#fileID, #function, #line, "- uiimage: \(url)")
         DispatchQueue.global().async { [weak self] in
             if let data = try? Data(contentsOf: url) {
                 if let image = UIImage(data: data) {
@@ -76,5 +74,45 @@ extension UIImageView {
                 }
             }
         }
+    }
+}
+
+
+extension UITableView {
+    func setEmptyMessage() {
+        print(#fileID, #function, #line, "- setEmptyMessage")
+        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
+            messageLabel.text = "아직 데이터를 준비하지 못했습니다🥺 \n조금만 기다려주세요"
+            messageLabel.textColor = .black
+            messageLabel.numberOfLines = 0
+            messageLabel.textAlignment = .center
+            messageLabel.font = .systemFont(ofSize: 15)
+            messageLabel.sizeToFit()
+
+            self.backgroundView = messageLabel
+            self.separatorStyle = .none
+    }
+    func restore() {
+        self.backgroundView = nil
+        self.separatorStyle = .singleLine
+    }
+}
+
+extension UICollectionView {
+    func setEmptyMessage() {
+        print(#fileID, #function, #line, "- setEmptyMessage")
+        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
+            messageLabel.text = "아직 리뷰가 없습니다🥺 \n리뷰나 자신만의 꿀팁을 남겨주세요!❤️"
+            messageLabel.textColor = .black
+            messageLabel.numberOfLines = 0
+            messageLabel.textAlignment = .center
+            messageLabel.font = .systemFont(ofSize: 15)
+            messageLabel.sizeToFit()
+
+            self.backgroundView = messageLabel
+    }
+    
+    func restore() {
+        self.backgroundView = nil
     }
 }

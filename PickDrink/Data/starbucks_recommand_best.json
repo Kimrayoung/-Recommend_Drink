@@ -1,0 +1,101 @@
+{
+    "starbucks_recommands": {
+        "best": {
+            "cafe_id": "starbucks",
+            "recommand_id": "starbucks_sweet",
+            "recommand_name": "인기⭐️",
+            "recommand_menus": {
+                "espresso": [
+                    {
+                        "menu_id": "starbucks_americano",
+                        "menu_name": "아메리카노"
+                    },
+                    {
+                        "menu_id": "starbucks_caffe_latte",
+                        "menu_name": "카페 라떼"
+                    },
+                    {
+                        "menu_id": "starbucks_vanilla_affogato",
+                        "menu_name": "바닐라 아포카토"
+                    },
+                    {
+                        "menu_id": "starbucks_caremel_macchiato",
+                        "menu_name": "카라멜 마키야또"
+                    }
+                ],
+                "blended": [
+                    {
+                        "menu_id": "starbucks_strawberry_delight_yogurt_blended",
+                        "menu_name": "딸기 딜라이트 요거트 블렌디드"
+                    },
+                    {
+                        "menu_id": "starbucks_mango_passion_tea_blended",
+                        "menu_name": "망고 패션 티 블렌디드"
+                    }
+                ],
+                "coldbrew": [
+                    {
+                        "menu_id": "starbucks_vanilla_cream_coldbrew",
+                        "menu_name": "바닐라 크림 콜드 브루"
+                    },
+                    {
+                        "menu_id": "starbucks_coldbrew",
+                        "menu_name": "콜드 브루"
+                    },
+                    {
+                        "menu_id": "starbucks_dolce_coldbrew",
+                        "menu_name": "돌체 콜드 브루"
+                    }
+                ],
+                "brewedcoffee": [
+                    {
+                        "menu_id": "starbucks_brewed_coffee",
+                        "menu_name": "오늘의 커피"
+                    }
+                ],
+                "fizzio": [
+                    {
+                        "menu_id": "starbucks_cool_lime_fizzio",
+                        "menu_name": "쿨 라임 피지오"
+                    }
+                ],
+                "frappuccino": [
+                    {
+                        "menu_id": "starbucks_double_espresso_chip_frappuccino",
+                        "menu_name": "더블 에스프레소 칩 프라푸치노"
+                    },
+                    {
+                        "menu_id": "starbucks_java_chip_frappuccino",
+                        "menu_name": "자바 칩 프라푸치노"
+                    }
+                ],
+                "refresher": [
+                    {
+                        "menu_id": "starbucks_strawberry_acai_with_lemonade",
+                        "menu_name": "딸기 아사이 레모네이드 스타벅스 리프레셔"
+                    }
+                ],
+                "tea": [
+                    {
+                        "menu_id": "starbucks_earl_grey_vanilla_tea_latte",
+                        "menu_name": "얼 그레이 바닐라 티 라떼"
+                    },
+                    {
+                        "menu_id": "starbucks_yuja_mint_tea",
+                        "menu_name": "유자 민트 티"
+                    },
+                    {
+                        "menu_id": "starbucks_grapefruit_honey_black_tea",
+                        "menu_name": "자몽 허니 블랙 티"
+                    }
+                ],
+                "etcDrink": [
+                    {
+                        "menu_id": "starbucks_signature_chocolate",
+                        "menu_name": "시그니처 초콜릿"
+                    }
+                ]
+            }
+        }
+    }
+}

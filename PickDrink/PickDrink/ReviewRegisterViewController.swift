@@ -25,7 +25,7 @@ class ReviewRegisterViewController: UIViewController {
     @IBOutlet weak var reviewRegisterBtn: UIButton!
     @IBOutlet weak var reviewPasswordTextField: UITextField!
     
-    let textViewPlaceHolder: String = "음료 맛이 어떤지 간단하게 적어주세요!"
+    let textViewPlaceHolder: String = "음료에 대한 생각이나 꿀팁을 간단하게 적어주세요!"
     let textBorderColor = UIColor(named: "reviewPlaceHolderColor")
     
     var reviewClosure: (() -> ())? = nil
@@ -191,8 +191,9 @@ extension ReviewRegisterViewController: UITextViewDelegate {
         }
     }
     
+    //MARK: - 리뷰 입력 중
     func textViewDidChange(_ textView: UITextView) {
-        //100자 넘어가면 더 이상 입력 안됨
+        //MARK: - 리뷰가 100자 이상 넘어가면 안되도록
         if textView.text.count > 100 {
             textView.deleteBackward()
         }
@@ -201,10 +202,6 @@ extension ReviewRegisterViewController: UITextViewDelegate {
             reviewTextViewCnt.text = "0 / 100"
         } else {
             reviewTextViewCnt.text = "\(textView.text.count) / 100"
-        }
-
-        if textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || textView.text == textViewPlaceHolder {
-            textView.text = textViewPlaceHolder
         }
     }
 

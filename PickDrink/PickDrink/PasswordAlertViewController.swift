@@ -62,7 +62,7 @@ class PasswordAlertViewController: UIViewController {
             if let checkBtnClosure = checkBtnClosure {
                 checkBtnClosure()
             }
-            self.dismiss(animated: true)
+            self.dismiss(animated: false)
         } else {
             passwordWrongLabel.isHidden = false
         }

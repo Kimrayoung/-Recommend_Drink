@@ -97,7 +97,7 @@ class MenuDetailViewController: UIViewController {
         descriptionLabel.numberOfLines = 0
         
         
-        //MARK: - 따뜻한 음료인지 차가운음료인지 셋팅
+        //MARK: - 따뜻한 음료인지 차가운음료인지 셋팅(0 -> hot only, 1 -> ice Only, 2 -> ice and hot)
         if menuDetail?.iceOrhot == 0 {
             if let imageUrlString = menuDetail?.imgUrl?[0] {
                 if let url = URL(string: imageUrlString) {
@@ -119,7 +119,7 @@ class MenuDetailViewController: UIViewController {
             button.rightAnchor.constraint(equalTo: self.hotOrIceView.rightAnchor, constant: 0).isActive = true
             button.bottomAnchor.constraint(equalTo: self.hotOrIceView.bottomAnchor, constant: 0).isActive = true
         }
-        else if menuDetail?.iceOrhot == 1 { //0 -> hot only, 1 -> ice Only, 2 -> ice and hot
+        else if menuDetail?.iceOrhot == 1 {
             if let imageUrlString = menuDetail?.imgUrl?[0] {
                 if let url = URL(string: imageUrlString) {
                     menuImg.loadImg(url: url)
@@ -140,7 +140,7 @@ class MenuDetailViewController: UIViewController {
             button.bottomAnchor.constraint(equalTo: self.hotOrIceView.bottomAnchor, constant: 0).isActive = true
             
         }
-        else if menuDetail?.iceOrhot == 2 { //0 -> hot only, 1 -> ice Only, 2 -> ice and hot
+        else if menuDetail?.iceOrhot == 2 {
             if let imageUrlString = menuDetail?.imgUrl?[1] {
                 if let url = URL(string: imageUrlString) {
                     menuImg.loadImg(url: url)
@@ -203,6 +203,10 @@ class MenuDetailViewController: UIViewController {
         
         reviewRegisterVC.reviewClosure = {
             self.receiveReviewData()
+            guard let menuReviewCnt = self.menuReviews?.count else { return }
+            if menuReviewCnt > 1 {
+                self.reviewCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .left, animated: false)
+            }
         }
     }
     
@@ -231,28 +235,9 @@ class MenuDetailViewController: UIViewController {
     
 }
 
-extension UICollectionView {
-    func setEmptyMessage() {
-        print(#fileID, #function, #line, "- setEmptyMessage")
-        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
-            messageLabel.text = "아직 리뷰가 없습니다🥺 \n리뷰나 자신만의 꿀팁을 남겨주세요!❤️"
-            messageLabel.textColor = .black
-            messageLabel.numberOfLines = 0
-            messageLabel.textAlignment = .center
-            messageLabel.font = .systemFont(ofSize: 15)
-            messageLabel.sizeToFit()
-
-            self.backgroundView = messageLabel
-    }
-    
-    func restore() {
-        self.backgroundView = nil
-    }
-}
-
 //MARK: - 콜렉션 뷰 dataSource관련 함수
 extension MenuDetailViewController: UICollectionViewDataSource {
-    //한개의 section에 몇개의 데이터가 들어갈건지 정해주기
+    //MARK: - 한개의 section에 몇개의 데이터가 들어갈건지 정해주기
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let menuReviews = menuReviews {
             if menuReviews.isEmpty {
@@ -284,6 +269,7 @@ extension MenuDetailViewController: UICollectionViewDataSource {
         
         reviewCell.reviewCompainBtnClosure = openModal(_:_:_:_:)
         reviewCell.reviewEditBtnClosure = reviewEdit(_:_:_:_:)
+        reviewCell.reviewDeleteBtnClosure = reviewDelete(_:)
 
         return reviewCell
     }
@@ -307,6 +293,13 @@ extension MenuDetailViewController{
         modalVC.reviewData = reviewData
         modalVC.modalType = modalType
         modalVC.firstLabelContent = reviewContent
+        
+        modalVC.collectionViewScrollToLeft = {
+            guard let menuReviewCnt = self.menuReviews?.count else { return }
+            if menuReviewCnt > 1 {
+                self.reviewCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .left, animated: false)
+            }
+        }
 
         self.present(modalVC, animated: true)
     }
@@ -329,14 +322,55 @@ extension MenuDetailViewController{
     }
     
     //MARK: - 리뷰 삭제하기
-    func reviewDelete(_ reviewPassword: String) {
+    func reviewDelete(_ reviewData: Review) {
+        guard let reviewPassword = reviewData.reviewPassword else { return }
         print(#fileID, #function, #line, "- reviewDelete", reviewPassword)
         
         guard let passwordVC = PasswordAlertViewController.getInstance() else { return }
         passwordVC.reviewPW = reviewPassword
         passwordVC.modalPresentationStyle = .overCurrentContext
         passwordVC.modalTransitionStyle = .crossDissolve
-//        passwordVC.checkBtnClosure =
+        
         self.present(passwordVC, animated: true)
+        
+        passwordVC.checkBtnClosure = {
+            let alert = UIAlertController(title: "리뷰 삭제", message: "작성하신 리뷰가 삭제됩니다🥺", preferredStyle: .alert)
+            
+            let okayAlertAction = UIAlertAction(title: "확인", style: .default) { _ in
+                print(#fileID, #function, #line, "- deleteReviewData")
+                self.reviewDeleteRequest(reviewData)
+            }
+            
+            let cancelAlertAction = UIAlertAction(title: "취소", style: .destructive) { _ in
+                self.dismiss(animated: true)
+            }
+            
+            alert.addAction(cancelAlertAction)
+            alert.addAction(okayAlertAction)
+            self.present(alert, animated: true)
+        }
+    }
+    
+    //MARK: - fireStore로 리뷰 삭제 요청 보내기
+    func reviewDeleteRequest(_ reviewData: Review) {
+        guard let menuId = reviewData.menuId,
+              let reviewId = reviewData.reviewId,
+              let reviewPassword = reviewData.reviewPassword,
+              let reviewStar = reviewData.reviewStar,
+              let reviewContent = reviewData.review else { return }
+        
+        let originalReview : [String : String] = [
+            "menuId" : menuId,
+            "review" : reviewContent,
+            "reviewId" : reviewId,
+            "reviewStar": reviewStar,
+            "reviewPassword": reviewPassword
+        ]
+        
+        print(#fileID, #function, #line, "- updateReview()\(reviewId)")
+        let reviewRemoveRequest = db.collection("reviews").document(self.menuId)
+        reviewRemoveRequest.updateData([
+            "reviews": FieldValue.arrayRemove([originalReview])
+        ])
     }
 }

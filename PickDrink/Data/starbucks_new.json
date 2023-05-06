@@ -1,0 +1,27 @@
+{
+    "starbucks_menus": {
+        "starbucks_Earl_grey_cacao_choco_cream_frappuccino": {
+            "menu_category": "frappuccino",
+            "menu_imgUrl": [
+                "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_earl_grey_cacao_choco_cream.jpeg?alt=media&token=cb856633-b629-4f8f-9f15-7dd6ba4ab55d"
+            ],
+            "menu_iceOrHot": 1,
+            "menu_name": "얼 그레이 카카오 초코 프라푸치노",
+            "menu_price": "6500(T)",
+            "menu_sizes": "Tall",
+            "menu_nutrition_standard": "Tall",
+            "menu_seasonOnly": true,
+            "menu_allergy": "우유, 대두, 밀",
+            "etc": "카카오톡 선물하기 전용 음료",
+            "menu_description": "바리스타가 된 춘식이 초콜릿 토핑과 카카오 초콜릿 칩, 그리고 티바나 얼그레이 티를 더해 누구나 특별한 달콤한을 즐길 수 있는 프라푸치노 음료입니다.",
+            "nutritionInfo": {
+                "calorie": "395(I)",
+                "caffeine": "54(I)",
+                "salt": "140(I)",
+                "sugar": "50(I)",
+                "protein": "5(I)",
+                "fat": "12(I)"
+            }
+        }
+    }
+}

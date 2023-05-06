@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class ListTableViewCell: UITableViewCell {
+    @IBOutlet weak var listView: UIView!
     @IBOutlet weak var listLabel: UILabel!
     
     override class func awakeFromNib() {

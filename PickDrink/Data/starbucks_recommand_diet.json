@@ -1,0 +1,180 @@
+{
+    "starbucks_recommands": {
+        "diet": {
+            "cafe_id": "starbucks",
+            "recommand_id": "starbucks_diet",
+            "recommand_name": "다이어터",
+            "recommand_menus": {
+                "espresso": [
+                    {
+                        "menu_id": "starbucks_espresso",
+                        "menu_name": "에스프레소"
+                    },
+                    {
+                        "menu_id": "starbucks_espresso_con_panna",
+                        "menu_name": "에스프레소 콘 파냐"
+                    },
+                    {
+                        "menu_id": "starbucks_espresso_macchiato",
+                        "menu_name": "에스프레소 마키야또"
+                    },
+                    {
+                        "menu_id": "starbucks_vanilla_double_shot",
+                        "menu_name": "바닐라 스타벅스 더블 샷"
+                    },
+                    {
+                        "menu_id": "starbucks_hazelnut_double_shot",
+                        "menu_name": "헤이즐넛 스타벅스 더블 샷"
+                    },
+                    {
+                        "menu_id": "starbucks_americano",
+                        "menu_name": "아메리카노"
+                    },
+                    {
+                        "menu_id": "starbucks_caffe_latte",
+                        "menu_name": "카페라떼"
+                    },
+                    {
+                        "menu_id": "starbucks_cappuccino",
+                        "menu_name": "카푸치노"
+                    },
+                    {
+                        "menu_id": "starbucks_double_shot",
+                        "menu_name": "스타벅스 더블 샷"
+                    },
+                    {
+                        "menu_id": "starbucks_brown_sugar_oat_Shaken_espresso",
+                        "menu_name": "브라운 슈가 오트 쉐이큰 에스프레소"
+                    }
+                ],
+                "blended": [
+                    {
+                        "menu_id": "starbucks_mango_passion_tea_blended",
+                        "menu_name": "망고 패션 티 블렌디드"
+                    },
+                    {
+                        "menu_id": "starbucks_light_kiwi_lime_blended",
+                        "menu_name": "라이트 키위 라임 블렌디드"
+                    }
+                ],
+                "coldbrew": [
+                    {
+                        "menu_id": "starbucks_nitro_vanilla_cream",
+                        "menu_name": "나이트로 바닐라 크림"
+                    },
+                    {
+                        "menu_id": "starbucks_reserve_nitruo",
+                        "menu_name": "리저브 나이트로"
+                    },
+                    {
+                        "menu_id": "starbucks_nitro_coldbrew",
+                        "menu_name": "나이트로 콜드 브루"
+                    },
+                    {
+                        "menu_id": "starbucks_reserve_coldbrew",
+                        "menu_name": "리저브 콜드 브루"
+                    },
+                    {
+                        "menu_id": "starbucks_mint_coldbrew",
+                        "menu_name": "민트 콜드 브루"
+                    },
+                    {
+                        "menu_id": "starbucks_vanilla_cream_coldbrew",
+                        "menu_name": "바닐라 크림 콜드 브루"
+                    },
+                    {
+                        "menu_id": "starbucks_coldbrew",
+                        "menu_name": "콜드 브루"
+                    },
+                    {
+                        "menu_id": "starbucks_coldbrew_with_oat",
+                        "menu_name": "콜드 브루 오트 라떼"
+                    }
+                ],
+                "brewedcoffee": [
+                    {
+                        "menu_id": "starbucks_brewed_coffee",
+                        "menu_name": "오늘의 커피"
+                    },
+                    {
+                        "menu_id": "starbucks_iced_coffee",
+                        "menu_name": "아이스 커피"
+                    }
+                ],
+                "fizzio": [
+                    {
+                        "menu_id": "starbucks_cool_lime_fizzio",
+                        "menu_name": "쿨 라임 피지오"
+                    },
+                    {
+                        "menu_id": "starbucks_black_tea_lemonade_fizzio",
+                        "menu_name": "블랙 티 레모네이트 피지오"
+                    },
+                    {
+                        "menu_id": "starbucks_passion_tango_tea_lemonade_fizzio",
+                        "menu_name": "패션 탱고 티 레모네이드 피지오"
+                    }
+                ],
+                "frappuccino": [
+                    {
+                        "menu_id": "starbucks_esrpesso_frappuccino",
+                        "menu_name": "에스프레소 프라푸치노"
+                    }
+                ],
+                "refresher": [
+                    {
+                        "menu_id": "starbucks_strawberry_acai_with_lemonade",
+                        "menu_name": "딸기 아사이 레모네이드 스타벅스 리프레셔"
+                    },
+                    {
+                        "menu_id": "starbucks_pink_drink_with_strawberry_acai",
+                        "menu_name": "핑크 드링크 위드 딸기 아사이 스타벅스 리프레셔"
+                    },
+                    {
+                        "menu_id": "starbucks_mango_dragonfruit_with_lemonade",
+                        "menu_name": "망고 용과 레모네이드 스타벅스 리프레셔"
+                    },
+                    {
+                        "menu_id": "starbucks_purple_drink_with_mango_dragonfruit",
+                        "menu_name": "퍼플 드링크 위드 망고 용과 스타벅스 리프레셔"
+                    }
+                ],
+                "tea": [
+                    {
+                        "menu_id": "starbucks_youthberry_brewed_tea",
+                        "menu_name": "유스베리 티"
+                    },
+                    {
+                        "menu_id": "starbucks_grapefruit_honey_black_tea",
+                        "menu_name": "자몽 허니 블랙 티"
+                    },
+                    {
+                        "menu_id": "starbucks_mint_blended_brewed_tea",
+                        "menu_name": "민트 블랙 티"
+                    },
+                    {
+                        "menu_id": "starbucks_earl_grey_brewed_tea",
+                        "menu_name": "얼 그레이 티"
+                    },
+                    {
+                        "menu_id": "starbucks_english_breakfast_brewed_tea",
+                        "menu_name": "잉글리쉬 브렉퍼스트 티"
+                    },
+                    {
+                        "menu_id": "starbucks_jeju_organic_green_tea",
+                        "menu_name": "제주 유기 녹차"
+                    },
+                    {
+                        "menu_id": "starbucks_chamomile_blended_brewed_tea",
+                        "menu_name": "캐모마일 블렌드 티"
+                    },
+                    {
+                        "menu_id": "starbucks_hibiscus_blend_brewed_tea",
+                        "menu_name": "히비스커스 블렌드 티"
+                    }
+                ],
+                "etcDrink": []
+            }
+        }
+    }
+}

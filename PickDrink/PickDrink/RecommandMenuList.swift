@@ -7,14 +7,30 @@
 
 import Foundation
 import UIKit
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class RecommandMenuList: UIViewController {
-    let recommandList: [String] = ["다이어터", "달달구리", "논 카페인", "신메뉴"]
+    let db = Firestore.firestore()
     
-    let menuList: [[String]] = [["아메리카노", "카페라떼", "바닐라라떼", "헤이즐럿라떼", "카라멜마끼야또"], ["초코라떼", "오곡라떼", "밤라떼", "밀크티"],["자몽에이드", "오렌지에이드", "레몬에이드", "청포도에이드"], ["자몽주스", "오렌지주스", "딸기주스", "딸기바나나주스", "블루베리 주스"], ["루이보스", "캐모마일", "얼그레이", "히비스커스"]]
-    
-    let menuListSectionString: [String] = ["espresso", "Non-espresso", "Ade", "Juicy", "Tea"]
     var navigationBarTitle: String = ""
+    var cafeId: String  = ""
+    var recommandList: [String] = ["다이어트", "신메뉴", "인기⭐️", "논-카페인"]
+    var recommandId: String = "diet"
+    //menuCategory의 인덱스 순서대로 menuList에 저장
+    var menuCategory: [String] = ["espresso", "coldbrew", "frappuccino", "fizzio", "tea", "refresher", "blended", "brewedcoffee", "etcDrink"]
+    
+    //menuList[0] = espresso 메뉴들
+    //menuList[1] = coldbrew 메뉴들
+    //menuList[2] = frappuccino 메뉴들(프라페, 할리치노 등)
+    //menuList[3] = fizzio 메뉴들(에이드)
+    //menuList[4] = tea 메뉴들
+    //menuList[5] = refresher 메뉴들
+    //menuList[6] = blended 메뉴들(스무디, 주스)
+    //menuList[7] = brewedCoffee 메뉴들
+    //menuList[8] = etcDrink 메뉴들
+    var menuList: [[CafeMenuComposition]] = []
 
     @IBOutlet weak var recommandStackView: UIStackView!
     @IBOutlet weak var recommanListTableView: UITableView!
@@ -23,11 +39,13 @@ class RecommandMenuList: UIViewController {
         super.viewDidLoad()
         setNavigationBar()
         recommandBtnSetting(recommandList)
+        requestRecommand()
         recommanListTableView.dataSource = self
         recommanListTableView.delegate = self
         
         //tableview에 셀등록
         recommanListTableView.register(ListTableViewCell.uiNib, forCellReuseIdentifier: ListTableViewCell.reuseIdentifier)
+        requestRecommand()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,7 +76,17 @@ class RecommandMenuList: UIViewController {
     }
     
     //MARK: - 추천대상 버튼 클릭
-    @objc fileprivate func recommandBtnSelected(_ sender: UIButton) {
+    @objc fileprivate func recommandBtnSelected(_ sender: MyStackBtn) {
+        if let id = sender.titleLabel?.text {
+            switch id {
+            case "신메뉴" : recommandId = "new"
+            case "다이어트" : recommandId = "diet"
+            case "논-카페인" : recommandId = "non_caffeine"
+            case "인기⭐️" : recommandId = "best"
+            default: return
+            }
+        }
+        requestRecommand()
         recommandStackView.arrangedSubviews.map { btn in
             if btn.tag == sender.tag {
                 btn.backgroundColor = UIColor(named: "recommandSelectedBtnColor")
@@ -66,18 +94,55 @@ class RecommandMenuList: UIViewController {
                 btn.backgroundColor = UIColor(named: "recommandBtnColor")
             }
         }
+        
+    }
+    
+    private func requestRecommand() {
+        let collection = cafeId + "_recommands"
+        let recommandDocRef = db.collection(collection).document(recommandId)
+        
+        recommandDocRef.getDocument(as: Recommand.self) { result in
+            switch result {
+            case .success(let recommand):
+                self.menuList = Array(repeating: [], count: self.menuCategory.count)
+                print(#fileID, #function, #line, "- recommadMenusList: \(recommand.recommandMenus)")
+                if let menus = recommand.recommandMenus {
+                    self.menuList[0] = menus.espresso
+                    self.menuList[1] = menus.coldbrew
+                    self.menuList[2] = menus.frappuccino
+                    self.menuList[3] = menus.fizzio
+                    self.menuList[4] = menus.tea
+                    self.menuList[5] = menus.refresher
+                    self.menuList[6] = menus.blended
+                    self.menuList[7] = menus.brewedcoffee
+                    self.menuList[8] = menus.etcDrink
+                }
+            case .failure(let err):
+                print(#fileID, #function, #line, "- err: \(err)")
+            }
+            self.recommanListTableView.reloadData()
+            if self.menuList.count != 0 {
+                self.recommanListTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+            }
+        }
+        
     }
 }
 
-
 extension RecommandMenuList: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return menuListSectionString.count
+        return menuCategory.count
     }
     //한 섹션에 몇개의 로우가 들어가는 지
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(#fileID, #function, #line, "- menuList.count: \(menuList[section].count)")
-        return menuList[section].count
+        print(#fileID, #function, #line, "- menuList: \(menuList.isEmpty)")
+        if menuList.isEmpty {
+            self.recommanListTableView.setEmptyMessage()
+            return 0
+        } else {
+            self.recommanListTableView.restore()
+            return menuList[section].count == 0 ? 1 : menuList[section].count
+        }
     }
     
     //섹션별로 어떤 cell이 들어가는지
@@ -89,7 +154,25 @@ extension RecommandMenuList: UITableViewDataSource {
         let sectionIndex = indexPath.section
         let rowIndex = indexPath.row
         
-        recruitCell.listLabel.text = menuList[sectionIndex][rowIndex]
+        let category = menuCategory[sectionIndex]
+        var categoryKorean = ""
+        
+        switch cafeId {
+        case "starbucks":
+            categoryKorean = MenuCategory.starbucksKoreaName(category)
+        default:
+            categoryKorean = ""
+        }
+        
+        if menuList[sectionIndex].count == 0 {
+            recruitCell.listLabel.text = "\(categoryKorean)에 해당하는 메뉴는 없습니다"
+            recruitCell.listLabel.textColor = UIColor(named: "reviewTextViewCntLabel")
+            recruitCell.listLabel.font = UIFont.systemFont(ofSize: 13)
+        } else {
+            recruitCell.listLabel.text = menuList[sectionIndex][rowIndex].menuName
+            recruitCell.listLabel.textColor = .black
+            recruitCell.listLabel.font = UIFont.systemFont(ofSize: 17)
+        }
         
         return recruitCell
     }
@@ -100,16 +183,26 @@ extension RecommandMenuList: UITableViewDataSource {
 extension RecommandMenuList: UITableViewDelegate {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         print(#fileID, #function, #line, "- section: \(section)")
+        let englishName = menuCategory[section]
         
-        return menuListSectionString[section]
+        switch cafeId {
+        case "starbucks": return MenuCategory.starbucksKoreaName(englishName)
+        default: return ""
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(#fileID, #function, #line, "- comment")
         
         guard let menuDetailVC = MenuDetailViewController.getInstance() else { return }
-        menuDetailVC.menuId = menuList[indexPath.section][indexPath.row]
+        if menuList[indexPath.section].count != 0 {
+            if let menuId = menuList[indexPath.section][indexPath.row].menuId {
+                menuDetailVC.cafeId = self.cafeId
+                menuDetailVC.menuId = menuId
+                
+                self.navigationController?.pushViewController(menuDetailVC, animated: true)
+            }
+        }
         
-        self.navigationController?.pushViewController(menuDetailVC, animated: true)
     }
 }

@@ -39,29 +39,29 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iqe-jR-1rx">
-                                        <rect key="frame" x="10" y="140" width="323" height="200"/>
+                                        <rect key="frame" x="10" y="140" width="323" height="150"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="yHY-qh-b24"/>
+                                            <constraint firstAttribute="height" constant="150" id="yHY-qh-b24"/>
                                         </constraints>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3X-jq-Wef">
-                                        <rect key="frame" x="286" y="350" width="47" height="18"/>
+                                        <rect key="frame" x="286" y="300" width="47" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" name="reviewTextViewCntLabel"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주의❗️ 검토 후 타당하지 않으면 접수가 반려될 수 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucN-oo-4Fg">
-                                        <rect key="frame" x="10" y="390" width="309" height="15.666666666666686"/>
+                                        <rect key="frame" x="10" y="340" width="309" height="15.666666666666686"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDP-Zp-H8h">
-                                        <rect key="frame" x="89" y="420.66666666666663" width="165" height="40"/>
+                                        <rect key="frame" x="89" y="370.66666666666663" width="165" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="165" id="Mh0-zg-e5u"/>
                                             <constraint firstAttribute="height" constant="40" id="yON-ED-vgp"/>

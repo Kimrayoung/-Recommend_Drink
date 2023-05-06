@@ -63,6 +63,40 @@ struct CafeMenuComposition: Codable {
     }
 }
 
+struct CafeRecommands: Codable {
+    let starbucksRecommands: RecommandCategory?
+    
+    enum CodingKeys: String, CodingKey {
+        case starbucksRecommands = "starbucks_recommands"
+    }
+}
+
+struct RecommandCategory: Codable {
+    let diet: Recommand?
+    let new: Recommand?
+    let nonCaffeine: Recommand?
+    let best: Recommand?
+    
+    enum CodingKeys: String, CodingKey {
+        case diet, new, best
+        case nonCaffeine = "non_caffeine"
+    }
+}
+
+struct Recommand: Codable {
+    let cafeId: String?
+    let recommandId: String?
+    let recommandName: String?
+    let recommandMenus: MenuCategory?
+    
+    enum CodingKeys: String, CodingKey {
+        case cafeId = "cafe_id"
+        case recommandId = "recommand_id"
+        case recommandName = "recommand_name"
+        case recommandMenus = "recommand_menus"
+    }
+}
+
 struct MenuDetail: Codable {
     let name: String?
     let imgUrl: [String]?

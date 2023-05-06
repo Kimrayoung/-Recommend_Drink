@@ -11,22 +11,27 @@ import UIKit
 /// 리뷰 collection에 들어갈 cell
 class ReviewCell: UICollectionViewCell {
     
+    @IBOutlet weak var reviewCell: UIView!
     @IBOutlet weak var reviewStarImageView: UIImageView!
     @IBOutlet weak var reviewContentLabel: UILabel!
     @IBOutlet weak var reviewEditBtn: UIButton!
     @IBOutlet weak var reviewDeleteBtn: UIButton!
     @IBOutlet weak var reviewComplainBtn: UIButton!
+    
     var reviewData: Review? = nil
     var reviewIndex: Int? = nil
     
     var reviewCompainBtnClosure: ((_ reviewContent: String, _ modalType: Modal, _ reviewData: Review, _ reviewIndex: Int) -> ())? = nil
     var reviewEditBtnClosure: ((_ reviewContent: String, _ modalType: Modal, _ reviewData: Review, _ reviewIndex: Int) -> ())? = nil
+    var reviewDeleteBtnClosure: ((_ reviewData: Review) -> ())? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
         reviewComplainBtn.addTarget(self, action: #selector(reviewComplainBtnClicked(_:)), for: .touchUpInside)
         
         reviewEditBtn.addTarget(self, action: #selector(reviewEditBtnClicked(_:)), for: .touchUpInside)
+        
+        reviewDeleteBtn.addTarget(self, action: #selector(reviewDeleteBtnClicked(_:)), for: .touchUpInside)
     }
     
     //MARK: - 리뷰 신고하기 버튼 클릭
@@ -54,6 +59,14 @@ class ReviewCell: UICollectionViewCell {
               let reviewData = reviewData else { return }
         
         reviewEditBtnClosure(reviewContent, .editReview, reviewData, reviewIndex)
+    }
+    
+    @objc private func reviewDeleteBtnClicked(_ sender: UIButton) {
+        print(#fileID, #function, #line, "- reviewDeleteBtn")
+        guard let reviewDeleteBtnClosure = reviewDeleteBtnClosure,
+              let reviewData = reviewData else { return }
+        
+        reviewDeleteBtnClosure(reviewData)
     }
     
 }

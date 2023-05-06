@@ -79,6 +79,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="reviewCell" destination="e0b-JX-B2s" id="Fhj-hH-g6z"/>
                 <outlet property="reviewComplainBtn" destination="dAm-EM-7E8" id="s3p-Xa-ED6"/>
                 <outlet property="reviewContentLabel" destination="f0t-dg-oYo" id="CJB-ux-W6Z"/>
                 <outlet property="reviewDeleteBtn" destination="nYY-qz-Czq" id="ZkD-8D-b9J"/>

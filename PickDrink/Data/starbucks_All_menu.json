@@ -97,7 +97,7 @@
             "menu_imgUrl": [
                 "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_vanilla_double_shot.jpeg?alt=media&token=b8e793fb-fab0-4021-8fc5-4c72a15f8c03"
             ],
-            "menu_iceOrHot": 2,
+            "menu_iceOrHot": 1,
             "menu_name": "바닐라 스타벅스 더블 샷",
             "menu_price": "5100(7oz)",
             "menu_sizes": "207ml(7oz)",
@@ -120,7 +120,7 @@
             "menu_imgUrl": [
                 "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_Hazelnut_Starbucks_Double_Shot.jpeg?alt=media&token=26c435d6-00ed-4d6c-ad40-27b6c80e7dc5"
             ],
-            "menu_iceOrHot": 0,
+            "menu_iceOrHot": 1,
             "menu_name": "헤이즐넛 스타벅스 더블샷",
             "menu_price": "5100(7oz)",
             "menu_sizes": "207ml(7oz)",
@@ -167,7 +167,7 @@
             "menu_imgUrl": [
                 "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_double_shot.jpeg?alt=media&token=21bc818b-8ca8-4832-a08c-c2e9c2eb1cb7"
             ],
-            "menu_iceOrHot": 0,
+            "menu_iceOrHot": 1,
             "menu_name": "스타벅스 더블샷",
             "menu_price": "5100(7oz)",
             "menu_sizes": "207ml(7oz)",
@@ -421,27 +421,6 @@
                 "sugar": "35(I)/39(H)",
                 "protein": "10(I)/12(H)",
                 "fat": "2.5(I)/2.6(H)"
-            }
-        },
-        "starbucks_jeju_forest_mugwort_latte": {
-            "menu_category": "espresso",
-            "menu_imgUrl": null,
-            "menu_iceOrHot": 2,
-            "menu_name": "제주 사려니 쑥길 라떼",
-            "menu_price": "7200(G)",
-            "menu_sizes": "Grande",
-            "menu_nutrition_standard": "Grande",
-            "menu_seasonOnly": false,
-            "menu_allergy": "대두, 우유",
-            "etc": "제주 only",
-            "menu_description": "화산송이가 덮혀진 검붉은 토양과 숲이 어우러진 제주 사려니 숲길을 표현한 음료로 국내산 쑥과 오트 음료를 이용하여 제주에서만 특별히 즐기는 아인슈페너 타입의 쑥&커피 음료",
-            "nutritionInfo": {
-                "calorie": null,
-                "caffeine": null,
-                "salt": null,
-                "sugar": null,
-                "protein": null,
-                "fat": null
             }
         },
         "starbucks_caffe_latte": {
@@ -2164,29 +2143,6 @@
                 "fat": "0(I)"
             }
         },
-        "starbucks_spring_strawberry_milk": {
-            "menu_category": "etc_drink",
-            "menu_imgUrl": [
-                "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_strawBerry_latte.jpeg?alt=media&token=29bb4482-3d31-460e-901d-797e17e5ded0"
-            ],
-            "menu_iceOrHot": 1,
-            "menu_name": "봄 딸기 라떼",
-            "menu_price": "6900(G)",
-            "menu_sizes": "Grande",
-            "menu_nutrition_standard": "Grande",
-            "menu_seasonOnly": true,
-            "menu_allergy": "우유",
-            "etc": null,
-            "menu_description": "상큼한 봄 딸기와 신선한 우유가 만나 부드럽고 달콤한 풍미를 느낄 수 있는 음료. 국내산 제철 딸기의 신선함을 가득 담은 스타벅스의 딸기 음료를 다양한 식물성 옵션(코코넛, 오트)을 선택하여 새로운 조합의 봄 딸기 라떼를 즐겨보세요.",
-            "nutritionInfo": {
-                "calorie": "225(I)",
-                "caffeine": "0(I)",
-                "salt": "75(I)",
-                "sugar": "39(I)",
-                "protein": "5(I)",
-                "fat": "2.9(I)"
-            }
-        },
         "starbucks_signature_chocolate": {
             "menu_category": "etc_drink",
             "menu_imgUrl": [
@@ -2304,6 +2260,167 @@
                 "sugar": "45(I)/49(H)",
                 "protein": "10(I)/13(H)",
                 "fat": "11(I)/7(H)"
+            }
+        },
+        "starbucks_plum_sunset_youthberry_tea": {
+            "menu_category": "tea",
+            "menu_imgUrl": [
+                "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_plum_sunset_youthberry_tea.jpeg?alt=media&token=c2b13c2d-473d-42db-928b-337e7a61ade1"
+            ],
+            "menu_iceOrHot": 1,
+            "menu_name": "플럼 선셋 유스베리 티",
+            "menu_price": "6800(G)",
+            "menu_sizes": "Grande",
+            "menu_nutrition_standard": "Grande",
+            "menu_seasonOnly": true,
+            "menu_allergy": "복숭아",
+            "etc": null,
+            "menu_description": "익숙한 자두와 상큼한 유스베리 티의 조합으로 일상적이지만 아름답고 특별한 선셋을 표현한 음료",
+            "nutritionInfo": {
+                "calorie": "175(I)",
+                "caffeine": "8(I)",
+                "salt": "10(I)",
+                "sugar": "36(I)",
+                "protein": "0(I)",
+                "fat": "0(I)"
+            }
+        },
+        "starbucks_jeju_hallabong_malcha_blended": {
+            "menu_category": "tea",
+            "menu_imgUrl": [
+                "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_jeju_hallabong_malcha_blended.jpeg?alt=media&token=53d37646-e479-46dd-a837-0aa1ffd84b10"
+            ],
+            "menu_iceOrHot": 1,
+            "menu_name": "제주 한라봉 말차 블렌디드",
+            "menu_price": "6800(G)",
+            "menu_sizes": "Grande",
+            "menu_nutrition_standard": "Grande",
+            "menu_seasonOnly": true,
+            "menu_allergy": null,
+            "etc": null,
+            "menu_description": "청정한 제주를 느낄 수 있도록 제주산 말차, 한라봉을 사용한 시원하고 달콤한 프로즌 티",
+            "nutritionInfo": {
+                "calorie": "330(I)",
+                "caffeine": "30(I)",
+                "salt": "35(I)",
+                "sugar": "77(I)",
+                "protein": "2(I)",
+                "fat": "0(I)"
+            }
+        },
+        "starbucks_mango_dragonfruit_with_lemonade": {
+            "menu_category": "refresher",
+            "menu_imgUrl": [
+                "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_mango_dragon_lemonade_refresher.jpeg?alt=media&token=6c9757bf-a62c-4e47-bc35-c0e71319097a"
+            ],
+            "menu_iceOrHot": 1,
+            "menu_name": "망고 용과 레모네이드 스타벅스 리프레셔",
+            "menu_price": "5900(T)/ 6400(G)/ 6900(V)",
+            "menu_sizes": "Tall/ Grande/ Venti",
+            "menu_nutrition_standard": "Tall",
+            "menu_seasonOnly": false,
+            "menu_allergy": null,
+            "etc": null,
+            "menu_description": "망고 용과와 레모네이드가 달콤 상큼하게 조화된 맛에 가볍게 에너지 부스팅을 할 수 있는 음료",
+            "nutritionInfo": {
+                "calorie": "95(I)",
+                "caffeine": "25(I)",
+                "salt": "35(I)",
+                "sugar": "23(I)",
+                "protein": "0(I)",
+                "fat": "0(I)"
+            }
+        },
+        "starbucks_purple_drink_with_mango_dragonfruit": {
+            "menu_category": "refresher",
+            "menu_imgUrl": [
+                "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_purple_drink_with_mango_dragon_refresher.jpeg?alt=media&token=34890e4f-16e8-4a5e-92e2-3105c8e1a9f3"
+            ],
+            "menu_iceOrHot": 1,
+            "menu_name": "퍼플 드링크 위드 망고 용과 스타벅스 리프레셔",
+            "menu_price": "5900(T)/ 6400(G)/ 6900(V)",
+            "menu_sizes": "Tall/ Grande/ Venti",
+            "menu_nutrition_standard": "Tall",
+            "menu_seasonOnly": false,
+            "menu_allergy": null,
+            "etc": null,
+            "menu_description": "망고 용과와 코코넛 밀크가 달콤하고 부드럽게 조화된 맛에 가볍게 에너지 부스팅을 할 수 있는 음료",
+            "nutritionInfo": {
+                "calorie": "90(I)",
+                "caffeine": "25(I)",
+                "salt": "70(I)",
+                "sugar": "16(I)",
+                "protein": "0(I)",
+                "fat": "0(I)"
+            }
+        },
+        "starbucks_vanilla_bean_pudding_blended_with_coldbrew": {
+            "menu_category": "blended",
+            "menu_imgUrl": [
+                "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_vanilla_bean_pudding_blended_with_coldbrew.jpeg?alt=media&token=84f4ad31-2275-49ec-bdb4-7de7983d9941"
+            ],
+            "menu_iceOrHot": 1,
+            "menu_name": "바닐라 빈 푸딩 블렌디드 위드 콜드 브루",
+            "menu_price": "6300(T)/ 6800(G)/ 7300(V)",
+            "menu_sizes": "Tall/ Grande/ Venti",
+            "menu_nutrition_standard": "Tall",
+            "menu_seasonOnly": false,
+            "menu_allergy": null,
+            "etc": null,
+            "menu_description": "바닐라 빈이 콕콕 박힌 부드러운 푸딩과 산뜻한 콜드 브루의 만남! 진한 바닐라 풍미를 느낄 수 있는 커피 블렌디드",
+            "nutritionInfo": {
+                "calorie": "365(I)",
+                "caffeine": "109(I)",
+                "salt": "240(I)",
+                "sugar": "44(I)",
+                "protein": "10(I)",
+                "fat": "7(I)"
+            }
+        },
+        "starbucks_light_kiwi_lime_blended": {
+            "menu_category": "blended",
+            "menu_imgUrl": [
+                "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_light_kiwi_lime_blended.jpeg?alt=media&token=de276018-bbd0-4b32-bc65-5fcba624b24e"
+            ],
+            "menu_iceOrHot": 1,
+            "menu_name": "라이트 키위 라임 블렌디드",
+            "menu_price": "6300(T)/ 6800(G)/ 7300(V)",
+            "menu_sizes": "Tall/ Grande/ Venti",
+            "menu_nutrition_standard": "Tall",
+            "menu_seasonOnly": false,
+            "menu_allergy": null,
+            "etc": "취향에 따라 클래식 시럽을 무료로 추가 하실 수 있습니다. \n천연 대체 감미료 함유되어 더욱 라이트하게 즐기실 수 있습니다.",
+            "menu_description": "여름의 나름함을 짜릿하게 날려버릴 블렌디드 \n새콤한 키위 라임과 곤약 젤리로 가볍게 리프레쉬 할 수 있는 음료",
+            "nutritionInfo": {
+                "calorie": "100(I)",
+                "caffeine": "0(I)",
+                "salt": "70(I)",
+                "sugar": "25(I)",
+                "protein": "1(I)",
+                "fat": "0(I)"
+            }
+        },
+        "starbucks_Earl_grey_cacao_choco_cream_frappuccino": {
+            "menu_category": "frappuccino",
+            "menu_imgUrl": [
+                "https://firebasestorage.googleapis.com/v0/b/pickdrink-492de.appspot.com/o/starbucks_earl_grey_cacao_choco_cream.jpeg?alt=media&token=cb856633-b629-4f8f-9f15-7dd6ba4ab55d"
+            ],
+            "menu_iceOrHot": 1,
+            "menu_name": "얼 그레이 카카오 초코 프라푸치노",
+            "menu_price": "6500(T)",
+            "menu_sizes": "Tall",
+            "menu_nutrition_standard": "Tall",
+            "menu_seasonOnly": true,
+            "menu_allergy": "우유, 대두, 밀",
+            "etc": "카카오톡 선물하기 전용 음료",
+            "menu_description": "바리스타가 된 춘식이 초콜릿 토핑과 카카오 초콜릿 칩, 그리고 티바나 얼그레이 티를 더해 누구나 특별한 달콤한을 즐길 수 있는 프라푸치노 음료입니다.",
+            "nutritionInfo": {
+                "calorie": "395(I)",
+                "caffeine": "54(I)",
+                "salt": "140(I)",
+                "sugar": "50(I)",
+                "protein": "5(I)",
+                "fat": "12(I)"
             }
         }
     }

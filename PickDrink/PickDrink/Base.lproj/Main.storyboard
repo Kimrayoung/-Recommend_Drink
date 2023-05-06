@@ -63,7 +63,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGA-AA-sNx">
-                                <rect key="frame" x="5" y="84.5" width="383" height="40"/>
+                                <rect key="frame" x="5" y="84.5" width="308" height="40"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6zw-Lu-hig">
                                         <rect key="frame" x="0.0" y="0.0" width="383" height="40"/>
@@ -117,7 +117,6 @@
                             <constraint firstItem="QdR-fa-sRm" firstAttribute="leading" secondItem="ZyS-ky-mQa" secondAttribute="leading" constant="5" id="gzh-Ke-yGc"/>
                             <constraint firstItem="XLa-Fc-L8D" firstAttribute="top" secondItem="uGA-AA-sNx" secondAttribute="bottom" constant="10" id="i3b-nW-cN0"/>
                             <constraint firstItem="QdR-fa-sRm" firstAttribute="top" secondItem="uGA-AA-sNx" secondAttribute="bottom" constant="10" id="qiG-An-cIX"/>
-                            <constraint firstItem="uGA-AA-sNx" firstAttribute="centerX" secondItem="LzO-UR-Yve" secondAttribute="centerX" id="say-rZ-BX2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="62g-0O-7R9"/>
@@ -160,7 +159,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="97e-U2-dRT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -179,7 +178,7 @@
                     <tabBarItem key="tabBarItem" title="카페별 추천음료" image="list.bullet.clipboard" catalog="system" id="gTv-u6-D7F"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NQU-A7-NNX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

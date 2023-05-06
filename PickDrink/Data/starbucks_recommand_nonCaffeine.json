@@ -1,0 +1,122 @@
+{
+    "starbucks_recommands": {
+        "non_caffeine": {
+            "cafe_id": "starbucks",
+            "recommand_id": "starbucks_nonCaffeine",
+            "recommand_name": "논카페인",
+            "recommand_menus": {
+                "espresso": [],
+                "blended": [
+                    {
+                        "menu_id": "starbucks_basil_lemon_sherbet_blended",
+                        "menu_name": "바질 레몬 셔벗 블렌디드"
+                    },
+                    {
+                        "menu_id": "starbucks_jeju_golden_tangerine_blended",
+                        "menu_name": "제주 금귤 듬뿍 블렌디드"
+                    },
+                    {
+                        "menu_id": "starbucks_mango_passion_tea_blended",
+                        "menu_name": "망고 패션 티 블렌디드"
+                    },
+                    {
+                        "menu_id": "starbucks_strawberry_delight_yogurt_blended",
+                        "menu_name": "딸기 딜라이트 요거트 블렌디드"
+                    },
+                    {
+                        "menu_id": "starbucks_mango_banana_blended",
+                        "menu_name": "망고 바나나 블렌디드"
+                    },
+                    {
+                        "menu_id": "starbucks_mint_chocolate_chip_blended",
+                        "menu_name": "민트 초콜릿 칩 블렌디드"
+                    },
+                    {
+                        "menu_id": "starbucks_light_kiwi_lime_blended",
+                        "menu_name": "라이트 키위 라임 블렌디드"
+                    }
+                ],
+                "coldbrew": [],
+                "brewedcoffee": [],
+                "fizzio": [
+                    {
+                        "menu_id": "starbucks_yuja_passion_fizzio",
+                        "menu_name": "유자 패션 피지오"
+                    },
+                    {
+                        "menu_id": "starbucks_romantic_vin_chaud_fizzio",
+                        "menu_name": "로맨틱 뱅쇼 피지오"
+                    },
+                    {
+                        "menu_id": "starbucks_passion_tango_tea_lemonade_fizzio",
+                        "menu_name": "패션 탱고 티 레모네이드 피지오"
+                    }
+                ],
+                "frappuccino": [
+                    {
+                        "menu_id": "starbucks_vanilla_cream_frappuccino",
+                        "menu_name": "바닐라 크림 프라푸치노"
+                    },
+                    {
+                        "menu_id": "starbucks_jeju_black_sesame_cream_frappuccino",
+                        "menu_name": "제주 까망 크림 프라푸치노"
+                    },
+                    {
+                        "menu_id": "starbucks_jeju_mugwort_cream_frappuccino",
+                        "menu_name": "제주 쑥떡 크림 프라푸치노"
+                    },
+                    {
+                        "menu_id": "starbucks_white_tiger_frappuccino",
+                        "menu_name": "화이트 타이거 프라푸치노"
+                    }
+                ],
+                "refresher": [
+                    {
+                        "menu_id": "",
+                        "menu_name": ""
+                    }
+                ],
+                "tea": [
+                    {
+                        "menu_id": "starbucks_jeju_golden_tangerine_passion_tea",
+                        "menu_name": "제주 금귤 패션 티"
+                    },
+                    {
+                        "menu_id": "starbucks_mint_blended_brewed_tea",
+                        "menu_name": "민트 블렌드 티"
+                    },
+                    {
+                        "menu_id": "starbucks_yuja_mint_tea",
+                        "menu_name": "유자 민트 티"
+                    },
+                    {
+                        "menu_id": "starbucks_chamomile_blended_brewed_tea",
+                        "menu_name": "캐모마일 블렌드 티"
+                    },
+                    {
+                        "menu_id": "starbucks_hibiscus_blend_brewed_tea",
+                        "menu_name": "히비스커스 블렌드 티"
+                    }
+                ],
+                "etcDrink": [
+                    {
+                        "menu_id": "starbucks_fluffy_panda_chocolate",
+                        "menu_name": "플러피 판타 초콜릿"
+                    },
+                    {
+                        "menu_id": "starbucks_slammer",
+                        "menu_name": "스타벅스 슬래머"
+                    },
+                    {
+                        "menu_id": "starbucks_milk_nutritionInfo",
+                        "menu_name": "우유"
+                    },
+                    {
+                        "menu_id": "starbucks_black_seasaem_latte_nutritionInfo",
+                        "menu_name": "제주 까망 라떼"
+                    }
+                ]
+            }
+        }
+    }
+}

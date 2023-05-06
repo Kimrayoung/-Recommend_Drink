@@ -1,0 +1,57 @@
+{
+    "starbucks_recommands": {
+        "new": {
+            "cafe_id": "starbucks",
+            "recommand_id": "starbucks_new",
+            "recommand_name": "신메뉴",
+            "recommand_menus": {
+                "espresso": [],
+                "blended": [
+                    {
+                        "menu_id": "starbucks_vanilla_bean_pudding_blended_with_coldbrew",
+                        "menu_name": "바닐라 빈 푸딩 블렌디드 위드 콜드 브루"
+                    },
+                    {
+                        "menu_id": "starbucks_light_kiwi_lime_blended",
+                        "menu_name": "라이트 키위 라임 블렌디드"
+                    }
+                ],
+                "coldbrew": [
+                    {
+                        "menu_id": "starbucks_reserve_nitruo",
+                        "menu_name": "리저브 나이트로"
+                    }
+                ],
+                "brewedcoffee": [],
+                "fizzio": [],
+                "frappuccino": [
+                    {
+                        "menu_id": "starbucks_Earl_grey_cacao_choco_cream_frappuccino",
+                        "menu_name": "얼 그레이 카카오 초코 프라푸치노"
+                    }
+                ],
+                "refresher": [
+                    {
+                        "menu_id": "starbucks_mango_dragonfruit_with_lemonade",
+                        "menu_name": "망고 용과 레모네이드 스타벅스 리프레셔"
+                    },
+                    {
+                        "menu_id": "starbucks_purple_drink_with_mango_dragonfruit",
+                        "menu_name": "퍼플 드링크 위드 망고 용과 스타벅스 리프레셔"
+                    }
+                ],
+                "tea": [
+                    {
+                        "menu_id": "starbucks_plum_sunset_youthberry_tea",
+                        "menu_name": "플럼 선셋 유스베리 티"
+                    },
+                    {
+                        "menu_id": "starbucks_jeju_hallabong_malcha_blended",
+                        "menu_name": "제주 한라봉 말차 블렌디드"
+                    }
+                ],
+                "etcDrink": []
+            }
+        }
+    }
+}

@@ -83,6 +83,10 @@ class DrinkListMainViewController: UIViewController {
                 print(#fileID, #function, #line, "- Document does not exist: \(self.menuList)")
             }
             self.drinkListTableView.reloadData()
+            if self.menuList.count != 0 {
+                self.drinkListTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+            }
+            
         }
     }
     
@@ -125,26 +129,6 @@ class DrinkListMainViewController: UIViewController {
     
 }
 
-extension UITableView {
-    func setEmptyMessage() {
-        print(#fileID, #function, #line, "- setEmptyMessage")
-        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
-            messageLabel.text = "아직 데이터를 준비하지 못했습니다🥺 \n조금만 기다려주세요"
-            messageLabel.textColor = .black
-            messageLabel.numberOfLines = 0
-            messageLabel.textAlignment = .center
-            messageLabel.font = .systemFont(ofSize: 15)
-            messageLabel.sizeToFit()
-
-            self.backgroundView = messageLabel
-            self.separatorStyle = .none
-    }
-    func restore() {
-        self.backgroundView = nil
-        self.separatorStyle = .singleLine
-    }
-}
-
 extension DrinkListMainViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return menuCategory.count
@@ -181,8 +165,12 @@ extension DrinkListMainViewController: UITableViewDataSource {
         
         if menuList[sectionIndex].count == 0 {
             recruitCell.listLabel.text = "\(categoryKorean)에 해당하는 메뉴는 없습니다"
+            recruitCell.listLabel.textColor = UIColor(named: "reviewTextViewCntLabel")
+            recruitCell.listLabel.font = UIFont.systemFont(ofSize: 13)
         } else {
             recruitCell.listLabel.text = menuList[sectionIndex][rowIndex].menuName
+            recruitCell.listLabel.textColor = .black
+            recruitCell.listLabel.font = UIFont.systemFont(ofSize: 17)
         }
 
         return recruitCell
@@ -205,12 +193,14 @@ extension DrinkListMainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(#fileID, #function, #line, "- menuList's clicked menuCategory: \(cafeId + "_" + menuCategory[indexPath.section])")
         //메뉴 중에 하나를 클릭한다면 해당 메뉴를 기준으로 MenuDetailViewController가 열려야 한다
-        guard let menuDetailVC = MenuDetailViewController.getInstance(),
-              let menuId = menuList[indexPath.section][indexPath.row].menuId else { return }
-        
-        menuDetailVC.cafeId = self.cafeId
-        menuDetailVC.menuId = menuId
-
-        self.navigationController?.pushViewController(menuDetailVC, animated: true)
+        guard let menuDetailVC = MenuDetailViewController.getInstance() else { return }
+        if menuList[indexPath.section].count != 0 {
+            if let menuId = menuList[indexPath.section][indexPath.row].menuId {
+                menuDetailVC.cafeId = self.cafeId
+                menuDetailVC.menuId = menuId
+                
+                self.navigationController?.pushViewController(menuDetailVC, animated: true)
+            }
+        }
     }
 }

@@ -21,6 +21,7 @@ class ModalViewController: UIViewController {
     var modalType: Modal? = nil
     var firstLabelContent: String? = nil
     let textBorderColor = UIColor(named: "reviewTextViewColor")
+    var collectionViewScrollToLeft : (() -> ())? = nil
     
     @IBOutlet weak var modalView: UIView!
     @IBOutlet weak var firstTitleLabel: UILabel!
@@ -72,6 +73,8 @@ class ModalViewController: UIViewController {
         case .editReview:
             removeReview()
             addReview()
+            guard let collectionViewScrollToLeft = collectionViewScrollToLeft else { return }
+            collectionViewScrollToLeft()
         default: return
         }
     }
@@ -203,9 +206,6 @@ extension ModalViewController: UITextViewDelegate {
             modalTextViewCnt.text = "\(textView.text.count) / 100"
         }
 
-        if textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || textView.text == textViewPlaceHolder {
-            textView.text = textViewPlaceHolder
-        }
     }
     
 

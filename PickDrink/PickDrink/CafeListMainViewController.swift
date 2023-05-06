@@ -15,9 +15,9 @@ import FirebaseFirestoreSwift
 class CafeListMainViewController: UIViewController {
     let db = Firestore.firestore()
     
-    let cafeList: [String] = ["스타벅스", "투썸플레이스", "메가커피", "할리스", "탐앤탐스"]
+    let cafeList: [String] = ["스타벅스", "메가커피", "할리스", "탐앤탐스"]
     @IBOutlet weak var cafeListTableView: UITableView!
-    var categorie: String = "espresso"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,9 +61,21 @@ extension CafeListMainViewController: UITableViewDelegate {
         print(#fileID, #function, #line, "- indexPath: \(indexPath)")
         
         let indexRow = indexPath.row
+        let cafeName = cafeList[indexRow]
+        var cafeId: String = ""
+        
+        switch cafeName {
+        case "스타벅스": cafeId = "starbucks"
+        case "메가커피": cafeId = "mega"
+        case "할리스": cafeId = "hollys"
+        case "탐앤탐스": cafeId = "tomNtoms"
+        default: cafeId = "없음"
+        }
+        
         
         if let recommandMenuListVC = RecommandMenuList.getInstance() {
             recommandMenuListVC.navigationBarTitle = cafeList[indexRow]
+            recommandMenuListVC.cafeId = cafeId
             self.navigationController?.pushViewController(recommandMenuListVC, animated: true)
         }
     }
