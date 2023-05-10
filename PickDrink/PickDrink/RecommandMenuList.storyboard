@@ -18,11 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vpG-qj-BlY">
-                                <rect key="frame" x="0.0" y="126" width="393" height="726"/>
+                                <rect key="frame" x="0.0" y="131" width="393" height="721"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19Y-4y-OV8">
-                                <rect key="frame" x="5" y="59" width="383" height="40"/>
+                                <rect key="frame" x="5" y="64" width="383" height="40"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="psr-GL-ugu">
                                         <rect key="frame" x="0.0" y="0.0" width="383" height="40"/>
@@ -40,7 +40,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="l2c-fk-kkH"/>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※ 다소 주관적일 수 있습니다!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Suw-ba-6pX">
-                                <rect key="frame" x="10" y="109" width="161" height="17"/>
+                                <rect key="frame" x="10" y="114" width="161" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" name="reviewTextViewCntLabel"/>
                                 <nil key="highlightedColor"/>
@@ -49,7 +49,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="19Y-4y-OV8" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="9gi-yb-5yF"/>
+                            <constraint firstItem="19Y-4y-OV8" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="5" id="9gi-yb-5yF"/>
                             <constraint firstItem="Suw-ba-6pX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="UDu-qn-hnP"/>
                             <constraint firstItem="vpG-qj-BlY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="XuX-Eg-5dp"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="19Y-4y-OV8" secondAttribute="trailing" constant="5" id="ZPj-cB-y9W"/>
