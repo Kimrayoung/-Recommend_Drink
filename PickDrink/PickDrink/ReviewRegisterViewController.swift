@@ -46,6 +46,10 @@ class ReviewRegisterViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     //MARK: - 네비게이션 세팅
     private func setNavigationBar() {
         self.navigationItem.title = navigationTitle

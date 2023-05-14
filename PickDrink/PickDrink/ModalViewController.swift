@@ -39,6 +39,10 @@ class ModalViewController: UIViewController {
         registerBtn.addTarget(self, action: #selector(registerBtnClicked(_:)), for: .touchUpInside)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     //MARK: - 모달화면 기본 세팅
     private func basicModalSetting() {
         modalView.layer.cornerRadius = 10

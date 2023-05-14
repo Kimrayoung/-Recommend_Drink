@@ -70,6 +70,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="접수하기">
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="baseBackgroundColor" name="complainBtnColor"/>
                                         </buttonConfiguration>
                                     </button>
                                 </subviews>
