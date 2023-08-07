@@ -7,6 +7,9 @@
 
 import Foundation
 import UIKit
+import Firebase
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 struct Cafe: Codable {
     let cafeId: String?
@@ -121,6 +124,7 @@ struct MenuDetail: Codable {
         case etc = "menu_etc"
         case nutrition = "nutritionInfo"
     }
+    
 }
 
 struct Nutrition: Codable {
@@ -137,26 +141,43 @@ struct ReviewArray: Codable {
 }
 
 struct Review: Codable {
-    let review: String?
-    let reviewPassword: String?
-    let reviewStar: String?
+    var reviewContent: String?
+    var reviewStar: String?
     let reviewId: String?
     let menuId: String?
+    let menuName: String?
+    let userId: String?
+    var userNickname: String?
     
     enum CodingKeys: String, CodingKey {
-        case review
-        case reviewPassword
-        case reviewStar
-        case reviewId
-        case menuId
+        case reviewContent = "review_content"
+        case reviewStar = "review_stars"
+        case reviewId = "review_id"
+        case menuId = "menu_id"
+        case menuName = "menu_name"
+        case userId = "user_id"
+        case userNickname = "user_nickname"
     }
 }
 
 struct Complain: Codable {
+    let complainId: String?
     let menuId: String?
     let complainReview: String?
     let complainReason: String?
     let reviewId: String?
+    let menuName: String?
+    let userId: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case complainId
+        case menuId
+        case complainReview
+        case complainReason
+        case reviewId
+        case menuName
+        case userId
+    }
 }
 
 public enum Modal{
@@ -196,3 +217,103 @@ public enum Modal{
     }
 }
 
+enum LoginPlatform {
+    case kakao
+    case apple
+}
+
+enum LoginStatus {
+    case login
+    case logout
+    case loginFail
+    case logoutFail
+}
+
+struct UserInfo: Codable {
+    let uid: String
+    let email: String?
+    var nickName: String?
+    let profileImg: URL?
+    let reviews: [DocumentReference]?
+    let complains: [DocumentReference]?
+    
+    enum CodingKeys: String, CodingKey {
+        case uid
+        case email
+        case nickName
+        case profileImg
+        case reviews
+        case complains
+    }
+}
+
+extension UserInfo {
+    //MARK: - user에 저장된 review reference를 통해서 user가 작성한 review가져오기
+    func fetchMyReviews(_ completion: @escaping ([Review]) -> Void) {
+        print(#fileID, #function, #line, "- ⭐️: \(self.reviews)")
+        let group = DispatchGroup()
+        var fetchedCompletedReviews: [Review] = []
+        
+        guard let reviews = self.reviews else { print(#fileID, #function, #line, "- review업음?🔥")
+            return }
+        reviews.forEach { ref in
+            group.enter()
+            
+            ref.getDocument { snapShot, err in
+                if let err = err {
+                    print(#fileID, #function, #line, "- get ref doc error: \(err.localizedDescription)")
+                    group.leave()
+                    return
+                }
+                
+                guard let snapShot = snapShot else {
+                    print(#fileID, #function, #line, "- get snapshot error")
+                    group.leave()
+                    return
+                }
+                
+                if let fetchedReview = try? snapShot.data(as: Review.self) {
+                    fetchedCompletedReviews.append(fetchedReview)
+                }
+                group.leave()
+            }
+        } //review.forEach
+        group.notify(queue: .main){
+            print(#fileID, #function, #line, "- 완료")
+            completion(fetchedCompletedReviews)
+        }
+    } //fetchMyReviews
+    
+    //MARK: - user에 저장된 complain reference를 통해서 user가 작성한 complain가져오기
+    func fetchMyComplain(_ completion: @escaping ([Complain]) -> Void) {
+        let group = DispatchGroup()
+        var fetchedCompletedComplains: [Complain] = []
+        
+        guard let complains = complains else { return }
+        complains.forEach { ref in
+            group.enter()
+            
+            ref.getDocument { snapShot, err in
+                if let err = err {
+                    print(#fileID, #function, #line, "- get complain ref doc error: \(err.localizedDescription)")
+                    group.leave()
+                    return
+                }
+                
+                guard let snapShot = snapShot else {
+                    print(#fileID, #function, #line, "- get complain snapshot error")
+                    group.leave()
+                    return
+                }
+                if let fetchedComplain = try? snapShot.data(as: Complain.self) {
+                    fetchedCompletedComplains.append(fetchedComplain)
+                }
+                group.leave()
+            }
+        }
+        group.notify(queue: .main){
+            print(#fileID, #function, #line, "- 완료")
+            completion(fetchedCompletedComplains)
+        }
+    } //fetchMyComplain
+}

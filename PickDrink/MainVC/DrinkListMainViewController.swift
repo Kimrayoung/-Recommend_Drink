@@ -77,8 +77,6 @@ class DrinkListMainViewController: UIViewController {
                     }
                 }
             } else {
-                print("Document does not exist")
-//                self.drinkListTableView.setEmptyMessage()
                 self.menuList = []
                 print(#fileID, #function, #line, "- Document does not exist: \(self.menuList)")
             }

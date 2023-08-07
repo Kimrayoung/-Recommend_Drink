@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Mypage Login View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="MypageLoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="MypageLoginViewController" customModule="PickDrink" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="C9P-Op-HcT">
+                                <rect key="frame" x="40" y="149" width="313" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ee-q7-kVZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="313" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Uja-ZX-K8S"/>
+                                        </constraints>
+                                        <state key="normal" image="카카오로 로그인_중앙정렬" backgroundImage="카카오로 로그인_중앙정렬">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="C9P-Op-HcT" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="0DH-ig-oNy"/>
+                            <constraint firstItem="C9P-Op-HcT" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="90" id="Gpx-rr-Veq"/>
+                            <constraint firstItem="C9P-Op-HcT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="a1g-Of-Zik"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="kakaoLoginBtn" destination="7ee-q7-kVZ" id="Vgu-Cl-WhV"/>
+                        <outlet property="loginBtnStackView" destination="C9P-Op-HcT" id="LcC-0r-IYC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="카카오로 로그인_중앙정렬" width="200.33332824707031" height="30"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

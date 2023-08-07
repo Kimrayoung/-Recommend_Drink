@@ -47,17 +47,17 @@ extension WithIdentifier {
 }
 
 protocol Storyboarded { //프로토콜 선언
-  static func getInstance(_ storyboardName: String?) -> Self?
+    static func getInstance(_ storyboardName: String?, _ storyboardID: String?) -> Self?
 }
 
 extension Storyboarded {
-  static func getInstance(_ storyboardName: String? = nil) -> Self? {
-      print(#fileID, #function, #line, "- storyboardName checked: \(String(describing: self))")
-    let name = storyboardName ?? String(describing: self)
-    
-    let storyBoard = UIStoryboard(name: name, bundle: Bundle.main)
-    return storyBoard.instantiateViewController(withIdentifier: String(describing: self)) as? Self
-  }
+    static func getInstance(_ storyboardName: String? = nil, _ storyboardID: String? = nil) -> Self? {
+        let name = storyboardName ?? String(describing: self)
+        let id = storyboardID ?? String(describing: self)
+        
+        let storyBoard = UIStoryboard(name: name, bundle: Bundle.main)
+        return storyBoard.instantiateViewController(withIdentifier: id) as? Self
+    }
 }
 
 extension UIViewController: Storyboarded {}
@@ -114,5 +114,20 @@ extension UICollectionView {
     
     func restore() {
         self.backgroundView = nil
+    }
+    
+    
+    /// 데이터를 가지고 오는 중
+    func setFetchingMessage() {
+        print(#fileID, #function, #line, "- setFetchingMessage")
+        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
+        messageLabel.text = "작성하신 데이터들을 가지고 오는 중입니다😎 \n조금만 기다려주세요!"
+        messageLabel.textColor = .black
+        messageLabel.numberOfLines = 0
+        messageLabel.textAlignment = .center
+        messageLabel.font = .systemFont(ofSize: 15)
+        messageLabel.sizeToFit()
+        
+        self.backgroundView = messageLabel
     }
 }

@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "선택된 카페 - "; ObjectID = "QdR-fa-sRm"; */
+"QdR-fa-sRm.text" = "선택된 카페 - ";
+
+/* Class = "UILabel"; text = "스타벅스"; ObjectID = "XLa-Fc-L8D"; */
+"XLa-Fc-L8D.text" = "스타벅스";
+
+/* Class = "UITabBarItem"; title = "음료 리스트"; ObjectID = "due-Rn-iWg"; */
+"due-Rn-iWg.title" = "음료 리스트";
+
+/* Class = "UITabBarItem"; title = "카페별 추천음료"; ObjectID = "gTv-u6-D7F"; */
+"gTv-u6-D7F.title" = "카페별 추천음료";
+
+/* Class = "UILabel"; text = "Pick Drink!🥤"; ObjectID = "oGb-FQ-7fI"; */
+"oGb-FQ-7fI.text" = "Pick Drink!🥤";
+
+/* Class = "UILabel"; text = "Pick Drink!🥤"; ObjectID = "yFh-3f-WWc"; */
+"yFh-3f-WWc.text" = "Pick Drink!🥤";

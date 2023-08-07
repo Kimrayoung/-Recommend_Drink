@@ -7,13 +7,11 @@
 
 import Foundation
 import UIKit
-import FirebaseCore
-import FirebaseFirestore
-import FirebaseFirestoreSwift
 
 /// 메뉴 디테일 화면
 class MenuDetailViewController: UIViewController {
-    let db = Firestore.firestore()
+    let firebaseManage = FirebaseManage.shared
+    let authVM = AuthVM.shared
     var cafeId: String = ""
     var menuId: String = "" //나중에 db 연결해서는 이 메뉴 ID를 통해서 데이터를 가지고 온다
     
@@ -21,6 +19,8 @@ class MenuDetailViewController: UIViewController {
     var menuDetail: MenuDetail? = nil
     
     var menuReviews: [Review]? = nil
+    var reviewTestData: [Review]? = nil
+    let reviewReferenceTest: [Review]? = nil
     
     @IBOutlet weak var menuImg: UIImageView!
     @IBOutlet weak var priceLabel: UILabel!
@@ -38,12 +38,12 @@ class MenuDetailViewController: UIViewController {
         receiveMenuData()
         receiveReviewData()
         navigationBarsetting()
-        
+
         reviewCollectionView.dataSource = self
         reviewCollectionView.delegate = self
         
-        //reviewCollectionViewCell등록하기
-        reviewCollectionView.register(ReviewCell.uiNib, forCellWithReuseIdentifier: ReviewCell.reuseIdentifier)
+//        reviewCollectionViewCell등록하기
+        reviewCollectionView.register(ReusableCell.uiNib, forCellWithReuseIdentifier: ReusableCell.reuseIdentifier)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,38 +55,26 @@ class MenuDetailViewController: UIViewController {
     func receiveMenuData(){
         print(#fileID, #function, #line, "- <#comment#>")
         let cafe = cafeId + "_menus"
-        let cafeMenuRequest = db.collection(cafe).document(menuId)
-        cafeMenuRequest.getDocument { (document, error) in
-            if let document = document, document.exists {
-                if let data = try? document.data(as: MenuDetail.self) {
-                    print(#fileID, #function, #line, "- data:\(data)")
-                    self.menuDetail = data
-
-                    self.nutritionInfo = data.nutrition
-                    self.basicSetting()
-                }
-            } else {
-                print("Document does not exist")
-            }
+        
+        firebaseManage.fetchMenuInfo(cafe, self.menuId) { menuInfo in
+            self.menuDetail = menuInfo
+            self.nutritionInfo = menuInfo?.nutrition
+            self.basicSetting()
         }
+        
     }
     
     //MARK: - 해당 메뉴에 대한 리뷰들을 받아온다
     func receiveReviewData() {
-        print(#fileID, #function, #line, "- <#comment#>")
-        let reviewRequest = db.collection("reviews").document(menuId)
-        reviewRequest.addSnapshotListener { documentSnapshot, err in
-            guard let documentSnapshot = documentSnapshot else {
-                print(#fileID, #function, #line, "- error fetching document: \(err)")
-                return
-            }
-            if let data = try? documentSnapshot.data(as: ReviewArray.self) {
-                print(#fileID, #function, #line, "- Review data parsing success:\(data)")
-                self.menuReviews = data.reviews?.reversed()
-            } else {
-                print(#fileID, #function, #line, "- Review data parsing fail: \(documentSnapshot)")
-            }
+        firebaseManage.fetchReviewsAll(self.menuId) { reviews in
+            print(#fileID, #function, #line, "- firebaseManage에서 받아온 review 체크⭐️: \(reviews)")
+            self.menuReviews = reviews
             self.reviewCollectionView.reloadData()
+            
+            guard let menuReviewCnt = self.menuReviews?.count else { return }
+            if menuReviewCnt > 1 {
+                self.reviewCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .left, animated: false)
+            }
         }
     }
     
@@ -193,6 +181,17 @@ class MenuDetailViewController: UIViewController {
     //MARK: - 리뷰를 쓰기 위해서 리뷰 등록 버튼 클릭
     @objc func reviewRegisterBtnClicked(_ sender: UIButton) {
         print(#fileID, #function, #line, "- ⭐️reviewRegisterBtnClicked")
+        print(#fileID, #function, #line, "- auth loginStatus checking: \(authVM.loginStatus.value)")
+        if authVM.loginStatus.value != .login {
+            let titleText = "에러"
+            let reviewAlert = UIAlertController(title: titleText, message: "로그인 이후 작성 가능합니다!", preferredStyle: .alert)
+            let reviewAlertAction = UIAlertAction(title: "확인", style: .cancel)
+
+            reviewAlert.addAction(reviewAlertAction)
+            self.present(reviewAlert, animated: true)
+            return
+        }
+        
         guard let reviewRegisterVC = ReviewRegisterViewController.getInstance() else { return }
         if let menuName = menuDetail?.name {
             reviewRegisterVC.navigationTitle = menuName
@@ -200,13 +199,11 @@ class MenuDetailViewController: UIViewController {
         }
         
         reviewRegisterVC.menuId = menuId
+        reviewRegisterVC.menuName = menuDetail?.name ?? "없음"
+        reviewRegisterVC.cafeId = cafeId
         
         reviewRegisterVC.reviewClosure = {
             self.receiveReviewData()
-            guard let menuReviewCnt = self.menuReviews?.count else { return }
-            if menuReviewCnt > 1 {
-                self.reviewCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .left, animated: false)
-            }
         }
     }
     
@@ -232,8 +229,8 @@ class MenuDetailViewController: UIViewController {
         nutritionVC.tempMenuName = menuDetail?.name
         self.navigationController?.pushViewController(nutritionVC, animated: true)
     }
-    
 }
+
 
 //MARK: - 콜렉션 뷰 dataSource관련 함수
 extension MenuDetailViewController: UICollectionViewDataSource {
@@ -255,22 +252,27 @@ extension MenuDetailViewController: UICollectionViewDataSource {
     
     //MARK: - 어떤 cell이 들어갈 건지 정해주기
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let reviewCell = reviewCollectionView.dequeueReusableCell(withReuseIdentifier: ReviewCell.reuseIdentifier, for: indexPath) as? ReviewCell else { return UICollectionViewCell() }
+        guard let reviewCell = reviewCollectionView.dequeueReusableCell(withReuseIdentifier: ReusableCell.reuseIdentifier, for: indexPath) as? ReusableCell else {
+            print(#fileID, #function, #line, "- make reusable cell error🥺")
+            return UICollectionViewCell()
+        }
         
         let indexRow = indexPath.row
         
-        guard let menuReviews = menuReviews else { return UICollectionViewCell() }
-        guard let starImg = UIImage(named: menuReviews[indexRow].reviewStar ?? "fivestars") else { return UICollectionViewCell() }
+        guard let menuReviews = menuReviews else {
+            print(#fileID, #function, #line, "- get menuReviews error🥺: \(String(describing: menuReviews))")
+            return UICollectionViewCell()
+        }
         
-        reviewCell.reviewStarImageView.image = starImg
-        reviewCell.reviewContentLabel.text = menuReviews[indexRow].review
-        reviewCell.reviewData = menuReviews[indexRow]
-        reviewCell.reviewIndex = indexRow
+        reviewCell.cellVCType = .menuDetailReview
+        reviewCell.cellData = menuReviews[indexRow]
+        reviewCell.cellIndex = indexRow
         
-        reviewCell.reviewCompainBtnClosure = openModal(_:_:_:_:)
-        reviewCell.reviewEditBtnClosure = reviewEdit(_:_:_:_:)
-        reviewCell.reviewDeleteBtnClosure = reviewDelete(_:)
+        reviewCell.cellDataSetting()
+        reviewCell.cellHiddenDataSetting()
+        reviewCell.reviewComplainBtnClosure = openModal(_:_:_:_:)
 
+        print(#fileID, #function, #line, "- menuDetailVC에서 reviewCell 체크⭐️: \(String(describing: reviewCell.cellData))")
         return reviewCell
     }
 }
@@ -280,7 +282,7 @@ extension MenuDetailViewController: UICollectionViewDelegateFlowLayout {
         return CGSizeMake(reviewCollectionView.frame.size.width, reviewCollectionView.frame.size.height)
     }
 }
-
+ 
 //MARK: - reviewCell 관련 함수 처리
 extension MenuDetailViewController{
     //MARK: - 리뷰 수정&삭제&신고하기 누르면 뜨는 모달 열기
@@ -294,83 +296,25 @@ extension MenuDetailViewController{
         modalVC.modalType = modalType
         modalVC.firstLabelContent = reviewContent
         
-        modalVC.collectionViewScrollToLeft = {
+        modalVC.collectionViewScrollToItem = {
             guard let menuReviewCnt = self.menuReviews?.count else { return }
             if menuReviewCnt > 1 {
                 self.reviewCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .left, animated: false)
             }
         }
+        
+        modalVC.complainSendCompledtedClosure = {
+            let modalAlert = UIAlertController(title: "리뷰 신고 완료", message: "해당 리뷰에 대한 신고 접수가 완료되었습니다.", preferredStyle: .alert)
+            
+            let modalAlertAction = UIAlertAction(title: "확인", style: .default)
+            
+            modalAlert.addAction(modalAlertAction)
+            self.present(modalAlert, animated: true)
+        }
 
         self.present(modalVC, animated: true)
     }
-    //MARK: - 리뷰 수정하기
-    func reviewEdit(_ reviewContent: String, _ modalType: Modal,_ reviewData: Review, _ reviewIndex: Int) {
-        print(#fileID, #function, #line, "- reviewEdit")
-        guard let passwordVC = PasswordAlertViewController.getInstance() else { return }
-        
-        guard let reviewPassword = reviewData.reviewPassword else { return }
-        passwordVC.reviewPW = reviewPassword
-        
-        passwordVC.modalPresentationStyle = .overCurrentContext
-        passwordVC.modalTransitionStyle =  .crossDissolve
-        
-        passwordVC.checkBtnClosure = {
-            self.openModal(reviewContent, modalType, reviewData, reviewIndex)
-        }
-        
-        self.present(passwordVC, animated: true)
-    }
     
-    //MARK: - 리뷰 삭제하기
-    func reviewDelete(_ reviewData: Review) {
-        guard let reviewPassword = reviewData.reviewPassword else { return }
-        print(#fileID, #function, #line, "- reviewDelete", reviewPassword)
-        
-        guard let passwordVC = PasswordAlertViewController.getInstance() else { return }
-        passwordVC.reviewPW = reviewPassword
-        passwordVC.modalPresentationStyle = .overCurrentContext
-        passwordVC.modalTransitionStyle = .crossDissolve
-        
-        self.present(passwordVC, animated: true)
-        
-        passwordVC.checkBtnClosure = {
-            let alert = UIAlertController(title: "리뷰 삭제", message: "작성하신 리뷰가 삭제됩니다🥺", preferredStyle: .alert)
-            
-            let okayAlertAction = UIAlertAction(title: "확인", style: .default) { _ in
-                print(#fileID, #function, #line, "- deleteReviewData")
-                self.reviewDeleteRequest(reviewData)
-            }
-            
-            let cancelAlertAction = UIAlertAction(title: "취소", style: .destructive) { _ in
-                self.dismiss(animated: true)
-            }
-            
-            alert.addAction(cancelAlertAction)
-            alert.addAction(okayAlertAction)
-            self.present(alert, animated: true)
-        }
-    }
-    
-    //MARK: - fireStore로 리뷰 삭제 요청 보내기
-    func reviewDeleteRequest(_ reviewData: Review) {
-        guard let menuId = reviewData.menuId,
-              let reviewId = reviewData.reviewId,
-              let reviewPassword = reviewData.reviewPassword,
-              let reviewStar = reviewData.reviewStar,
-              let reviewContent = reviewData.review else { return }
-        
-        let originalReview : [String : String] = [
-            "menuId" : menuId,
-            "review" : reviewContent,
-            "reviewId" : reviewId,
-            "reviewStar": reviewStar,
-            "reviewPassword": reviewPassword
-        ]
-        
-        print(#fileID, #function, #line, "- updateReview()\(reviewId)")
-        let reviewRemoveRequest = db.collection("reviews").document(self.menuId)
-        reviewRemoveRequest.updateData([
-            "reviews": FieldValue.arrayRemove([originalReview])
-        ])
-    }
 }
+
+

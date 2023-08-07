@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MypageLoginView" customModule="PickDrink" customModuleProvider="target">
+            <connections>
+                <outlet property="logoutBtn" destination="IRs-y2-gsy" id="ysM-s6-qn4"/>
+                <outlet property="nickname" destination="mpd-pK-NlZ" id="q7I-v8-w8w"/>
+                <outlet property="profileImg" destination="Wa9-61-moW" id="eSG-dK-pTh"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="pxr-Jd-DPm">
+            <rect key="frame" x="0.0" y="0.0" width="418" height="118"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wa9-61-moW">
+                    <rect key="frame" x="20" y="20" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="3ds-pe-fxj"/>
+                        <constraint firstAttribute="width" constant="70" id="oMZ-s0-N8l"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Nickname" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpd-pK-NlZ">
+                    <rect key="frame" x="107" y="20" width="301" height="24"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRs-y2-gsy">
+                    <rect key="frame" x="107" y="55" width="83" height="34.333333333333343"/>
+                    <color key="tintColor" name="MypageMainColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="로그아웃">
+                        <color key="baseForegroundColor" name="MypageMainColor"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="logoutBtnClicked:" destination="-1" eventType="touchUpInside" id="QaB-IQ-n0r"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="IRs-y2-gsy" firstAttribute="top" secondItem="mpd-pK-NlZ" secondAttribute="bottom" constant="11" id="GwI-f6-rVD"/>
+                <constraint firstItem="IRs-y2-gsy" firstAttribute="leading" secondItem="Wa9-61-moW" secondAttribute="trailing" constant="17" id="K6d-Gk-pgz"/>
+                <constraint firstAttribute="trailing" secondItem="mpd-pK-NlZ" secondAttribute="trailing" constant="10" id="ZtG-F2-GGp"/>
+                <constraint firstItem="Wa9-61-moW" firstAttribute="leading" secondItem="pxr-Jd-DPm" secondAttribute="leading" constant="20" id="eRe-Id-NUf"/>
+                <constraint firstItem="Wa9-61-moW" firstAttribute="top" secondItem="pxr-Jd-DPm" secondAttribute="top" constant="20" id="eVI-eG-uLC"/>
+                <constraint firstItem="mpd-pK-NlZ" firstAttribute="top" secondItem="Wa9-61-moW" secondAttribute="top" id="lzA-y9-mdu"/>
+                <constraint firstItem="mpd-pK-NlZ" firstAttribute="leading" secondItem="Wa9-61-moW" secondAttribute="trailing" constant="17" id="xvx-i7-b1X"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="152.67175572519082" y="-34.507042253521128"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="MypageMainColor">
+            <color red="0.42352941176470588" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

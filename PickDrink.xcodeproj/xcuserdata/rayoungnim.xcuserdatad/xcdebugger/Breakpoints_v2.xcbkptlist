@@ -3,4 +3,70 @@
    uuid = "A1761395-76CD-4B00-9B99-4900D174FC7A"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4135CFC1-8B02-445B-B97C-730302538A25"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickDrink/ReviewRegister/ReviewRegisterViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "registerBtnClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "79371BF2-24C4-4DD6-802E-53569A850C2E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickDrink/MenuDetail/MenuDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "reviewRegisterBtnClicked(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "79371BF2-24C4-4DD6-802E-53569A850C2E - 9a2c1c9923f7f623"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in PickDrink.MenuDetailViewController.reviewRegisterBtnClicked(__C.UIButton) -&gt; ()"
+                  moduleName = "PickDrink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rayoungnim/Documents/programming/ios/project/PickDrink/PickDrink/MenuDetail/MenuDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "206"
+                  endingLineNumber = "206"
+                  offsetFromSymbolStart = "696">
+               </Location>
+               <Location
+                  uuid = "79371BF2-24C4-4DD6-802E-53569A850C2E - 9a2c1c9923f7f623"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in PickDrink.MenuDetailViewController.reviewRegisterBtnClicked(__C.UIButton) -&gt; ()"
+                  moduleName = "PickDrink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rayoungnim/Documents/programming/ios/project/PickDrink/PickDrink/MenuDetail/MenuDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "206"
+                  endingLineNumber = "206"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

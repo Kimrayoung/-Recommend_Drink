@@ -13,15 +13,20 @@ import FirebaseFirestoreSwift
 
 /// 모달
 class ModalViewController: UIViewController {
+    let firebaseManage = FirebaseManage.shared
     let db = Firestore.firestore()
     
+    var userId = AuthVM.shared.userId.value
     var menuId: String = ""
     var reviewData: Review? = nil
     var reviewIndex: Int? = nil
     var modalType: Modal? = nil
     var firstLabelContent: String? = nil
     let textBorderColor = UIColor(named: "reviewTextViewColor")
-    var collectionViewScrollToLeft : (() -> ())? = nil
+    var collectionViewScrollToItem : (() -> ())? = nil
+    
+    var editCompletedClosure: ((_ reviewEditContent: String, _ reviewIndex: Int) -> ())? = nil
+    var complainSendCompledtedClosure: (() -> ())? = nil
     
     @IBOutlet weak var modalView: UIView!
     @IBOutlet weak var firstTitleLabel: UILabel!
@@ -65,20 +70,32 @@ class ModalViewController: UIViewController {
     //MARK: - 모달 등록 버튼 클릭
     @objc private func registerBtnClicked(_ sender: UIButton) {
         print(#fileID, #function, #line, "- registerBtnClicked")
-        if !textViewChecking() {
+        if textViewChecking() != true {
             let modalAlertAction = UIAlertAction(title: "확인", style: .cancel)
             makeAlert("에러", "입력하지 않은 항목이 있습니다.", modalAlertAction)
             return
         }
         
+        guard let reviewData = reviewData else { return }
+        let modalTextView = modalTextView.text ?? "없음"
+        let reviewId = reviewData.reviewId ?? "없음"
+        let userId = userId ?? "없음"
+        
         switch modalType {
         case .complain:
-            sendComplaint()
+            firebaseManage.sendComplain(modalTextView, reviewData, userId) {
+                guard let complainSendCompledtedClosure = complainSendCompledtedClosure else { return }
+                self.dismiss(animated: true)
+                complainSendCompledtedClosure()
+            }
         case .editReview:
-            removeReview()
-            addReview()
-            guard let collectionViewScrollToLeft = collectionViewScrollToLeft else { return }
-            collectionViewScrollToLeft()
+            firebaseManage.editReview(reviewId, modalTextView) { //edit 성공
+                guard let editCompletedClosure = self.editCompletedClosure,
+                      let reviewIndex = self.reviewIndex else { return }
+                
+                editCompletedClosure(modalTextView, reviewIndex)
+                self.dismiss(animated: true)
+            }
         default: return
         }
     }
@@ -90,44 +107,18 @@ class ModalViewController: UIViewController {
         }
         return true
     }
-    
-    //MARK: - 신고하기를 눌렀을 경우 -> 리뷰 내용, 리뷰 아이디, 메뉴 아이디
-    private func sendComplaint() {
-        guard let complainReview = modalFirstContentLabel.text,
-              let reviewId = reviewData?.reviewId else { return }
 
-        let complain: Complain = Complain(menuId: self.menuId, complainReview: complainReview, complainReason: self.modalTextView.text, reviewId: reviewId)
-        
-        do {
-            try db.collection("complaints").addDocument(from: complain)
-            
-            let modalAlertActionhandler = UIAlertAction(title: "확인", style: .default) { _ in
-                self.dismiss(animated: true)
-            }
-            makeAlert("신고사항 접수 완료", "메뉴 상세보기 화면으로 돌아갑니다.", modalAlertActionhandler)
-        } catch let err {
-            print(#fileID, #function, #line, "- err: \(err)")
-        }
-    }
-    
-    //1번 방법 - 배열의 전체를 삭제한 다음 전체 review를 다시 붙여넣기
-    //1번 방법의 장점 - 순서 유지, 쉬움
-    //1번 방법의 단점 - db수정이 오래걸릴 수 있음(전체 데이터를 다시 붙여넣어야 하니까)(데이터 완료가 언제 될지 예측이 어려움)
-    //2번 방법 - 배열에서 해당 Review만 삭제한 후 수정한 Review를 가장 앞에 오게 함
-    //2번 방법의 장점 - 귀찮음, db수정이 오래걸리지 않음,,?
     private func removeReview() {
         guard let reviewData = self.reviewData,
               let reviewId = reviewData.reviewId,
-              let reviewPassword = reviewData.reviewPassword,
               let reviewStar = reviewData.reviewStar,
-              let reviewContent = reviewData.review else { return }
+              let reviewContent = reviewData.reviewContent else { return }
         
         let originalReview : [String : String] = [
             "menuId" : menuId,
             "review" : reviewContent,
             "reviewId" : reviewId,
             "reviewStar": reviewStar,
-            "reviewPassword": reviewPassword
         ]
         
         print(#fileID, #function, #line, "- updateReview()\(reviewId)")
@@ -140,7 +131,6 @@ class ModalViewController: UIViewController {
     private func addReview() {
         guard let reviewData = self.reviewData,
               let reviewId = reviewData.reviewId,
-              let reviewPassword = reviewData.reviewPassword,
               let reviewStar = reviewData.reviewStar,
               let reviewContent = modalTextView.text else { return }
         
@@ -151,7 +141,6 @@ class ModalViewController: UIViewController {
                 "review" : reviewContent,
                 "reviewId" : reviewId,
                 "reviewStar": reviewStar,
-                "reviewPassword": reviewPassword
             ]
             
             reviewRemoveRequest.updateData([

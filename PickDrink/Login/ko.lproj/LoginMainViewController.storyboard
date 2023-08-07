@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--LoginMainViewController-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="LoginMainViewController" title="LoginMainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="LoginMainViewController" customModule="PickDrink" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick Drink!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWp-9I-NQD">
+                                <rect key="frame" x="97" y="130" width="199" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PickDrinkMainImg" translatesAutoresizingMaskIntoConstraints="NO" id="eMc-CB-G3p">
+                                <rect key="frame" x="106.66666666666669" y="196" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="PIq-b7-4la"/>
+                                    <constraint firstAttribute="height" constant="180" id="ulA-hB-pcK"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="87X-xZ-ezn">
+                                <rect key="frame" x="40" y="411" width="313" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ver-bU-T67">
+                                        <rect key="frame" x="0.0" y="0.0" width="313" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="lnh-i6-l74"/>
+                                        </constraints>
+                                        <state key="normal" image="카카오로 로그인_중앙정렬" backgroundImage="카카오로 로그인_중앙정렬">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ver-bU-T67" firstAttribute="leading" secondItem="87X-xZ-ezn" secondAttribute="leading" id="3WO-3w-m8O"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="87X-xZ-ezn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="9Ib-nf-D5g"/>
+                            <constraint firstItem="eMc-CB-G3p" firstAttribute="top" secondItem="XWp-9I-NQD" secondAttribute="bottom" constant="18" id="Cy4-U3-EpM"/>
+                            <constraint firstItem="XWp-9I-NQD" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="HX3-Ub-RHk"/>
+                            <constraint firstItem="XWp-9I-NQD" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="130" id="g3r-dL-mYP"/>
+                            <constraint firstItem="eMc-CB-G3p" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="jTi-ok-YZm"/>
+                            <constraint firstItem="87X-xZ-ezn" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="lv6-Ta-Aab"/>
+                            <constraint firstItem="87X-xZ-ezn" firstAttribute="top" secondItem="eMc-CB-G3p" secondAttribute="bottom" constant="35" id="wTd-TJ-LkQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="appLogo" destination="XWp-9I-NQD" id="xK2-zi-SQc"/>
+                        <outlet property="appLogoImg" destination="eMc-CB-G3p" id="DDO-vT-uL5"/>
+                        <outlet property="kakaoLoginBtn" destination="ver-bU-T67" id="ueK-RJ-VZP"/>
+                        <outlet property="loginBtnStackView" destination="87X-xZ-ezn" id="KXA-jh-Cfg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64.885496183206101" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="PickDrinkMainImg" width="60" height="60"/>
+        <image name="카카오로 로그인_중앙정렬" width="200.33332824707031" height="30"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

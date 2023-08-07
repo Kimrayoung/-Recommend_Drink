@@ -7,14 +7,31 @@
 
 import UIKit
 import FirebaseCore
+import KakaoSDKCommon
+import KakaoSDKAuth
+import KakaoSDKUser
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        let kakaoNativeAppKey = Bundle.main.infoDictionary?["KAKAO_NATIVE_APP_KEY"] ?? ""
+        KakaoSDK.initSDK(appKey: kakaoNativeAppKey as! String)
+        
         return true
     }
+    
+    //MARK: - 카카오톡 유무 체크
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+            if (AuthApi.isKakaoTalkLoginUrl(url)) {
+                return AuthController.handleOpenUrl(url: url)
+            }
+
+            return false
+        }
 
     // MARK: UISceneSession Lifecycle
 

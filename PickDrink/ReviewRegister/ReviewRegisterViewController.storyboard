@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -76,28 +77,14 @@
                                 <color key="textColor" name="reviewTextViewCntLabel"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호를 설정해주세요!(숫자 4자리)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18R-ok-a15">
-                                <rect key="frame" x="25" y="415" width="259.33333333333331" height="20.333333333333314"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex) 0000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E0k-Sd-Wba">
-                                <rect key="frame" x="25" y="445.33333333333331" width="343" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="fB8-bb-90S"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주의 ❗️해당 메뉴와 상관없는 내용은 통보없이 삭제 될 수 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4o-LK-1UB">
-                                <rect key="frame" x="25" y="510.33333333333331" width="343" height="14.333333333333314"/>
+                                <rect key="frame" x="25" y="432" width="343" height="14.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8i-UE-Z29">
-                                <rect key="frame" x="100" y="534.66666666666663" width="193" height="40"/>
+                                <rect key="frame" x="100" y="456.33333333333331" width="193" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="eOK-lb-3OJ"/>
                                 </constraints>
@@ -119,31 +106,25 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="I8i-UE-Z29" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="0JD-cR-odu"/>
+                            <constraint firstItem="M4o-LK-1UB" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="3mI-6r-dt0"/>
                             <constraint firstItem="04J-3e-IAM" firstAttribute="top" secondItem="JyH-PN-COD" secondAttribute="bottom" constant="10" id="3rF-9A-fqW"/>
                             <constraint firstAttribute="trailing" secondItem="M4o-LK-1UB" secondAttribute="trailing" constant="25" id="Cnb-ed-7Ac"/>
-                            <constraint firstItem="E0k-Sd-Wba" firstAttribute="top" secondItem="18R-ok-a15" secondAttribute="bottom" constant="10" id="LJj-7q-arF"/>
                             <constraint firstItem="04J-3e-IAM" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Njj-AV-bAJ"/>
-                            <constraint firstItem="M4o-LK-1UB" firstAttribute="leading" secondItem="JyH-PN-COD" secondAttribute="leading" id="UJi-wN-HXh"/>
                             <constraint firstItem="Yny-dA-mzh" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Yzr-Az-RSj"/>
                             <constraint firstItem="fYz-vw-J5F" firstAttribute="centerX" secondItem="Yny-dA-mzh" secondAttribute="centerX" id="ae3-bb-c89"/>
                             <constraint firstItem="I8i-UE-Z29" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="100" id="deH-0F-a5a"/>
                             <constraint firstItem="04J-3e-IAM" firstAttribute="leading" secondItem="JyH-PN-COD" secondAttribute="leading" id="eMx-k0-P2q"/>
                             <constraint firstItem="XrB-gz-72l" firstAttribute="trailing" secondItem="04J-3e-IAM" secondAttribute="trailing" id="fAE-bw-LE0"/>
                             <constraint firstItem="JyH-PN-COD" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="85" id="fdy-OJ-VpL"/>
-                            <constraint firstItem="18R-ok-a15" firstAttribute="leading" secondItem="JyH-PN-COD" secondAttribute="leading" id="g2V-qm-FIO"/>
                             <constraint firstItem="JyH-PN-COD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="gEZ-ln-lfN"/>
                             <constraint firstItem="I8i-UE-Z29" firstAttribute="top" secondItem="M4o-LK-1UB" secondAttribute="bottom" constant="10" id="gOF-iE-wXe"/>
                             <constraint firstItem="XrB-gz-72l" firstAttribute="top" secondItem="04J-3e-IAM" secondAttribute="bottom" constant="10" id="k2D-dx-71O"/>
                             <constraint firstItem="Yny-dA-mzh" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="s9I-Fb-sD0"/>
-                            <constraint firstItem="18R-ok-a15" firstAttribute="top" secondItem="04J-3e-IAM" secondAttribute="bottom" constant="40" id="tbz-CV-8U4"/>
-                            <constraint firstItem="E0k-Sd-Wba" firstAttribute="leading" secondItem="18R-ok-a15" secondAttribute="leading" id="vL4-3G-dCa"/>
+                            <constraint firstItem="M4o-LK-1UB" firstAttribute="top" secondItem="XrB-gz-72l" secondAttribute="bottom" constant="30" id="tKi-qK-fb6"/>
                             <constraint firstItem="fYz-vw-J5F" firstAttribute="top" secondItem="Yny-dA-mzh" secondAttribute="bottom" id="vOA-Gc-hpl"/>
-                            <constraint firstItem="M4o-LK-1UB" firstAttribute="top" secondItem="E0k-Sd-Wba" secondAttribute="bottom" constant="25" id="xIJ-B6-5Ke"/>
-                            <constraint firstItem="E0k-Sd-Wba" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="xfv-GE-JlR"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="reviewPasswordTextField" destination="E0k-Sd-Wba" id="PBs-dJ-pcG"/>
                         <outlet property="reviewRegisterBtn" destination="I8i-UE-Z29" id="UD4-QD-NaO"/>
                         <outlet property="reviewTextView" destination="04J-3e-IAM" id="WkV-jJ-4tX"/>
                         <outlet property="reviewTextViewCnt" destination="XrB-gz-72l" id="2E7-zf-ko7"/>
