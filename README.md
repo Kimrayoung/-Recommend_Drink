@@ -45,7 +45,7 @@
 <p align="center">
   <img src="https://github.com/Kimrayoung/Recommend_Drink/assets/66238470/92d13d9d-359c-4dd1-8bfa-95864279709a" width="300" height="600"/>
   <img src="https://github.com/Kimrayoung/Recommend_Drink/assets/66238470/aafd81bf-cc53-4556-b54b-895db1c6b40c" width="300" height="600"/>
-  <figcaption align="center">3개 이미지 띄우기</figcaption>
+  <figcaption align="center"></figcaption>
 </p>
 
 
