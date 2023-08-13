@@ -40,7 +40,8 @@
 [앱 개발일지]https://pastoral-dust-a7f.notion.site/9dcbb038d0214581a7cf9e57f3c4a658?pvs=4
 
 👀서비스 화면
-![PickDrink_v1 1](https://github.com/Kimrayoung/Recommend_Drink/assets/66238470/974842c6-4c8a-4eb3-bce3-dcc79984af50) {: width="200" height="400"}
+<img src="![PickDrink_v1 1](https://github.com/Kimrayoung/Recommend_Drink/assets/66238470/21bc7766-795d-42a7-ab3e-85976c597c03)
+" width="250" height="250"/>
 
 
 
