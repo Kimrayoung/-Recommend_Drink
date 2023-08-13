@@ -37,10 +37,11 @@
 이번 프로젝트로 로그인 기능을 추가하겠다고 다짐을 하면서 처음 로그인 기능을 프로젝트에 넣게 되었습니다. 아무래도 처음 로그인을 진행하다보니 처음부터 프로젝트에 넣어서 진행을 하면 꼬이는 부분도 많고 로그인을 구현하다가 어디가 틀렸는지 알기가 힘들것 같아서 따로 프로젝트를 파서 진행을 했습니다. 애플 로그인과 카카오 로그인 각각 파이어 베이스와 연동해서 구현하는 것을 연습하고 실제 프로젝트에 구현하는 부분을 진행하였습니다.
 
 앱관련 기타 문서
-[앱 개발일지]https://pastoral-dust-a7f.notion.site/9dcbb038d0214581a7cf9e57f3c4a658?pvs=4
+[앱 개발일지](https://pastoral-dust-a7f.notion.site/9dcbb038d0214581a7cf9e57f3c4a658?pvs=4)
 
-👀서비스 화면
-<img src="https://github.com/Kimrayoung/Recommend_Drink/assets/66238470/92d13d9d-359c-4dd1-8bfa-95864279709a" width="250" height="400"/>
+# 👀서비스 화면
+
+<img src="https://github.com/Kimrayoung/Recommend_Drink/assets/66238470/92d13d9d-359c-4dd1-8bfa-95864279709a" width="300" height="600"/>
 
 
 
